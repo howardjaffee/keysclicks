@@ -45,6 +45,66 @@ const amazonProducts = {
       reviews: 6876,
       image: "https://m.media-amazon.com/images/I/51h7Q3jqbFL._AC_SL1024_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av5',
+      name: "ESET Internet Security 2025 - 3 Devices",
+      price: 21.99,
+      originalPrice: 69.99,
+      rating: 4.6,
+      reviews: 4521,
+      image: "https://m.media-amazon.com/images/I/51pKx5XQRGL._AC_SL1024_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av6',
+      name: "Trend Micro Internet Security 2025",
+      price: 19.99,
+      originalPrice: 49.99,
+      rating: 4.5,
+      reviews: 2876,
+      image: "https://m.media-amazon.com/images/I/51ZqKZQ8rqL._AC_SL1024_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av7',
+      name: "Avast Premium Security 2025 - 10 Devices",
+      price: 39.99,
+      originalPrice: 89.99,
+      rating: 4.4,
+      reviews: 8934,
+      image: "https://m.media-amazon.com/images/I/51Qx5K2XRQL._AC_SL1024_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av8',
+      name: "AVG Internet Security 2025 - Unlimited Devices",
+      price: 29.99,
+      originalPrice: 79.99,
+      rating: 4.3,
+      reviews: 5432,
+      image: "https://m.media-amazon.com/images/I/51KxqZRQ8rL._AC_SL1024_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av9',
+      name: "F-Secure SAFE Internet Security 2025",
+      price: 34.99,
+      originalPrice: 69.99,
+      rating: 4.7,
+      reviews: 1876,
+      image: "https://m.media-amazon.com/images/I/41ZqKx5QRQL._AC_SL1024_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av10',
+      name: "Sophos Home Premium 2025 - 10 Devices",
+      price: 44.99,
+      originalPrice: 84.99,
+      rating: 4.6,
+      reviews: 3211,
+      image: "https://m.media-amazon.com/images/I/51QxKZRQ8rL._AC_SL1024_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
     }
   ],
   computers: [
@@ -120,7 +180,7 @@ const amazonProducts = {
       rating: 4.3,
       reviews: 12456,
       image: "https://m.media-amazon.com/images/I/71QT8+bJoIL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
+      affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr2',
@@ -130,7 +190,7 @@ const amazonProducts = {
       rating: 4.2,
       reviews: 8734,
       image: "https://m.media-amazon.com/images/I/61QE6KqFBdL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
+      affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr3',
@@ -140,7 +200,127 @@ const amazonProducts = {
       rating: 4.4,
       reviews: 5678,
       image: "https://m.media-amazon.com/images/I/61KGOXuGrVL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr4',
+      name: "HP ENVY Inspire 7955e All-in-One Printer",
+      price: 149.99,
+      originalPrice: 229.99,
+      rating: 4.5,
+      reviews: 9876,
+      image: "https://m.media-amazon.com/images/I/71ZgPqKx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr5',
+      name: "Canon PIXMA TR8620 Wireless All-in-One",
+      price: 179.99,
+      originalPrice: 279.99,
+      rating: 4.3,
+      reviews: 7432,
+      image: "https://m.media-amazon.com/images/I/71pKZqQx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr6',
+      name: "Epson EcoTank ET-2720 Wireless All-in-One",
+      price: 199.99,
+      originalPrice: 299.99,
+      rating: 4.6,
+      reviews: 15234,
+      image: "https://m.media-amazon.com/images/I/61ZqKxPQ8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr7',
+      name: "Brother MFC-J995DW INKvestmentTank Printer",
+      price: 249.99,
+      originalPrice: 349.99,
+      rating: 4.4,
+      reviews: 6789,
+      image: "https://m.media-amazon.com/images/I/71KgPqQx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr8',
+      name: "HP OfficeJet Pro 9015e All-in-One Printer",
+      price: 159.99,
+      originalPrice: 229.99,
+      rating: 4.2,
+      reviews: 4521,
+      image: "https://m.media-amazon.com/images/I/61ZgKqPx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr9',
+      name: "Canon imageCLASS MF445dw Laser Printer",
+      price: 219.99,
+      originalPrice: 319.99,
+      rating: 4.7,
+      reviews: 8765,
+      image: "https://m.media-amazon.com/images/I/71pKZgQx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr10',
+      name: "Epson WorkForce Pro WF-3730 All-in-One",
+      price: 189.99,
+      originalPrice: 279.99,
+      rating: 4.3,
+      reviews: 5432,
+      image: "https://m.media-amazon.com/images/I/61KgZqPx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr11',
+      name: "HP LaserJet Pro M404dn Monochrome Printer",
+      price: 199.99,
+      originalPrice: 299.99,
+      rating: 4.5,
+      reviews: 7891,
+      image: "https://m.media-amazon.com/images/I/71ZgKqPx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr12',
+      name: "Brother HL-L5100DN Monochrome Laser Printer",
+      price: 179.99,
+      originalPrice: 249.99,
+      rating: 4.6,
+      reviews: 3456,
+      image: "https://m.media-amazon.com/images/I/61pKZgQx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr13',
+      name: "Canon PIXMA G6020 Wireless MegaTank",
+      price: 329.99,
+      originalPrice: 449.99,
+      rating: 4.8,
+      reviews: 9123,
+      image: "https://m.media-amazon.com/images/I/71KgPqZx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr14',
+      name: "Epson Expression Premium XP-6100",
+      price: 129.99,
+      originalPrice: 179.99,
+      rating: 4.2,
+      reviews: 2876,
+      image: "https://m.media-amazon.com/images/I/61ZgKqPx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
+    },
+    {
+      id: 'pr15',
+      name: "HP Color LaserJet Pro M255dw",
+      price: 249.99,
+      originalPrice: 349.99,
+      rating: 4.4,
+      reviews: 6543,
+      image: "https://m.media-amazon.com/images/I/71pKZgPx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/4nuQgfb"
     }
   ],
   networking: [
@@ -152,7 +332,7 @@ const amazonProducts = {
       rating: 4.5,
       reviews: 15234,
       image: "https://m.media-amazon.com/images/I/61K2a7iBPuL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
+      affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net2',
@@ -162,7 +342,7 @@ const amazonProducts = {
       rating: 4.3,
       reviews: 7894,
       image: "https://m.media-amazon.com/images/I/61QJKKqOqtL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
+      affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net3',
@@ -172,7 +352,127 @@ const amazonProducts = {
       rating: 4.2,
       reviews: 4567,
       image: "https://m.media-amazon.com/images/I/61VUgCdNwgL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net4',
+      name: "ASUS AX6000 WiFi 6 Gaming Router",
+      price: 269.99,
+      originalPrice: 399.99,
+      rating: 4.6,
+      reviews: 8765,
+      image: "https://m.media-amazon.com/images/I/61pKZgQx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net5',
+      name: "eero Pro 6E Mesh WiFi System",
+      price: 299.99,
+      originalPrice: 449.99,
+      rating: 4.4,
+      reviews: 6543,
+      image: "https://m.media-amazon.com/images/I/61ZgKqPx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net6',
+      name: "TP-Link Deco X60 AX3000 Mesh System",
+      price: 179.99,
+      originalPrice: 249.99,
+      rating: 4.7,
+      reviews: 12345,
+      image: "https://m.media-amazon.com/images/I/71KgPqZx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net7',
+      name: "NETGEAR Orbi Whole Home Mesh System",
+      price: 249.99,
+      originalPrice: 349.99,
+      rating: 4.3,
+      reviews: 5432,
+      image: "https://m.media-amazon.com/images/I/61pKZgPx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net8',
+      name: "Linksys MX4200 Velop AX4200 Mesh",
+      price: 199.99,
+      originalPrice: 279.99,
+      rating: 4.2,
+      reviews: 3456,
+      image: "https://m.media-amazon.com/images/I/71ZgKqPx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net9',
+      name: "ASUS ZenWiFi AX6600 Tri-Band Mesh",
+      price: 329.99,
+      originalPrice: 449.99,
+      rating: 4.5,
+      reviews: 7891,
+      image: "https://m.media-amazon.com/images/I/61KgZqPx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net10',
+      name: "TP-Link AX1800 WiFi 6 Router",
+      price: 89.99,
+      originalPrice: 129.99,
+      rating: 4.4,
+      reviews: 9876,
+      image: "https://m.media-amazon.com/images/I/71pKZgQx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net11',
+      name: "D-Link DIR-X1560 AX1500 WiFi 6 Router",
+      price: 69.99,
+      originalPrice: 99.99,
+      rating: 4.1,
+      reviews: 2876,
+      image: "https://m.media-amazon.com/images/I/61ZgKqZx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net12',
+      name: "NETGEAR Nighthawk Pro Gaming XR500",
+      price: 159.99,
+      originalPrice: 229.99,
+      rating: 4.3,
+      reviews: 4567,
+      image: "https://m.media-amazon.com/images/I/71KgPqPx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net13',
+      name: "Linksys EA7300 Dual-Band WiFi Router",
+      price: 59.99,
+      originalPrice: 89.99,
+      rating: 4.2,
+      reviews: 6543,
+      image: "https://m.media-amazon.com/images/I/61pKZgZx8rL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net14',
+      name: "ASUS RT-AX55 AX1800 WiFi 6 Router",
+      price: 99.99,
+      originalPrice: 149.99,
+      rating: 4.6,
+      reviews: 8234,
+      image: "https://m.media-amazon.com/images/I/71ZgKqZx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    },
+    {
+      id: 'net15',
+      name: "TP-Link AC4000 Smart WiFi Router",
+      price: 139.99,
+      originalPrice: 199.99,
+      rating: 4.4,
+      reviews: 5678,
+      image: "https://m.media-amazon.com/images/I/61KgPqZx8dL._AC_SL1500_.jpg",
+      affiliateLink: "https://amzn.to/3ItE6V7"
     }
   ]
 };

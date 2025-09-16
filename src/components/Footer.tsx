@@ -172,8 +172,8 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-hero-foreground/60 text-center md:text-left">
             © 2024 Digitalcorner. All rights reserved. | 
-            <a href="#" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
-            <a href="#" className="hover:text-primary-glow ml-1">Terms of Service</a>
+            <a href="/privacy" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
+            <a href="/terms" className="hover:text-primary-glow ml-1">Terms of Service</a>
           </div>
           <div className="text-sm text-hero-foreground/60">
             Affiliate Disclosure: As an Amazon Associate, we earn from qualifying purchases.
