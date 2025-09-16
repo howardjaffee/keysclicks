@@ -2,9 +2,20 @@ import { Search, ShoppingCart, User, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 import logo from "@/assets/logo.png";
+import { CategoryProducts } from "./CategoryProducts";
 
 export const Header = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+  };
+  
+  const handleCloseProducts = () => {
+    setSelectedCategory(null);
+  };
   return (
     <>
       {/* Top notification bar */}
@@ -80,22 +91,67 @@ export const Header = () => {
           {/* Category navigation */}
           <nav className="py-3 border-t">
             <div className="flex items-center gap-8 text-sm overflow-x-auto">
-              <Button variant="ghost" className="text-primary font-medium hover:bg-primary/10 whitespace-nowrap">
+              <Button 
+                variant="ghost" 
+                className="text-primary font-medium hover:bg-primary/10 whitespace-nowrap"
+                onClick={() => handleCategoryClick('all')}
+              >
                 All Categories
               </Button>
-              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Antivirus</Button>
-              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Computers</Button>
-              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Office Software</Button>
-              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Printers</Button>
-              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Networking</Button>
-              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Security Suites</Button>
-              <Button variant="ghost" className="bg-deal/10 text-deal hover:bg-deal/20 whitespace-nowrap">
+              <Button 
+                variant="ghost" 
+                className="hover:text-primary whitespace-nowrap"
+                onClick={() => handleCategoryClick('antivirus')}
+              >
+                Antivirus
+              </Button>
+              <Button 
+                variant="ghost" 
+                className="hover:text-primary whitespace-nowrap"
+                onClick={() => handleCategoryClick('computers')}
+              >
+                Computers
+              </Button>
+              <Button 
+                variant="ghost" 
+                className="hover:text-primary whitespace-nowrap"
+                onClick={() => handleCategoryClick('office')}
+              >
+                Office Software
+              </Button>
+              <Button 
+                variant="ghost" 
+                className="hover:text-primary whitespace-nowrap"
+                onClick={() => handleCategoryClick('printers')}
+              >
+                Printers
+              </Button>
+              <Button 
+                variant="ghost" 
+                className="hover:text-primary whitespace-nowrap"
+                onClick={() => handleCategoryClick('networking')}
+              >
+                Networking
+              </Button>
+              <Button 
+                variant="ghost" 
+                className="bg-deal/10 text-deal hover:bg-deal/20 whitespace-nowrap"
+                onClick={() => handleCategoryClick('antivirus')}
+              >
                 🔥 Hot Deals
               </Button>
             </div>
           </nav>
         </div>
       </header>
+      
+      {/* Category Products Modal */}
+      {selectedCategory && (
+        <CategoryProducts 
+          category={selectedCategory} 
+          onClose={handleCloseProducts}
+        />
+      )}
     </>
   );
 };
