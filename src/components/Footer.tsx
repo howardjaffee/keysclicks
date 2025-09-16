@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 import { 
   Mail, 
   Phone, 
@@ -53,12 +54,12 @@ export const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Quick Links</h3>
               <nav className="space-y-2">
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                <Link to="/about" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   About Us
-                </a>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                </Link>
+                <Link to="/contact" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   Contact Us
-                </a>
+                </Link>
                 <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   Track Your Order
                 </a>
@@ -172,8 +173,8 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-hero-foreground/60 text-center md:text-left">
             © 2024 Digitalcorner. All rights reserved. | 
-            <a href="/privacy" className="hover:text-primary-glow ml-1">Privacy Policy</a> | 
-            <a href="/terms" className="hover:text-primary-glow ml-1">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-primary-glow ml-1">Privacy Policy</Link> | 
+            <Link to="/terms" className="hover:text-primary-glow ml-1">Terms of Service</Link>
           </div>
           <div className="text-sm text-hero-foreground/60">
             Affiliate Disclosure: As an Amazon Associate, we earn from qualifying purchases.
