@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, Heart, ShoppingCart } from "lucide-react";
+import { Star, Heart, ShoppingCart, Eye } from "lucide-react";
 import { useState } from "react";
+import { ProductModal } from "./ProductModal";
 
 import k7AntivirusImg from "@/assets/products/k7-antivirus.jpg";
 import kasperskyAntivirusImg from "@/assets/products/kaspersky-antivirus.jpg";
@@ -18,116 +19,208 @@ import office2021Img from "@/assets/products/office-2021.jpg";
 const products = [
   {
     id: 1,
-    name: "Kaspersky Antivirus 1PC 1 Year",
-    price: 225.00,
-    originalPrice: 699.00,
-    discount: 68,
+    name: "Norton 360 Deluxe 2025 - 5 Devices",
+    price: 24.99,
+    originalPrice: 89.99,
+    discount: 72,
     rating: 4.8,
-    reviews: 2456,
+    reviews: 15657,
     image: kasperskyAntivirusImg,
     badge: "Best Seller",
-    category: "Antivirus"
+    category: "Antivirus",
+    affiliateLink: "https://amzn.to/3Ifn6Sw",
+    description: "Norton 360 Deluxe provides comprehensive protection for up to 5 devices with antivirus, VPN, password manager, and Dark Web monitoring.",
+    features: [
+      "Real-time threat protection for 5 devices",
+      "Secure VPN (unlimited data)",
+      "Password Manager with secure vault",
+      "Dark Web Monitoring for personal info",
+      "100GB cloud backup storage",
+      "Smart Firewall for PC/Mac"
+    ]
   },
   {
     id: 2,
-    name: "McAfee Total Protection 1PC 3 Years",
-    price: 999.00,
-    originalPrice: 2999.00,
-    discount: 67,
+    name: "McAfee Total Protection 2025 - 5 Devices",
+    price: 29.99,
+    originalPrice: 119.99,
+    discount: 75,
     rating: 4.7,
-    reviews: 1834,
+    reviews: 11847,
     image: mcafeeTotalImg,
     badge: "Hot Deal",
-    category: "Total Protection"
+    category: "Total Protection",
+    affiliateLink: "https://amzn.to/3Ifn6Sw",
+    description: "McAfee Total Protection offers award-winning antivirus, identity monitoring, and secure VPN for comprehensive digital security.",
+    features: [
+      "Antivirus protection for 5 devices",
+      "Identity monitoring and restoration",
+      "Secure VPN with bank-grade encryption",
+      "Password Manager with biometric login",
+      "Safe browsing and anti-phishing",
+      "File shredder for sensitive data"
+    ]
   },
   {
     id: 3,
-    name: "K7 Anti Virus Premium 1PC 1 Year",
-    price: 170.00,
-    originalPrice: 699.00,
-    discount: 76,
+    name: "Norton AntiVirus Plus 2025 - 1 Device",
+    price: 19.99,
+    originalPrice: 59.99,
+    discount: 67,
     rating: 4.6,
-    reviews: 987,
+    reviews: 8987,
     image: k7AntivirusImg,
-    badge: "Top Rated",
-    category: "Antivirus"
+    badge: "Budget Pick",
+    category: "Antivirus",
+    affiliateLink: "https://amzn.to/3Ifn6Sw",
+    description: "Essential antivirus protection for 1 PC or Mac with real-time threat protection and Smart Firewall.",
+    features: [
+      "Real-time threat protection",
+      "Advanced malware detection",
+      "Smart Firewall for PC/Mac",
+      "Automatic security updates",
+      "24/7 customer support",
+      "2GB cloud backup storage"
+    ]
   },
   {
     id: 4,
-    name: "Windows 11 Pro Product Key",
-    price: 1299.00,
-    originalPrice: 2499.00,
-    discount: 48,
+    name: "Microsoft Windows 11 Pro (Digital License)",
+    price: 199.99,
+    originalPrice: 399.99,
+    discount: 50,
     rating: 4.9,
-    reviews: 3421,
+    reviews: 5421,
     image: windows11Img,
     badge: "Premium",
-    category: "Windows Keys"
+    category: "Operating Systems",
+    affiliateLink: "https://amzn.to/4poVKtF",
+    description: "Genuine Microsoft Windows 11 Pro digital license with enhanced security, productivity features, and business tools.",
+    features: [
+      "Enhanced security with TPM 2.0",
+      "Microsoft Teams integration",
+      "BitLocker device encryption",
+      "Windows Hello biometric login",
+      "Hyper-V virtualization",
+      "Remote Desktop functionality"
+    ]
   },
   {
     id: 5,
-    name: "CCleaner Professional License",
-    price: 599.00,
-    originalPrice: 999.00,
-    discount: 40,
-    rating: 4.5,
-    reviews: 1245,
+    name: "Bitdefender Antivirus Plus 2025",
+    price: 23.99,
+    originalPrice: 59.99,
+    discount: 60,
+    rating: 4.8,
+    reviews: 3245,
     image: ccleanerImg,
-    badge: "Popular",
-    category: "Software"
+    badge: "Editor's Choice",
+    category: "Antivirus",
+    affiliateLink: "https://amzn.to/3Ifn6Sw",
+    description: "Award-winning antivirus protection with minimal impact on system performance and advanced threat detection.",
+    features: [
+      "Advanced threat defense",
+      "Web attack prevention",
+      "Anti-fraud protection",
+      "Secure browsing",
+      "Rescue mode for infected systems",
+      "Multi-layer ransomware protection"
+    ]
   },
   {
     id: 6,
-    name: "Quick Heal Antivirus Pro 1PC 1 Year",
-    price: 310.00,
-    originalPrice: 700.00,
-    discount: 56,
+    name: "Kaspersky Internet Security 2025",
+    price: 27.99,
+    originalPrice: 79.99,
+    discount: 65,
     rating: 4.7,
-    reviews: 876,
+    reviews: 6876,
     image: quickhealImg,
     badge: "Trending",
-    category: "Antivirus"
+    category: "Internet Security",
+    affiliateLink: "https://amzn.to/3Ifn6Sw",
+    description: "Multi-device protection with privacy tools, safe banking, and parental controls for comprehensive family security.",
+    features: [
+      "Multi-device protection (3 devices)",
+      "Safe Money for secure banking",
+      "Privacy Cleaner for browsing data",
+      "Webcam protection",
+      "Parental Control tools",
+      "Password Manager included"
+    ]
   },
   {
     id: 7,
-    name: "Windows 10 Home Product Key",
-    price: 899.00,
-    originalPrice: 1699.00,
-    discount: 47,
+    name: "Microsoft Windows 10 Home (Digital License)",
+    price: 139.99,
+    originalPrice: 199.99,
+    discount: 30,
     rating: 4.8,
-    reviews: 2134,
+    reviews: 8134,
     image: windows10Img,
-    badge: "Great Value",
-    category: "Windows Keys"
+    badge: "Reliable Choice",
+    category: "Operating Systems",
+    affiliateLink: "https://amzn.to/4poVKtF",
+    description: "Genuine Windows 10 Home digital license with familiar interface and essential features for home users.",
+    features: [
+      "Familiar Windows interface",
+      "Microsoft Edge browser",
+      "Windows Hello login",
+      "Cortana voice assistant",
+      "Xbox app integration",
+      "Regular security updates"
+    ]
   },
   {
     id: 8,
-    name: "Microsoft Office 2021 Professional",
-    price: 1999.00,
-    originalPrice: 3499.00,
+    name: "Microsoft Office 2021 Professional Plus",
+    price: 249.99,
+    originalPrice: 439.99,
     discount: 43,
     rating: 4.9,
-    reviews: 1876,
+    reviews: 4876,
     image: office2021Img,
-    badge: "Premium",
-    category: "Office Keys"
+    badge: "Professional",
+    category: "Office Software",
+    affiliateLink: "https://amzn.to/4poVKtF",
+    description: "Complete Office suite with Word, Excel, PowerPoint, Outlook, and more for professional productivity.",
+    features: [
+      "Word, Excel, PowerPoint, Outlook",
+      "Access database management",
+      "Publisher desktop publishing",
+      "OneNote digital notebook",
+      "Skype for Business communication",
+      "One-time purchase (no subscription)"
+    ]
   },
   {
     id: 9,
-    name: "NPAV Total Security 1PC 1 Year",
-    price: 299.00,
-    originalPrice: 1250.00,
-    discount: 76,
+    name: "ESET Internet Security 2025",
+    price: 39.99,
+    originalPrice: 89.99,
+    discount: 56,
     rating: 4.6,
-    reviews: 756,
+    reviews: 2756,
     image: npavImg,
-    badge: "Best Value",
-    category: "Total Protection"
+    badge: "Advanced Protection",
+    category: "Internet Security",
+    affiliateLink: "https://amzn.to/3Ifn6Sw",
+    description: "Premium internet security with banking protection, anti-theft features, and parental control.",
+    features: [
+      "Multi-layered protection",
+      "Banking & payment protection",
+      "Anti-theft for laptops",
+      "Parental Control",
+      "Social media scanner",
+      "Cloud-powered scanning"
+    ]
   }
 ];
 
 export const FeaturedProducts = () => {
   const [favorites, setFavorites] = useState<number[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   const toggleFavorite = (productId: number) => {
     setFavorites(prev => 
@@ -135,6 +228,15 @@ export const FeaturedProducts = () => {
         ? prev.filter(id => id !== productId)
         : [...prev, productId]
     );
+  };
+
+  const handleProductClick = (product: typeof products[0]) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleBuyNow = (affiliateLink: string) => {
+    window.open(affiliateLink, '_blank');
   };
 
   return (
@@ -156,7 +258,7 @@ export const FeaturedProducts = () => {
           {products.map((product) => (
             <Card 
               key={product.id} 
-              className="group hover:shadow-card transition-all duration-300 cursor-pointer border-0 bg-card overflow-hidden"
+              className="group hover:shadow-card transition-all duration-300 border-0 bg-card overflow-hidden"
             >
               <CardContent className="p-0">
                 {/* Product Image */}
@@ -189,13 +291,27 @@ export const FeaturedProducts = () => {
                     </Badge>
                   </div>
                   
-                  {/* Favorite & Quick Actions */}
-                  <div className="absolute top-3 right-3 mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Action Buttons */}
+                  <div className="absolute top-3 right-3 mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
                     <Button
                       size="sm"
                       variant="ghost"
                       className="bg-white/90 hover:bg-white text-foreground rounded-full p-2 h-auto"
-                      onClick={() => toggleFavorite(product.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleProductClick(product);
+                      }}
+                    >
+                      <Eye className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="bg-white/90 hover:bg-white text-foreground rounded-full p-2 h-auto"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleFavorite(product.id);
+                      }}
                     >
                       <Heart 
                         className={`h-4 w-4 ${
@@ -214,7 +330,10 @@ export const FeaturedProducts = () => {
                     </Badge>
                   </div>
                   
-                  <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 
+                    className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors line-clamp-2 cursor-pointer"
+                    onClick={() => handleProductClick(product)}
+                  >
                     {product.name}
                   </h3>
                   
@@ -247,14 +366,24 @@ export const FeaturedProducts = () => {
                     </span>
                   </div>
                   
-                  {/* Buy Now Button */}
-                  <Button 
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                    size="lg"
-                  >
-                    <ShoppingCart className="h-4 w-4 mr-2" />
-                    Buy Now
-                  </Button>
+                  {/* Action Buttons */}
+                  <div className="flex gap-2">
+                    <Button 
+                      variant="outline"
+                      className="flex-1"
+                      onClick={() => handleProductClick(product)}
+                    >
+                      <Eye className="h-4 w-4 mr-2" />
+                      Details
+                    </Button>
+                    <Button 
+                      className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                      onClick={() => handleBuyNow(product.affiliateLink)}
+                    >
+                      <ShoppingCart className="h-4 w-4 mr-2" />
+                      Buy Now
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -266,6 +395,13 @@ export const FeaturedProducts = () => {
             View All Digital Products
           </Button>
         </div>
+        
+        {/* Product Modal */}
+        <ProductModal 
+          product={selectedProduct}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     </section>
   );

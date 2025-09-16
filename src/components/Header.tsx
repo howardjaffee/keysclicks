@@ -79,18 +79,18 @@ export const Header = () => {
           
           {/* Category navigation */}
           <nav className="py-3 border-t">
-            <div className="flex items-center gap-8 text-sm">
-              <Button variant="ghost" className="text-primary font-medium hover:bg-primary/10">
+            <div className="flex items-center gap-8 text-sm overflow-x-auto">
+              <Button variant="ghost" className="text-primary font-medium hover:bg-primary/10 whitespace-nowrap">
                 All Categories
               </Button>
-              <Button variant="ghost" className="hover:text-primary">Antivirus</Button>
-              <Button variant="ghost" className="hover:text-primary">Total Protection</Button>
-              <Button variant="ghost" className="hover:text-primary">Internet Security</Button>
-              <Button variant="ghost" className="hover:text-primary">Windows Keys</Button>
-              <Button variant="ghost" className="hover:text-primary">Office Keys</Button>
-              <Button variant="ghost" className="hover:text-primary">Software</Button>
-              <Button variant="ghost" className="bg-deal/10 text-deal hover:bg-deal/20">
-                🔥 Deals
+              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Antivirus</Button>
+              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Computers</Button>
+              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Office Software</Button>
+              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Printers</Button>
+              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Networking</Button>
+              <Button variant="ghost" className="hover:text-primary whitespace-nowrap">Security Suites</Button>
+              <Button variant="ghost" className="bg-deal/10 text-deal hover:bg-deal/20 whitespace-nowrap">
+                🔥 Hot Deals
               </Button>
             </div>
           </nav>

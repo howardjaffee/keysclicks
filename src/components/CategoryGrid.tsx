@@ -2,17 +2,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Laptop, 
-  Smartphone, 
-  Gamepad2, 
-  Headphones, 
-  Camera, 
-  Watch,
-  Home,
-  Wifi
+  Shield, 
+  Monitor, 
+  FileText, 
+  Settings, 
+  Wifi, 
+  Lock,
+  Smartphone,
+  Printer
 } from "lucide-react";
-
-import { Shield, Key, Cpu, Zap } from "lucide-react";
 
 const categories = [
   {
@@ -20,56 +18,63 @@ const categories = [
     name: "Antivirus Software",
     icon: Shield,
     color: "bg-red-50 hover:bg-red-100 text-red-600",
-    deal: "Up to 76% off",
-    count: "50+ products"
+    deal: "Up to 75% off",
+    count: "50+ products",
+    affiliateLink: "https://amzn.to/3Ifn6Sw"
   },
   {
     id: 2,
-    name: "Total Protection",
-    icon: Shield,
+    name: "Computers & Laptops",
+    icon: Monitor,
     color: "bg-blue-50 hover:bg-blue-100 text-blue-600",
-    deal: "Best security",
-    count: "25+ products"
+    deal: "Best deals",
+    count: "200+ products",
+    affiliateLink: "https://amzn.to/4poVKtF"
   },
   {
     id: 3,
-    name: "Windows Keys",
-    icon: Key,
-    color: "bg-purple-50 hover:bg-purple-100 text-purple-600",
-    deal: "Genuine keys",
-    count: "15+ versions"
+    name: "Office Software",
+    icon: FileText,
+    color: "bg-green-50 hover:bg-green-100 text-green-600",
+    deal: "Professional suite",
+    count: "15+ versions",
+    affiliateLink: "https://amzn.to/4poVKtF"
   },
   {
     id: 4,
-    name: "Office Keys",
-    icon: Laptop,
-    color: "bg-orange-50 hover:bg-orange-100 text-orange-600",
-    deal: "Professional suite",
-    count: "10+ versions"
+    name: "Printers & Scanners",
+    icon: Printer,
+    color: "bg-purple-50 hover:bg-purple-100 text-purple-600",
+    deal: "Printing solutions",
+    count: "100+ models",
+    affiliateLink: "https://amzn.to/4poVKtF"
   },
   {
     id: 5,
-    name: "System Cleaners",
-    icon: Cpu,
-    color: "bg-green-50 hover:bg-green-100 text-green-600",
-    deal: "Optimize PC",
-    count: "8+ tools"
+    name: "Network Equipment",
+    icon: Wifi,
+    color: "bg-indigo-50 hover:bg-indigo-100 text-indigo-600",
+    deal: "WiFi & routers",
+    count: "80+ solutions",
+    affiliateLink: "https://amzn.to/4poVKtF"
   },
   {
     id: 6,
-    name: "Internet Security",
-    icon: Wifi,
-    color: "bg-indigo-50 hover:bg-indigo-100 text-indigo-600",
-    deal: "Safe browsing",
-    count: "20+ solutions"
+    name: "Total Protection",
+    icon: Lock,
+    color: "bg-orange-50 hover:bg-orange-100 text-orange-600",
+    deal: "Complete security",
+    count: "25+ suites",
+    affiliateLink: "https://amzn.to/3Ifn6Sw"
   },
   {
     id: 7,
-    name: "VPN Software",
-    icon: Zap,
+    name: "System Utilities",
+    icon: Settings,
     color: "bg-teal-50 hover:bg-teal-100 text-teal-600",
-    deal: "Secure connection",
-    count: "12+ providers"
+    deal: "Optimize PC",
+    count: "30+ tools",
+    affiliateLink: "https://amzn.to/4poVKtF"
   },
   {
     id: 8,
@@ -77,11 +82,15 @@ const categories = [
     icon: Smartphone,
     color: "bg-cyan-50 hover:bg-cyan-100 text-cyan-600",
     deal: "Mobile protection",
-    count: "18+ apps"
+    count: "40+ apps",
+    affiliateLink: "https://amzn.to/3Ifn6Sw"
   }
 ];
 
 export const CategoryGrid = () => {
+  const handleCategoryClick = (affiliateLink: string) => {
+    window.open(affiliateLink, '_blank');
+  };
   return (
     <section className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -101,6 +110,7 @@ export const CategoryGrid = () => {
               <Card 
                 key={category.id} 
                 className="group hover:shadow-card transition-all duration-300 cursor-pointer border-0 bg-card hover:scale-105"
+                onClick={() => handleCategoryClick(category.affiliateLink)}
               >
                 <CardContent className="p-6 text-center relative overflow-hidden">
                   {/* Background decoration */}
