@@ -13,7 +13,7 @@ const amazonProducts = {
       originalPrice: 89.99,
       rating: 4.8,
       reviews: 15657,
-      image: "https://m.media-amazon.com/images/I/51EzRHdZ7lL._AC_SL1500_.jpg",
+      image: "https://m.media-amazon.com/images/I/51EzRHdZ7lL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -23,27 +23,27 @@ const amazonProducts = {
       originalPrice: 119.99,
       rating: 4.7,
       reviews: 11847,
-      image: "https://m.media-amazon.com/images/I/51K2-uKBURL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/51K2-uKBURL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av3',
-      name: "Bitdefender Antivirus Plus 2025",
+      name: "Bitdefender Total Security 2025 - 5 Devices",
       price: 23.99,
       originalPrice: 59.99,
       rating: 4.8,
       reviews: 3245,
-      image: "https://m.media-amazon.com/images/I/41VjDhKZYoL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/41VjDhKZYoL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av4',
-      name: "Kaspersky Internet Security 2025",
+      name: "Kaspersky Internet Security 2025 - 3 Devices",
       price: 27.99,
       originalPrice: 79.99,
       rating: 4.7,
       reviews: 6876,
-      image: "https://m.media-amazon.com/images/I/51h7Q3jqbFL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/51h7Q3jqbFL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -53,17 +53,17 @@ const amazonProducts = {
       originalPrice: 69.99,
       rating: 4.6,
       reviews: 4521,
-      image: "https://m.media-amazon.com/images/I/51pKx5XQRGL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/51pKx5XQRGL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av6',
-      name: "Trend Micro Internet Security 2025",
+      name: "Trend Micro Internet Security 2025 - 3 Devices",
       price: 19.99,
       originalPrice: 49.99,
       rating: 4.5,
       reviews: 2876,
-      image: "https://m.media-amazon.com/images/I/51ZqKZQ8rqL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/51ZqKZQ8rqL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -73,8 +73,8 @@ const amazonProducts = {
       originalPrice: 89.99,
       rating: 4.4,
       reviews: 8934,
-      image: "https://m.media-amazon.com/images/I/51Qx5K2XRQL._AC_SL1024_.jpg",
-      affiliateLink: "https://amzn.to/3Ifn6Sw"
+      image: "https://m.media-amazon.com/images/I/51Qx5K2XRQL._AC_SL1000_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"  
     },
     {
       id: 'av8',
@@ -83,17 +83,17 @@ const amazonProducts = {
       originalPrice: 79.99,
       rating: 4.3,
       reviews: 5432,
-      image: "https://m.media-amazon.com/images/I/51KxqZRQ8rL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/51KxqZRQ8rL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av9',
-      name: "F-Secure SAFE Internet Security 2025",
+      name: "Webroot SecureAnywhere Internet Security Plus 2025",
       price: 34.99,
       originalPrice: 69.99,
       rating: 4.7,
       reviews: 1876,
-      image: "https://m.media-amazon.com/images/I/41ZqKx5QRQL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/41ZqKx5QRQL._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -103,7 +103,57 @@ const amazonProducts = {
       originalPrice: 84.99,
       rating: 4.6,
       reviews: 3211,
-      image: "https://m.media-amazon.com/images/I/51QxKZRQ8rL._AC_SL1024_.jpg",
+      image: "https://m.media-amazon.com/images/I/51QxKZRQ8rL._AC_SL1000_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av11',
+      name: "K7 Total Security 2025 - 5 Devices",
+      price: 16.99,
+      originalPrice: 39.99,
+      rating: 4.2,
+      reviews: 2453,
+      image: "https://m.media-amazon.com/images/I/51pKx5XRGL._AC_SL1000_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av12',
+      name: "Malwarebytes Premium 2025 - 5 Devices",
+      price: 39.99,
+      originalPrice: 79.99,
+      rating: 4.5,
+      reviews: 7821,
+      image: "https://m.media-amazon.com/images/I/51ZqKZQ8dL._AC_SL1000_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av13',
+      name: "Quick Heal Total Security 2025 - 3 Devices",
+      price: 24.99,
+      originalPrice: 59.99,
+      rating: 4.3,
+      reviews: 3654,
+      image: "https://m.media-amazon.com/images/I/51pKx5XQGL._AC_SL1000_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av14',
+      name: "G Data Internet Security 2025 - 3 Devices",
+      price: 32.99,
+      originalPrice: 69.99,
+      rating: 4.4,
+      reviews: 1987,
+      image: "https://m.media-amazon.com/images/I/41VjDhKZGL._AC_SL1000_.jpg",
+      affiliateLink: "https://amzn.to/3Ifn6Sw"
+    },
+    {
+      id: 'av15',
+      name: "Panda Dome Essential 2025 - 3 Devices",
+      price: 18.99,
+      originalPrice: 44.99,
+      rating: 4.1,
+      reviews: 2876,
+      image: "https://m.media-amazon.com/images/I/51KxqZRQ8L._AC_SL1000_.jpg",
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     }
   ],
@@ -485,6 +535,9 @@ interface CategoryProductsProps {
 export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) => {
   const products = amazonProducts[category as keyof typeof amazonProducts] || [];
   
+  console.log('CategoryProducts - Selected category:', category);
+  console.log('CategoryProducts - Products found:', products.length);
+  
   const handleBuyNow = (affiliateLink: string) => {
     window.open(affiliateLink, '_blank');
   };
@@ -495,12 +548,18 @@ export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) =
       computers: "Computers & Laptops", 
       office: "Office Software & Productivity",
       printers: "Printers & Scanners",
-      networking: "Network & WiFi Equipment"
+      networking: "Network & WiFi Equipment",
+      all: "All Categories"
     };
     return titles[cat as keyof typeof titles] || "Products";
   };
 
-  if (products.length === 0) {
+  // Handle "all" category by showing all products
+  const displayProducts = category === 'all' 
+    ? [...amazonProducts.antivirus, ...amazonProducts.computers, ...amazonProducts.office, ...amazonProducts.printers, ...amazonProducts.networking]
+    : products;
+
+  if (displayProducts.length === 0) {
     return (
       <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
         <div className="bg-white rounded-lg p-8 max-w-md mx-4">
@@ -527,31 +586,34 @@ export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) =
                   ✕
                 </Button>
               </div>
-              <p className="text-muted-foreground mt-2">
-                {products.length} products available
-              </p>
+                <p className="text-muted-foreground mt-2">
+                  {displayProducts.length} products available
+                </p>
             </div>
             
-            {/* Products Grid */}
-            <div className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {products.map((product) => (
-                  <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-4">
-                      {/* Product Image */}
-                      <div className="relative mb-4">
-                        <img 
-                          src={product.image} 
-                          alt={product.name}
-                          className="w-full h-48 object-cover rounded-lg"
-                          onError={(e) => {
-                            e.currentTarget.src = "https://via.placeholder.com/300x200?text=Product+Image";
-                          }}
-                        />
-                        <Badge className="absolute top-2 right-2 bg-deal text-deal-foreground">
-                          {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
-                        </Badge>
-                      </div>
+              <div className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {displayProducts.map((product) => (
+                    <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
+                      <CardContent className="p-4">
+                        {/* Product Image */}
+                        <div className="relative mb-4">
+                          <img 
+                            src={product.image} 
+                            alt={product.name}
+                            className="w-full h-48 object-cover rounded-lg"
+                            onError={(e) => {
+                              console.log('Image failed to load:', product.image);
+                              e.currentTarget.src = "https://via.placeholder.com/300x200/f3f4f6/6b7280?text=Product+Image";
+                            }}
+                            onLoad={() => {
+                              console.log('Image loaded successfully:', product.image);
+                            }}
+                          />
+                          <Badge className="absolute top-2 right-2 bg-deal text-deal-foreground">
+                            {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+                          </Badge>
+                        </div>
                       
                       {/* Product Info */}
                       <div className="space-y-3">
