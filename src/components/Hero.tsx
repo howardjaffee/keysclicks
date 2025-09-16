@@ -19,21 +19,21 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center bg-primary/20 text-primary-glow px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30">
-            <Zap className="h-4 w-4 mr-2" />
-            Best Tech Deals Online
+            <Shield className="h-4 w-4 mr-2" />
+            Digital Security & Software Store
           </div>
           
           {/* Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Discover Your
+            Protect Your
             <span className="block text-transparent bg-gradient-to-r from-primary-glow to-primary bg-clip-text">
               Digital World
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-hero-foreground/90 max-w-3xl mx-auto leading-relaxed">
-            Find the latest electronics, gadgets, and tech accessories at unbeatable prices. 
-            Your trusted partner for all things digital.
+            Genuine antivirus software, Windows & Office product keys, and premium digital security solutions. 
+            Stay safe with our powerful antivirus protection!
           </p>
           
           {/* CTA Buttons */}
@@ -42,7 +42,7 @@ export const Hero = () => {
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold shadow-primary group"
             >
-              Shop Now
+              Shop Digital Products
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
@@ -51,7 +51,7 @@ export const Hero = () => {
               size="lg"
               className="border-2 border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10 px-8 py-4 text-lg backdrop-blur-sm"
             >
-              View Categories
+              Browse Antivirus
             </Button>
           </div>
           
@@ -59,15 +59,15 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-hero-foreground/80">
             <div className="flex items-center gap-2">
               <Shield className="h-5 w-5 text-primary-glow" />
-              <span className="text-sm font-medium">Secure Shopping</span>
+              <span className="text-sm font-medium">Genuine Licenses</span>
             </div>
             <div className="flex items-center gap-2">
               <Award className="h-5 w-5 text-primary-glow" />
-              <span className="text-sm font-medium">Top Rated Products</span>
+              <span className="text-sm font-medium">Instant Delivery</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="h-5 w-5 text-primary-glow" />
-              <span className="text-sm font-medium">Fast Delivery</span>
+              <span className="text-sm font-medium">24/7 Support</span>
             </div>
           </div>
         </div>

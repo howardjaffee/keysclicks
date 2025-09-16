@@ -4,78 +4,125 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Heart, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 
+import k7AntivirusImg from "@/assets/products/k7-antivirus.jpg";
+import kasperskyAntivirusImg from "@/assets/products/kaspersky-antivirus.jpg";
+import mcafeeAntivirusImg from "@/assets/products/mcafee-antivirus.jpg";
+import mcafeeTotalImg from "@/assets/products/mcafee-total-protection.jpg";
+import quickhealImg from "@/assets/products/quickheal-antivirus.png";
+import npavImg from "@/assets/products/npav-total-security.jpg";
+import windows11Img from "@/assets/products/windows-11-pro.jpg";
+import windows10Img from "@/assets/products/windows-10-home.jpg";
+import ccleanerImg from "@/assets/products/ccleaner-pro.jpg";
+import office2021Img from "@/assets/products/office-2021.jpg";
+
 const products = [
   {
     id: 1,
-    name: "Premium Wireless Headphones",
-    price: 199.99,
-    originalPrice: 299.99,
-    discount: 33,
+    name: "Kaspersky Antivirus 1PC 1 Year",
+    price: 225.00,
+    originalPrice: 699.00,
+    discount: 68,
     rating: 4.8,
     reviews: 2456,
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    image: kasperskyAntivirusImg,
     badge: "Best Seller",
-    category: "Audio"
+    category: "Antivirus"
   },
   {
     id: 2,
-    name: "Gaming Mechanical Keyboard",
-    price: 129.99,
-    originalPrice: 179.99,
-    discount: 28,
+    name: "McAfee Total Protection 1PC 3 Years",
+    price: 999.00,
+    originalPrice: 2999.00,
+    discount: 67,
     rating: 4.7,
     reviews: 1834,
-    image: "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=400&fit=crop",
+    image: mcafeeTotalImg,
     badge: "Hot Deal",
-    category: "Gaming"
+    category: "Total Protection"
   },
   {
     id: 3,
-    name: "4K Webcam for Streaming",
-    price: 89.99,
-    originalPrice: 129.99,
-    discount: 31,
+    name: "K7 Anti Virus Premium 1PC 1 Year",
+    price: 170.00,
+    originalPrice: 699.00,
+    discount: 76,
     rating: 4.6,
     reviews: 987,
-    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop",
-    badge: "New Arrival",
-    category: "Cameras"
+    image: k7AntivirusImg,
+    badge: "Top Rated",
+    category: "Antivirus"
   },
   {
     id: 4,
-    name: "Smart Fitness Watch",
-    price: 249.99,
-    originalPrice: 349.99,
-    discount: 29,
+    name: "Windows 11 Pro Product Key",
+    price: 1299.00,
+    originalPrice: 2499.00,
+    discount: 48,
     rating: 4.9,
     reviews: 3421,
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+    image: windows11Img,
     badge: "Premium",
-    category: "Wearables"
+    category: "Windows Keys"
   },
   {
     id: 5,
-    name: "Wireless Charging Pad",
-    price: 39.99,
-    originalPrice: 59.99,
-    discount: 33,
+    name: "CCleaner Professional License",
+    price: 599.00,
+    originalPrice: 999.00,
+    discount: 40,
     rating: 4.5,
     reviews: 1245,
-    image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop",
-    badge: "Budget Pick",
-    category: "Accessories"
+    image: ccleanerImg,
+    badge: "Popular",
+    category: "Software"
   },
   {
     id: 6,
-    name: "Portable Bluetooth Speaker",
-    price: 79.99,
-    originalPrice: 119.99,
-    discount: 33,
+    name: "Quick Heal Antivirus Pro 1PC 1 Year",
+    price: 310.00,
+    originalPrice: 700.00,
+    discount: 56,
     rating: 4.7,
-    reviews: 1876,
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop",
+    reviews: 876,
+    image: quickhealImg,
     badge: "Trending",
-    category: "Audio"
+    category: "Antivirus"
+  },
+  {
+    id: 7,
+    name: "Windows 10 Home Product Key",
+    price: 899.00,
+    originalPrice: 1699.00,
+    discount: 47,
+    rating: 4.8,
+    reviews: 2134,
+    image: windows10Img,
+    badge: "Great Value",
+    category: "Windows Keys"
+  },
+  {
+    id: 8,
+    name: "Microsoft Office 2021 Professional",
+    price: 1999.00,
+    originalPrice: 3499.00,
+    discount: 43,
+    rating: 4.9,
+    reviews: 1876,
+    image: office2021Img,
+    badge: "Premium",
+    category: "Office Keys"
+  },
+  {
+    id: 9,
+    name: "NPAV Total Security 1PC 1 Year",
+    price: 299.00,
+    originalPrice: 1250.00,
+    discount: 76,
+    rating: 4.6,
+    reviews: 756,
+    image: npavImg,
+    badge: "Best Value",
+    category: "Total Protection"
   }
 ];
 
@@ -95,13 +142,13 @@ export const FeaturedProducts = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-            Hot Selling Products
+            Digital Security Products
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured Products
+            Featured Digital Products
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our handpicked selection of the most popular tech products
+            Genuine software licenses, antivirus protection, and system optimization tools
           </p>
         </div>
         
@@ -200,13 +247,13 @@ export const FeaturedProducts = () => {
                     </span>
                   </div>
                   
-                  {/* Add to Cart Button */}
+                  {/* Buy Now Button */}
                   <Button 
                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                     size="lg"
                   >
                     <ShoppingCart className="h-4 w-4 mr-2" />
-                    Add to Cart
+                    Buy Now
                   </Button>
                 </div>
               </CardContent>
@@ -216,7 +263,7 @@ export const FeaturedProducts = () => {
         
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" className="px-8">
-            View All Products
+            View All Digital Products
           </Button>
         </div>
       </div>

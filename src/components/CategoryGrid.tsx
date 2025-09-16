@@ -12,70 +12,72 @@ import {
   Wifi
 } from "lucide-react";
 
+import { Shield, Key, Cpu, Zap } from "lucide-react";
+
 const categories = [
   {
     id: 1,
-    name: "Laptops & Computers",
-    icon: Laptop,
-    color: "bg-blue-50 hover:bg-blue-100 text-blue-600",
-    deal: "Up to 40% off",
-    count: "1,200+ items"
+    name: "Antivirus Software",
+    icon: Shield,
+    color: "bg-red-50 hover:bg-red-100 text-red-600",
+    deal: "Up to 76% off",
+    count: "50+ products"
   },
   {
     id: 2,
-    name: "Smartphones",
-    icon: Smartphone,
-    color: "bg-purple-50 hover:bg-purple-100 text-purple-600",
-    deal: "Best prices",
-    count: "800+ items"
+    name: "Total Protection",
+    icon: Shield,
+    color: "bg-blue-50 hover:bg-blue-100 text-blue-600",
+    deal: "Best security",
+    count: "25+ products"
   },
   {
     id: 3,
-    name: "Gaming",
-    icon: Gamepad2,
-    color: "bg-red-50 hover:bg-red-100 text-red-600",
-    deal: "Gaming week",
-    count: "500+ items"
+    name: "Windows Keys",
+    icon: Key,
+    color: "bg-purple-50 hover:bg-purple-100 text-purple-600",
+    deal: "Genuine keys",
+    count: "15+ versions"
   },
   {
     id: 4,
-    name: "Audio & Headphones",
-    icon: Headphones,
-    color: "bg-green-50 hover:bg-green-100 text-green-600",
-    deal: "Premium sound",
-    count: "650+ items"
+    name: "Office Keys",
+    icon: Laptop,
+    color: "bg-orange-50 hover:bg-orange-100 text-orange-600",
+    deal: "Professional suite",
+    count: "10+ versions"
   },
   {
     id: 5,
-    name: "Cameras",
-    icon: Camera,
-    color: "bg-orange-50 hover:bg-orange-100 text-orange-600",
-    deal: "New arrivals",
-    count: "300+ items"
+    name: "System Cleaners",
+    icon: Cpu,
+    color: "bg-green-50 hover:bg-green-100 text-green-600",
+    deal: "Optimize PC",
+    count: "8+ tools"
   },
   {
     id: 6,
-    name: "Smartwatches",
-    icon: Watch,
+    name: "Internet Security",
+    icon: Wifi,
     color: "bg-indigo-50 hover:bg-indigo-100 text-indigo-600",
-    deal: "Latest models",
-    count: "200+ items"
+    deal: "Safe browsing",
+    count: "20+ solutions"
   },
   {
     id: 7,
-    name: "Smart Home",
-    icon: Home,
+    name: "VPN Software",
+    icon: Zap,
     color: "bg-teal-50 hover:bg-teal-100 text-teal-600",
-    deal: "Connected living",
-    count: "400+ items"
+    deal: "Secure connection",
+    count: "12+ providers"
   },
   {
     id: 8,
-    name: "Networking",
-    icon: Wifi,
+    name: "Mobile Security",
+    icon: Smartphone,
     color: "bg-cyan-50 hover:bg-cyan-100 text-cyan-600",
-    deal: "Fast internet",
-    count: "250+ items"
+    deal: "Mobile protection",
+    count: "18+ apps"
   }
 ];
 

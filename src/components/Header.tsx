@@ -9,7 +9,7 @@ export const Header = () => {
     <>
       {/* Top notification bar */}
       <div className="bg-primary text-primary-foreground py-2 px-4 text-center text-sm">
-        <span className="font-medium">🚀 Free shipping on orders over $50 • Limited time deal!</span>
+        <span className="font-medium">🔐 Instant Digital Delivery • Genuine Software Licenses • 24/7 Support</span>
       </div>
       
       {/* Main header */}
@@ -83,12 +83,12 @@ export const Header = () => {
               <Button variant="ghost" className="text-primary font-medium hover:bg-primary/10">
                 All Categories
               </Button>
-              <Button variant="ghost" className="hover:text-primary">Electronics</Button>
-              <Button variant="ghost" className="hover:text-primary">Computers</Button>
-              <Button variant="ghost" className="hover:text-primary">Gaming</Button>
-              <Button variant="ghost" className="hover:text-primary">Mobile</Button>
-              <Button variant="ghost" className="hover:text-primary">Smart Home</Button>
-              <Button variant="ghost" className="hover:text-primary">Accessories</Button>
+              <Button variant="ghost" className="hover:text-primary">Antivirus</Button>
+              <Button variant="ghost" className="hover:text-primary">Total Protection</Button>
+              <Button variant="ghost" className="hover:text-primary">Internet Security</Button>
+              <Button variant="ghost" className="hover:text-primary">Windows Keys</Button>
+              <Button variant="ghost" className="hover:text-primary">Office Keys</Button>
+              <Button variant="ghost" className="hover:text-primary">Software</Button>
               <Button variant="ghost" className="bg-deal/10 text-deal hover:bg-deal/20">
                 🔥 Deals
               </Button>
