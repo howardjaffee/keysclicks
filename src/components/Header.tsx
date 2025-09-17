@@ -1,13 +1,24 @@
-import { Search, ShoppingCart, User, Menu } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 import logo from "@/assets/logo.png";
 import { CategoryProducts } from "./CategoryProducts";
 
 export const Header = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
   
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
@@ -16,6 +27,12 @@ export const Header = () => {
   const handleCloseProducts = () => {
     setSelectedCategory(null);
   };
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/');
+  };
+  
   return (
     <>
       {/* Top notification bar */}
@@ -36,9 +53,32 @@ export const Header = () => {
               <Button variant="ghost" size="sm" className="text-xs">
                 Free Tech Guide Download
               </Button>
-              <Button variant="ghost" size="sm" className="text-xs">
-                Register / Sign In
-              </Button>
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="sm" className="text-xs">
+                      Welcome, {user.email?.split('@')[0]}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem asChild>
+                      <Link to="/account" className="cursor-pointer">
+                        <User className="h-4 w-4 mr-2" />
+                        My Account
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer">
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sign Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Button variant="ghost" size="sm" className="text-xs" asChild>
+                  <Link to="/auth">Register / Sign In</Link>
+                </Button>
+              )}
             </div>
           </div>
           
@@ -69,10 +109,36 @@ export const Header = () => {
             
             {/* Actions */}
             <div className="flex items-center gap-4">
-              <Button variant="ghost" size="sm" className="relative">
-                <User className="h-5 w-5" />
-                <span className="ml-2 hidden md:inline">Account</span>
-              </Button>
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="sm" className="relative">
+                      <User className="h-5 w-5" />
+                      <span className="ml-2 hidden md:inline">Account</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem asChild>
+                      <Link to="/account" className="cursor-pointer">
+                        <User className="h-4 w-4 mr-2" />
+                        Dashboard
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer">
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sign Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Button variant="ghost" size="sm" asChild>
+                  <Link to="/auth">
+                    <User className="h-5 w-5" />
+                    <span className="ml-2 hidden md:inline">Sign In</span>
+                  </Link>
+                </Button>
+              )}
               
               <Button variant="ghost" size="sm" className="relative">
                 <ShoppingCart className="h-5 w-5" />
