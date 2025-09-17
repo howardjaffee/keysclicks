@@ -60,17 +60,17 @@ export const Footer = () => {
                 <Link to="/contact" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   Contact Us
                 </Link>
+                <Link to="/returns" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                  Returns & Refunds
+                </Link>
+                <Link to="/faq" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                  FAQ
+                </Link>
                 <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   Track Your Order
                 </a>
                 <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   Shipping Info
-                </a>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Returns & Refunds
-                </a>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  FAQ
                 </a>
               </nav>
             </div>

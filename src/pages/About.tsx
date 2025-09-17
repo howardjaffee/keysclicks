@@ -39,19 +39,19 @@ export const About = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                 <p className="text-muted-foreground text-lg mb-4">
-                  Founded in 2020, Digitalcorner started with a simple mission: to make digital security accessible and affordable for everyone. We recognized that with the increasing number of cyber threats, people needed reliable, genuine software solutions without breaking the bank.
+                  Founded in 2020, Digital Corner started with a simple mission: to make digital security and technology accessible and affordable for everyone. We recognized that with the increasing number of cyber threats and the growing need for reliable software solutions, people needed a trusted source for genuine, affordable digital products.
                 </p>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Today, we're proud to serve over 50,000 customers worldwide, offering genuine software licenses, premium antivirus solutions, and cutting-edge tech products from trusted brands like Norton, McAfee, Kaspersky, and Microsoft.
+                  Today, we're proud to serve customers worldwide through our Amazon affiliate program, offering carefully curated selections of antivirus software, office applications, computer hardware, printers, and networking equipment from trusted brands like Norton, McAfee, Kaspersky, Microsoft, HP, Canon, and ASUS.
                 </p>
                 <div className="flex gap-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">50K+</div>
-                    <div className="text-sm text-muted-foreground">Happy Customers</div>
+                    <div className="text-2xl font-bold text-primary">100K+</div>
+                    <div className="text-sm text-muted-foreground">Products Sold</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">1000+</div>
-                    <div className="text-sm text-muted-foreground">Products</div>
+                    <div className="text-2xl font-bold text-primary">5000+</div>
+                    <div className="text-sm text-muted-foreground">Curated Items</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">24/7</div>
@@ -63,8 +63,8 @@ export const About = () => {
                 <Card className="bg-primary/10 border-primary/20">
                   <CardContent className="p-6 text-center">
                     <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2">Genuine Products</h3>
-                    <p className="text-sm text-muted-foreground">100% authentic software licenses</p>
+                    <h3 className="font-semibold mb-2">Trusted Products</h3>
+                    <p className="text-sm text-muted-foreground">Amazon verified digital products</p>
                   </CardContent>
                 </Card>
                 <Card className="bg-deal/10 border-deal/20">
@@ -77,15 +77,15 @@ export const About = () => {
                 <Card className="bg-green-50 border-green-200">
                   <CardContent className="p-6 text-center">
                     <Users className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2">Expert Support</h3>
-                    <p className="text-sm text-muted-foreground">Dedicated customer service</p>
+                    <h3 className="font-semibold mb-2">Expert Guidance</h3>
+                    <p className="text-sm text-muted-foreground">Product recommendations & support</p>
                   </CardContent>
                 </Card>
                 <Card className="bg-purple-50 border-purple-200">
                   <CardContent className="p-6 text-center">
                     <Heart className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2">Trusted Choice</h3>
-                    <p className="text-sm text-muted-foreground">Thousands of 5-star reviews</p>
+                    <h3 className="font-semibold mb-2">Customer Focus</h3>
+                    <p className="text-sm text-muted-foreground">Your satisfaction is our priority</p>
                   </CardContent>
                 </Card>
               </div>
@@ -107,9 +107,9 @@ export const About = () => {
               <Card>
                 <CardContent className="p-8 text-center">
                   <CheckCircle className="h-16 w-16 text-primary mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-4">Authenticity</h3>
+                  <h3 className="text-xl font-bold mb-4">Authentic Products</h3>
                   <p className="text-muted-foreground">
-                    We only sell genuine, licensed software from official vendors. No pirated or counterfeit products.
+                    We partner with Amazon to bring you only genuine, licensed software and hardware from official vendors. Every product is verified and authentic.
                   </p>
                 </CardContent>
               </Card>
@@ -117,9 +117,9 @@ export const About = () => {
               <Card>
                 <CardContent className="p-8 text-center">
                   <Shield className="h-16 w-16 text-primary mx-auto mb-6" />
-                  <h3 className="text-xl font-bold mb-4">Security First</h3>
+                  <h3 className="text-xl font-bold mb-4">Digital Security</h3>
                   <p className="text-muted-foreground">
-                    Your digital security is our top priority. We recommend only the best protection solutions.
+                    Your digital safety is our mission. We curate the best antivirus, security software, and protective solutions to keep you safe online.
                   </p>
                 </CardContent>
               </Card>
@@ -129,7 +129,7 @@ export const About = () => {
                   <Star className="h-16 w-16 text-primary mx-auto mb-6" />
                   <h3 className="text-xl font-bold mb-4">Customer Success</h3>
                   <p className="text-muted-foreground">
-                    We measure our success by your satisfaction. Our support team is always here to help.
+                    We measure our success by your satisfaction. Our expert recommendations and support help you make the best purchasing decisions.
                   </p>
                 </CardContent>
               </Card>
