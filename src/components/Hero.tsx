@@ -42,16 +42,21 @@ export const Hero = () => {
             
             {/* Main heading */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in">
-              Protect Your
+              Your Corner for
               <span className="block text-transparent bg-gradient-to-r from-primary-glow to-primary bg-clip-text">
-                Digital World
+                Digital Product Keys & Software
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-hero-foreground/90 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              Genuine antivirus software, Windows & Office product keys, and premium digital security solutions. 
-              Stay safe with our powerful antivirus protection!
+              Find honest reviews, expert comparisons, and exclusive deals on top-rated antivirus software, Windows licenses, and essential PC tools.
             </p>
+            
+            <div className="text-lg mb-8 text-hero-foreground/80 max-w-4xl mx-auto leading-relaxed animate-fade-in">
+              <p>
+                Welcome to Digital Corner, your go-to source for everything digital. We understand how overwhelming it can be to choose the right software to protect your devices and enhance your productivity. Our mission is to simplify this process by providing comprehensive guides, in-depth reviews, and side-by-side comparisons of popular digital products. Whether you need a robust antivirus like McAfee or Norton, a new operating system like Windows 11, or a utility tool like CCleaner, we've got you covered. We've done the research so you can make an informed decision and get the best value.
+              </p>
+            </div>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in">

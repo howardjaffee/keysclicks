@@ -168,6 +168,18 @@ export const Footer = () => {
         </div>
       </div>
       
+      {/* Trademark Disclaimer */}
+      <div className="border-b border-hero-foreground/20">
+        <div className="container mx-auto px-4 py-6">
+          <div className="text-center">
+            <h4 className="text-sm font-semibold mb-2 text-hero-foreground/80">Trademark Disclaimer</h4>
+            <p className="text-xs text-hero-foreground/60 max-w-4xl mx-auto">
+              "McAfee," "Norton," "Webroot," "Windows," "Microsoft," "HP," "Canon," "ASUS," "Kaspersky," and "CCleaner" are registered trademarks of their respective owners. Our use of these names and images is for informational and review purposes only and does not imply any direct endorsement or official partnership with the trademark owners, other than our status as an Amazon affiliate.
+            </p>
+          </div>
+        </div>
+      </div>
+      
       {/* Bottom Footer */}
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">

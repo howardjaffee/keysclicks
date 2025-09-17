@@ -35,14 +35,16 @@ export const Privacy = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">1. Information We Collect</h2>
             <p className="mb-4">
-              We collect information you provide directly to us, such as when you subscribe to our newsletter or contact us for support.
+              As an Amazon affiliate website, we collect information you provide directly to us, such as when you subscribe to our newsletter, contact us for support, or interact with our content.
             </p>
             <h3 className="text-lg font-medium mb-2">Information collected automatically:</h3>
             <ul className="list-disc pl-6 mb-4">
-              <li>IP address and browser information</li>
-              <li>Pages visited and time spent on site</li>
-              <li>Referral source</li>
-              <li>Device and browser type</li>
+              <li>IP address and browser information for analytics and fraud prevention</li>
+              <li>Pages visited and time spent on site to improve user experience</li>
+              <li>Referral source and affiliate link tracking for commission purposes</li>
+              <li>Device and browser type for responsive design optimization</li>
+              <li>Cookies and tracking technologies as described below</li>
+              <li>Purchase data from Amazon for commission tracking (anonymized)</li>
             </ul>
           </section>
 
@@ -81,7 +83,16 @@ export const Privacy = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">5. Cookies and Tracking</h2>
             <p className="mb-4">
-              We use cookies and similar tracking technologies to enhance your experience on our website. You can control cookie settings through your browser preferences.
+              We use cookies and similar tracking technologies to enhance your experience on our website and track affiliate sales. This includes:
+            </p>
+            <ul className="list-disc pl-6 mb-4">
+              <li><strong>Essential Cookies:</strong> Required for website functionality</li>
+              <li><strong>Analytics Cookies:</strong> Google Analytics to understand user behavior</li>
+              <li><strong>Affiliate Tracking:</strong> Amazon Associates tracking cookies for commission purposes</li>
+              <li><strong>Advertising Cookies:</strong> Google Ads conversion tracking</li>
+            </ul>
+            <p className="mb-4">
+              You can control cookie settings through your browser preferences, but disabling cookies may affect website functionality and our ability to provide personalized recommendations.
             </p>
           </section>
 

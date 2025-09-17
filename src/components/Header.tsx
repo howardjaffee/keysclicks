@@ -35,6 +35,13 @@ export const Header = () => {
   
   return (
     <>
+      {/* Affiliate Disclosure Banner */}
+      <div className="bg-amber-50 border-b border-amber-200 py-2 px-4 text-center text-sm text-amber-800">
+        <span className="font-medium">
+          ⚠️ Disclaimer: This site contains affiliate links. We may receive a small commission for purchases made through these links at no extra cost to you. As an Amazon Associate, we earn from qualifying purchases. This helps support our work in providing valuable information and reviews.
+        </span>
+      </div>
+      
       {/* Top notification bar */}
       <div className="bg-primary text-primary-foreground py-2 px-4 text-center text-sm">
         <span className="font-medium">🔐 Instant Digital Delivery • Genuine Software Licenses • 24/7 Support</span>

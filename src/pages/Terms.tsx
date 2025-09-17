@@ -35,65 +35,102 @@ export const Terms = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">1. Acceptance of Terms</h2>
             <p className="mb-4">
-              By accessing and using Digitalcorner ("we," "our," or "us"), you accept and agree to be bound by the terms and provision of this agreement.
+              By accessing and using digitalcorner.lovable.app ("Website"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+            </p>
+            <p className="mb-4">
+              This Website provides reviews, comparisons, and recommendations for digital products available through our Amazon affiliate partnerships. We are not the direct seller of any products featured on this site.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">2. Affiliate Disclosure</h2>
+            <h2 className="text-xl font-semibold mb-4">2. Affiliate Disclosure & Third-Party Relationships</h2>
             <p className="mb-4">
-              Digitalcorner is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
+              <strong>Important:</strong> This website participates in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
             </p>
             <p className="mb-4">
-              When you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate links are disclosed clearly throughout the site.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">3. Product Information</h2>
-            <p className="mb-4">
-              We strive to provide accurate product information, including prices, descriptions, and availability. However, we cannot guarantee that all information is completely accurate, complete, or current.
+              When you click on links to Amazon or other affiliate partners and make a purchase, we may earn a commission at no additional cost to you. This helps support our website and allows us to continue providing valuable content and reviews.
             </p>
             <p className="mb-4">
-              Prices and availability of products are subject to change without notice. All purchases are made directly through Amazon or other merchant partners.
+              We are not affiliated with, sponsored by, or endorsed by Amazon, Microsoft, Norton, McAfee, Kaspersky, or any other companies whose products we review, except through official affiliate partnerships.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">4. External Links</h2>
+            <h2 className="text-xl font-semibold mb-4">3. Product Information & Reviews</h2>
             <p className="mb-4">
-              Our website contains links to external websites. We are not responsible for the content, privacy policies, or practices of any third-party websites.
+              All product information, reviews, and recommendations on this Website are provided for informational purposes only. While we strive for accuracy, product features, pricing, and availability may change without notice.
+            </p>
+            <ul className="list-disc pl-6 mb-4">
+              <li>Product prices and availability are subject to change on retailer websites</li>
+              <li>We are not responsible for pricing errors or inventory availability</li>
+              <li>Our reviews reflect our honest opinions based on research and testing</li>
+              <li>Individual results may vary when using reviewed products</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold mb-4">4. Intellectual Property Rights</h2>
+            <p className="mb-4">
+              All content on this Website, including text, graphics, logos, images, and software, is the property of Digitalcorner or its content suppliers and is protected by copyright laws.
+            </p>
+            <p className="mb-4">
+              Company names, product names, and logos used on this Website are trademarks of their respective owners. Their use is for informational and review purposes only and does not imply endorsement or affiliation.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">5. Intellectual Property</h2>
+            <h2 className="text-xl font-semibold mb-4">5. Limitation of Liability</h2>
             <p className="mb-4">
-              The content, organization, graphics, design, compilation, magnetic translation, digital conversion, and other matters related to the site are protected under applicable copyrights, trademarks, and other proprietary rights.
+              <strong>Important Disclaimer:</strong> Digitalcorner serves as an informational resource and affiliate partner only. We are not responsible for:
+            </p>
+            <ul className="list-disc pl-6 mb-4">
+              <li>Product quality, performance, or compatibility issues</li>
+              <li>Customer service or technical support for purchased products</li>
+              <li>Shipping delays, damaged products, or returns</li>
+              <li>Any disputes between you and third-party retailers</li>
+              <li>Changes to product specifications or availability</li>
+            </ul>
+            <p className="mb-4">
+              For all product-related issues, please contact the manufacturer or retailer directly.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">6. Limitation of Liability</h2>
+            <h2 className="text-xl font-semibold mb-4">6. User Conduct</h2>
             <p className="mb-4">
-              In no event shall Digitalcorner be liable for any direct, indirect, punitive, incidental, special, or consequential damages arising out of or in any way connected with the use of this website.
+              You agree not to use this Website for any unlawful purpose or any purpose prohibited under this clause. You agree not to use the Website in any way that could damage the Website or impair anyone else's use of the Website.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">7. Changes to Terms</h2>
+            <h2 className="text-xl font-semibold mb-4">7. Privacy & Data Collection</h2>
             <p className="mb-4">
-              We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to the website.
+              Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the Website, to understand our practices regarding data collection and affiliate tracking.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">8. Contact Information</h2>
+            <h2 className="text-xl font-semibold mb-4">8. Changes to Terms</h2>
+            <p className="mb-4">
+              We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on the Website. Your continued use of the Website constitutes acceptance of the modified terms.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold mb-4">9. Governing Law</h2>
+            <p className="mb-4">
+              These terms are governed by and construed in accordance with the laws of the United States. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts of Nevada.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold mb-4">10. Contact Information</h2>
             <p className="mb-4">
               If you have any questions about these Terms & Conditions, please contact us at:
             </p>
-            <p className="mb-2">Email: support@digitalcorner.com</p>
+            <p className="mb-2">Email: legal@digitalcorner.com</p>
             <p className="mb-2">Phone: 540 242 3003</p>
+            <p className="mb-2">Address: #04 S Jones, Las Vegas NV 89107</p>
           </section>
         </div>
       </div>

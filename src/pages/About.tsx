@@ -37,13 +37,16 @@ export const About = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-                <p className="text-muted-foreground text-lg mb-4">
-                  Founded in 2020, Digital Corner started with a simple mission: to make digital security and technology accessible and affordable for everyone. We recognized that with the increasing number of cyber threats and the growing need for reliable software solutions, people needed a trusted source for genuine, affordable digital products.
-                </p>
-                <p className="text-muted-foreground text-lg mb-6">
-                  Today, we're proud to serve customers worldwide through our Amazon affiliate program, offering carefully curated selections of antivirus software, office applications, computer hardware, printers, and networking equipment from trusted brands like Norton, McAfee, Kaspersky, Microsoft, HP, Canon, and ASUS.
-                </p>
+              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+              <p className="text-muted-foreground text-lg mb-4">
+                Founded in 2020, Digital Corner started with a simple mission: to make digital security and software selection accessible and informed for everyone. We understand how overwhelming it can be to choose the right software to protect your devices and enhance your productivity in today's digital world.
+              </p>
+              <p className="text-muted-foreground text-lg mb-4">
+                Our mission is to simplify this process by providing comprehensive guides, in-depth reviews, and side-by-side comparisons of popular digital products. Whether you need robust antivirus protection like McAfee or Norton, a new operating system like Windows 11, or utility tools like CCleaner, we've done the research so you can make informed decisions and get the best value.
+              </p>
+              <p className="text-muted-foreground text-lg mb-6">
+                Today, we're proud to serve customers worldwide through our Amazon affiliate partnerships, offering carefully curated selections of antivirus software, office applications, computer hardware, printers, and networking equipment from trusted brands we genuinely recommend.
+              </p>
                 <div className="flex gap-4">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">100K+</div>
