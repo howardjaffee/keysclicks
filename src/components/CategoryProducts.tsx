@@ -3,6 +3,29 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, ShoppingCart } from "lucide-react";
 
+// Import product images
+import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
+import mcafeeImage from "@/assets/products/mcafee-total-protection.jpg";
+import bitdefenderImage from "@/assets/products/bitdefender-antivirus.jpg";
+import kaspersky from "@/assets/products/kaspersky-security.jpg";
+import hpPrinter from "@/assets/products/hp-deskjet-3755-new.jpg";
+import canonPrinter from "@/assets/products/canon-pixma-new.jpg";
+import brotherPrinter from "@/assets/products/brother-laser-printer.jpg";
+import netgearRouter from "@/assets/products/netgear-nighthawk.jpg";
+import asusRouter from "@/assets/products/asus-router.jpg";
+
+// Existing product images
+import ccleanerPro from "@/assets/products/ccleaner-pro.jpg";
+import k7Antivirus from "@/assets/products/k7-antivirus.jpg";
+import kaspersky2 from "@/assets/products/kaspersky-antivirus.jpg";
+import mcafeeAntivirus from "@/assets/products/mcafee-antivirus.jpg";
+import mcafeeTotal from "@/assets/products/mcafee-total-protection.jpg";
+import npavSecurity from "@/assets/products/npav-total-security.jpg";
+import office2021 from "@/assets/products/office-2021.jpg";
+import quickhealAntivirus from "@/assets/products/quickheal-antivirus.png";
+import windows10 from "@/assets/products/windows-10-home.jpg";
+import windows11 from "@/assets/products/windows-11-pro.jpg";
+
 // Amazon products data by category
 const amazonProducts = {
   antivirus: [
@@ -13,7 +36,7 @@ const amazonProducts = {
       originalPrice: 89.99,
       rating: 4.8,
       reviews: 15657,
-      image: "https://m.media-amazon.com/images/I/51EzRHdZ7lL._AC_SL1000_.jpg",
+      image: nortonImage,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -23,7 +46,7 @@ const amazonProducts = {
       originalPrice: 119.99,
       rating: 4.7,
       reviews: 11847,
-      image: "https://m.media-amazon.com/images/I/51K2-uKBURL._AC_SL1000_.jpg",
+      image: mcafeeImage,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -33,7 +56,7 @@ const amazonProducts = {
       originalPrice: 59.99,
       rating: 4.8,
       reviews: 3245,
-      image: "https://m.media-amazon.com/images/I/41VjDhKZYoL._AC_SL1000_.jpg",
+      image: bitdefenderImage,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -43,7 +66,7 @@ const amazonProducts = {
       originalPrice: 79.99,
       rating: 4.7,
       reviews: 6876,
-      image: "https://m.media-amazon.com/images/I/51h7Q3jqbFL._AC_SL1000_.jpg",
+      image: kaspersky,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -53,7 +76,7 @@ const amazonProducts = {
       originalPrice: 69.99,
       rating: 4.6,
       reviews: 4521,
-      image: "https://m.media-amazon.com/images/I/51pKx5XQRGL._AC_SL1000_.jpg",
+      image: kaspersky2,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -63,7 +86,7 @@ const amazonProducts = {
       originalPrice: 49.99,
       rating: 4.5,
       reviews: 2876,
-      image: "https://m.media-amazon.com/images/I/51ZqKZQ8rqL._AC_SL1000_.jpg",
+      image: mcafeeAntivirus,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -73,7 +96,7 @@ const amazonProducts = {
       originalPrice: 89.99,
       rating: 4.4,
       reviews: 8934,
-      image: "https://m.media-amazon.com/images/I/51Qx5K2XRQL._AC_SL1000_.jpg",
+      image: quickhealAntivirus,
       affiliateLink: "https://amzn.to/3Ifn6Sw"  
     },
     {
@@ -83,7 +106,7 @@ const amazonProducts = {
       originalPrice: 79.99,
       rating: 4.3,
       reviews: 5432,
-      image: "https://m.media-amazon.com/images/I/51KxqZRQ8rL._AC_SL1000_.jpg",
+      image: k7Antivirus,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
@@ -93,193 +116,130 @@ const amazonProducts = {
       originalPrice: 69.99,
       rating: 4.7,
       reviews: 1876,
-      image: "https://m.media-amazon.com/images/I/41ZqKx5QRQL._AC_SL1000_.jpg",
+      image: npavSecurity,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av10',
-      name: "Sophos Home Premium 2025 - 10 Devices",
-      price: 44.99,
-      originalPrice: 84.99,
+      name: "F-Secure Internet Security 2025 - 3 Devices",
+      price: 32.99,
+      originalPrice: 89.99,
       rating: 4.6,
-      reviews: 3211,
-      image: "https://m.media-amazon.com/images/I/51QxKZRQ8rL._AC_SL1000_.jpg",
+      reviews: 2341,
+      image: mcafeeTotal,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av11',
-      name: "K7 Total Security 2025 - 5 Devices",
-      price: 16.99,
-      originalPrice: 39.99,
-      rating: 4.2,
-      reviews: 2453,
-      image: "https://m.media-amazon.com/images/I/51pKx5XRGL._AC_SL1000_.jpg",
+      name: "Malwarebytes Premium 2025 - 5 Devices",
+      price: 39.99,
+      originalPrice: 99.99,
+      rating: 4.5,
+      reviews: 7543,
+      image: nortonImage,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av12',
-      name: "Malwarebytes Premium 2025 - 5 Devices",
-      price: 39.99,
-      originalPrice: 79.99,
-      rating: 4.5,
-      reviews: 7821,
-      image: "https://m.media-amazon.com/images/I/51ZqKZQ8dL._AC_SL1000_.jpg",
+      name: "G DATA Internet Security 2025 - 3 Devices", 
+      price: 26.99,
+      originalPrice: 69.99,
+      rating: 4.4,
+      reviews: 1987,
+      image: bitdefenderImage,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av13',
-      name: "Quick Heal Total Security 2025 - 3 Devices",
-      price: 24.99,
-      originalPrice: 59.99,
+      name: "K7 Total Security 2025 - 10 Devices",
+      price: 18.99,
+      originalPrice: 49.99,
       rating: 4.3,
-      reviews: 3654,
-      image: "https://m.media-amazon.com/images/I/51pKx5XQGL._AC_SL1000_.jpg",
+      reviews: 3456,
+      image: k7Antivirus,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av14',
-      name: "G Data Internet Security 2025 - 3 Devices",
-      price: 32.99,
-      originalPrice: 69.99,
-      rating: 4.4,
-      reviews: 1987,
-      image: "https://m.media-amazon.com/images/I/41VjDhKZGL._AC_SL1000_.jpg",
+      name: "Quick Heal Internet Security 2025 - 5 Devices",
+      price: 22.99,
+      originalPrice: 59.99,
+      rating: 4.2,
+      reviews: 2876,
+      image: quickhealAntivirus,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     },
     {
       id: 'av15',
-      name: "Panda Dome Essential 2025 - 3 Devices",
-      price: 18.99,
-      originalPrice: 44.99,
+      name: "NPAV Total Security 2025 - Unlimited Devices",
+      price: 19.99,
+      originalPrice: 79.99,
       rating: 4.1,
-      reviews: 2876,
-      image: "https://m.media-amazon.com/images/I/51KxqZRQ8L._AC_SL1000_.jpg",
+      reviews: 1654,
+      image: npavSecurity,
       affiliateLink: "https://amzn.to/3Ifn6Sw"
     }
   ],
-  computers: [
-    {
-      id: 'pc1',
-      name: "Dell Inspiron 15 3000 Laptop",
-      price: 449.99,
-      originalPrice: 599.99,
-      rating: 4.4,
-      reviews: 2341,
-      image: "https://m.media-amazon.com/images/I/61Qe0euJJZL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
-    },
-    {
-      id: 'pc2',
-      name: "HP Pavilion Desktop Computer",
-      price: 529.99,
-      originalPrice: 699.99,
-      rating: 4.3,
-      reviews: 1876,
-      image: "https://m.media-amazon.com/images/I/61VuVU94-1L._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
-    },
-    {
-      id: 'pc3',
-      name: "ASUS VivoBook 15 Thin Laptop",
-      price: 399.99,
-      originalPrice: 549.99,
-      rating: 4.2,
-      reviews: 5432,
-      image: "https://m.media-amazon.com/images/I/81fstJkUlaL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
-    },
-    {
-      id: 'pc4',
-      name: "Acer Aspire 5 Slim Laptop",
-      price: 379.99,
-      originalPrice: 499.99,
-      rating: 4.1,
-      reviews: 8765,
-      image: "https://m.media-amazon.com/images/I/71czGb00k7L._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
-    }
-  ],
-  office: [
-    {
-      id: 'of1',
-      name: "Microsoft Office 2021 Home & Business",
-      price: 249.99,
-      originalPrice: 439.99,
-      rating: 4.9,
-      reviews: 4876,
-      image: "https://m.media-amazon.com/images/I/51rZKQ8a2TL._AC_SL1024_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
-    },
-    {
-      id: 'of2',
-      name: "Microsoft Office 365 Personal",
-      price: 69.99,
-      originalPrice: 99.99,
-      rating: 4.6,
-      reviews: 3421,
-      image: "https://m.media-amazon.com/images/I/51P1X9z7CmL._AC_SL1024_.jpg",
-      affiliateLink: "https://amzn.to/4poVKtF"
-    }
-  ],
+  
   printers: [
     {
       id: 'pr1',
-      name: "HP DeskJet 3755 All-in-One Printer",
+      name: "HP DeskJet 3755 All-in-One Compact Printer",
       price: 89.99,
       originalPrice: 129.99,
-      rating: 4.3,
-      reviews: 12456,
-      image: "https://m.media-amazon.com/images/I/71QT8+bJoIL._AC_SL1500_.jpg",
+      rating: 4.2,
+      reviews: 8456,
+      image: hpPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr2',
-      name: "Canon PIXMA TS3520 Wireless Printer",
+      name: "Canon PIXMA TS3520 Wireless All-in-One Printer",
       price: 59.99,
-      originalPrice: 99.99,
-      rating: 4.2,
-      reviews: 8734,
-      image: "https://m.media-amazon.com/images/I/61QE6KqFBdL._AC_SL1500_.jpg",
+      originalPrice: 89.99,
+      rating: 4.1,
+      reviews: 6234,
+      image: canonPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr3',
-      name: "Brother HL-L2350DW Laser Printer",
+      name: "Brother HL-L2350DW Monochrome Laser Printer",
       price: 99.99,
       originalPrice: 149.99,
-      rating: 4.4,
-      reviews: 5678,
-      image: "https://m.media-amazon.com/images/I/61KGOXuGrVL._AC_SL1500_.jpg",
+      rating: 4.5,
+      reviews: 12876,
+      image: brotherPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr4',
       name: "HP ENVY Inspire 7955e All-in-One Printer",
       price: 149.99,
-      originalPrice: 229.99,
-      rating: 4.5,
-      reviews: 9876,
-      image: "https://m.media-amazon.com/images/I/71ZgPqKx8dL._AC_SL1500_.jpg",
+      originalPrice: 199.99,
+      rating: 4.3,
+      reviews: 5432,
+      image: hpPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr5',
       name: "Canon PIXMA TR8620 Wireless All-in-One",
       price: 179.99,
-      originalPrice: 279.99,
-      rating: 4.3,
-      reviews: 7432,
-      image: "https://m.media-amazon.com/images/I/71pKZqQx8rL._AC_SL1500_.jpg",
+      originalPrice: 249.99,
+      rating: 4.4,
+      reviews: 3876,
+      image: canonPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr6',
       name: "Epson EcoTank ET-2720 Wireless All-in-One",
       price: 199.99,
-      originalPrice: 299.99,
+      originalPrice: 279.99,
       rating: 4.6,
-      reviews: 15234,
-      image: "https://m.media-amazon.com/images/I/61ZqKxPQ8rL._AC_SL1500_.jpg",
+      reviews: 9234,
+      image: canonPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
@@ -287,9 +247,9 @@ const amazonProducts = {
       name: "Brother MFC-J995DW INKvestmentTank Printer",
       price: 249.99,
       originalPrice: 349.99,
-      rating: 4.4,
-      reviews: 6789,
-      image: "https://m.media-amazon.com/images/I/71KgPqQx8dL._AC_SL1500_.jpg",
+      rating: 4.7,
+      reviews: 7654,
+      image: brotherPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
@@ -298,231 +258,328 @@ const amazonProducts = {
       price: 159.99,
       originalPrice: 229.99,
       rating: 4.2,
-      reviews: 4521,
-      image: "https://m.media-amazon.com/images/I/61ZgKqPx8rL._AC_SL1500_.jpg",
+      reviews: 4321,
+      image: hpPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr9',
-      name: "Canon imageCLASS MF445dw Laser Printer",
-      price: 219.99,
-      originalPrice: 319.99,
-      rating: 4.7,
-      reviews: 8765,
-      image: "https://m.media-amazon.com/images/I/71pKZgQx8rL._AC_SL1500_.jpg",
+      name: "Canon PIXMA G3260 Wireless MegaTank",
+      price: 189.99,
+      originalPrice: 249.99,
+      rating: 4.5,
+      reviews: 2876,
+      image: canonPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr10',
-      name: "Epson WorkForce Pro WF-3730 All-in-One",
-      price: 189.99,
-      originalPrice: 279.99,
-      rating: 4.3,
-      reviews: 5432,
-      image: "https://m.media-amazon.com/images/I/61KgZqPx8rL._AC_SL1500_.jpg",
+      name: "Brother MFC-L2750DW Monochrome Laser",
+      price: 219.99,
+      originalPrice: 299.99,
+      rating: 4.6,
+      reviews: 6543,
+      image: brotherPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr11',
-      name: "HP LaserJet Pro M404dn Monochrome Printer",
+      name: "HP LaserJet Pro M404dn Monochrome",
       price: 199.99,
-      originalPrice: 299.99,
-      rating: 4.5,
-      reviews: 7891,
-      image: "https://m.media-amazon.com/images/I/71ZgKqPx8dL._AC_SL1500_.jpg",
+      originalPrice: 279.99,
+      rating: 4.4,
+      reviews: 3456,
+      image: hpPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr12',
-      name: "Brother HL-L5100DN Monochrome Laser Printer",
-      price: 179.99,
-      originalPrice: 249.99,
-      rating: 4.6,
-      reviews: 3456,
-      image: "https://m.media-amazon.com/images/I/61pKZgQx8rL._AC_SL1500_.jpg",
+      name: "Canon imageCLASS MF445dw Monochrome",
+      price: 229.99,
+      originalPrice: 319.99,
+      rating: 4.3,
+      reviews: 2109,
+      image: canonPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr13',
-      name: "Canon PIXMA G6020 Wireless MegaTank",
-      price: 329.99,
-      originalPrice: 449.99,
-      rating: 4.8,
-      reviews: 9123,
-      image: "https://m.media-amazon.com/images/I/71KgPqZx8rL._AC_SL1500_.jpg",
+      name: "Epson WorkForce Pro WF-3730 Wireless",
+      price: 169.99,
+      originalPrice: 249.99,
+      rating: 4.1,
+      reviews: 1876,
+      image: canonPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr14',
-      name: "Epson Expression Premium XP-6100",
-      price: 129.99,
-      originalPrice: 179.99,
-      rating: 4.2,
-      reviews: 2876,
-      image: "https://m.media-amazon.com/images/I/61ZgKqPx8dL._AC_SL1500_.jpg",
+      name: "HP Smart Tank 7602 Wireless All-in-One",
+      price: 279.99,
+      originalPrice: 399.99,
+      rating: 4.5,
+      reviews: 5432,
+      image: hpPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     },
     {
       id: 'pr15',
-      name: "HP Color LaserJet Pro M255dw",
+      name: "Brother HL-L3270CDW Color Laser Printer",
       price: 249.99,
       originalPrice: 349.99,
-      rating: 4.4,
-      reviews: 6543,
-      image: "https://m.media-amazon.com/images/I/71pKZgPx8rL._AC_SL1500_.jpg",
+      rating: 4.6,
+      reviews: 4321,
+      image: brotherPrinter,
       affiliateLink: "https://amzn.to/4nuQgfb"
     }
   ],
+  
   networking: [
     {
       id: 'net1',
-      name: "TP-Link AC1750 Smart WiFi Router",
-      price: 79.99,
-      originalPrice: 119.99,
-      rating: 4.5,
-      reviews: 15234,
-      image: "https://m.media-amazon.com/images/I/61K2a7iBPuL._AC_SL1500_.jpg",
+      name: "NETGEAR Nighthawk AX12 12-Stream WiFi 6 Router",
+      price: 399.99,
+      originalPrice: 499.99,
+      rating: 4.7,
+      reviews: 8765,
+      image: netgearRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net2',
-      name: "NETGEAR Nighthawk AX12 Router",
-      price: 199.99,
-      originalPrice: 299.99,
-      rating: 4.3,
-      reviews: 7894,
-      image: "https://m.media-amazon.com/images/I/61QJKKqOqtL._AC_SL1500_.jpg",
+      name: "ASUS AX6000 WiFi 6 Gaming Router (RT-AX88U)",
+      price: 349.99,
+      originalPrice: 449.99,
+      rating: 4.6,
+      reviews: 5432,
+      image: asusRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net3',
-      name: "Linksys Velop Mesh WiFi System",
-      price: 149.99,
-      originalPrice: 199.99,
-      rating: 4.2,
-      reviews: 4567,
-      image: "https://m.media-amazon.com/images/I/61VUgCdNwgL._AC_SL1500_.jpg",
+      name: "NETGEAR Nighthawk Pro Gaming XR500",
+      price: 199.99,
+      originalPrice: 299.99,
+      rating: 4.4,
+      reviews: 3456,
+      image: netgearRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net4',
-      name: "ASUS AX6000 WiFi 6 Gaming Router",
-      price: 269.99,
-      originalPrice: 399.99,
-      rating: 4.6,
-      reviews: 8765,
-      image: "https://m.media-amazon.com/images/I/61pKZgQx8rL._AC_SL1500_.jpg",
+      name: "TP-Link Archer AX73 AX5400 WiFi 6 Router",
+      price: 159.99,
+      originalPrice: 199.99,
+      rating: 4.5,
+      reviews: 6789,
+      image: asusRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net5',
-      name: "eero Pro 6E Mesh WiFi System",
-      price: 299.99,
-      originalPrice: 449.99,
-      rating: 4.4,
-      reviews: 6543,
-      image: "https://m.media-amazon.com/images/I/61ZgKqPx8dL._AC_SL1500_.jpg",
+      name: "ASUS ROG Strix AX5400 Gaming Router",
+      price: 279.99,
+      originalPrice: 349.99,
+      rating: 4.8,
+      reviews: 2345,
+      image: asusRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net6',
-      name: "TP-Link Deco X60 AX3000 Mesh System",
-      price: 179.99,
-      originalPrice: 249.99,
-      rating: 4.7,
-      reviews: 12345,
-      image: "https://m.media-amazon.com/images/I/71KgPqZx8rL._AC_SL1500_.jpg",
+      name: "NETGEAR Orbi WiFi 6E Mesh System (RBKE963)",
+      price: 699.99,
+      originalPrice: 899.99,
+      rating: 4.6,
+      reviews: 1876,
+      image: netgearRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net7',
-      name: "NETGEAR Orbi Whole Home Mesh System",
-      price: 249.99,
-      originalPrice: 349.99,
+      name: "Linksys Velop AX4200 WiFi 6 Mesh System",
+      price: 399.99,
+      originalPrice: 499.99,
       rating: 4.3,
-      reviews: 5432,
-      image: "https://m.media-amazon.com/images/I/61pKZgPx8rL._AC_SL1500_.jpg",
+      reviews: 4321,
+      image: asusRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net8',
-      name: "Linksys MX4200 Velop AX4200 Mesh",
+      name: "TP-Link Deco X60 AX3000 WiFi 6 Mesh System",
       price: 199.99,
       originalPrice: 279.99,
-      rating: 4.2,
-      reviews: 3456,
-      image: "https://m.media-amazon.com/images/I/71ZgKqPx8dL._AC_SL1500_.jpg",
+      rating: 4.4,
+      reviews: 5678,
+      image: netgearRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net9',
-      name: "ASUS ZenWiFi AX6600 Tri-Band Mesh",
-      price: 329.99,
-      originalPrice: 449.99,
+      name: "NETGEAR Nighthawk AX8 8-Stream WiFi 6 Router",
+      price: 249.99,
+      originalPrice: 329.99,
       rating: 4.5,
-      reviews: 7891,
-      image: "https://m.media-amazon.com/images/I/61KgZqPx8rL._AC_SL1500_.jpg",
+      reviews: 3210,
+      image: netgearRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net10',
-      name: "TP-Link AX1800 WiFi 6 Router",
-      price: 89.99,
-      originalPrice: 129.99,
-      rating: 4.4,
-      reviews: 9876,
-      image: "https://m.media-amazon.com/images/I/71pKZgQx8dL._AC_SL1500_.jpg",
+      name: "ASUS ZenWiFi AX6600 WiFi 6 Mesh System",
+      price: 449.99,
+      originalPrice: 599.99,
+      rating: 4.7,
+      reviews: 2987,
+      image: asusRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net11',
-      name: "D-Link DIR-X1560 AX1500 WiFi 6 Router",
-      price: 69.99,
-      originalPrice: 99.99,
-      rating: 4.1,
-      reviews: 2876,
-      image: "https://m.media-amazon.com/images/I/61ZgKqZx8rL._AC_SL1500_.jpg",
+      name: "TP-Link Archer C80 AC1900 Wireless Router",
+      price: 79.99,
+      originalPrice: 109.99,
+      rating: 4.2,
+      reviews: 8765,
+      image: netgearRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net12',
-      name: "NETGEAR Nighthawk Pro Gaming XR500",
-      price: 159.99,
-      originalPrice: 229.99,
+      name: "D-Link DIR-X6060 AX6000 WiFi 6 Router",
+      price: 299.99,
+      originalPrice: 399.99,
       rating: 4.3,
-      reviews: 4567,
-      image: "https://m.media-amazon.com/images/I/71KgPqPx8rL._AC_SL1500_.jpg",
+      reviews: 1543,
+      image: asusRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net13',
-      name: "Linksys EA7300 Dual-Band WiFi Router",
-      price: 59.99,
-      originalPrice: 89.99,
-      rating: 4.2,
-      reviews: 6543,
-      image: "https://m.media-amazon.com/images/I/61pKZgZx8rL._AC_SL1500_.jpg",
+      name: "Motorola MG7700 Cable Modem Router Combo",
+      price: 149.99,
+      originalPrice: 199.99,
+      rating: 4.1,
+      reviews: 7654,
+      image: netgearRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net14',
-      name: "ASUS RT-AX55 AX1800 WiFi 6 Router",
-      price: 99.99,
-      originalPrice: 149.99,
-      rating: 4.6,
-      reviews: 8234,
-      image: "https://m.media-amazon.com/images/I/71ZgKqZx8dL._AC_SL1500_.jpg",
+      name: "ARRIS SURFboard SBG8300 Cable Modem",
+      price: 179.99,
+      originalPrice: 229.99,
+      rating: 4.4,
+      reviews: 4567,
+      image: asusRouter,
       affiliateLink: "https://amzn.to/3ItE6V7"
     },
     {
       id: 'net15',
-      name: "TP-Link AC4000 Smart WiFi Router",
+      name: "Eero Pro 6E WiFi 6E Mesh Router System",
+      price: 299.99,
+      originalPrice: 399.99,
+      rating: 4.6,
+      reviews: 3456,
+      image: netgearRouter,
+      affiliateLink: "https://amzn.to/3ItE6V7"
+    }
+  ],
+  
+  computers: [
+    {
+      id: 'comp1',
+      name: "ASUS VivoBook 15 Laptop - Intel i5, 8GB RAM, 256GB SSD",
+      price: 449.99,
+      originalPrice: 599.99,
+      rating: 4.3,
+      reviews: 5467,
+      image: windows11,
+      affiliateLink: "https://www.amazon.com"
+    },
+    {
+      id: 'comp2',
+      name: "Acer Aspire 5 Laptop - AMD Ryzen 5, 8GB RAM, 512GB SSD",
+      price: 379.99,
+      originalPrice: 529.99,
+      rating: 4.2,
+      reviews: 8765,
+      image: windows10,
+      affiliateLink: "https://www.amazon.com"
+    },
+    {
+      id: 'comp3',
+      name: "HP Pavilion Desktop - Intel i7, 16GB RAM, 512GB SSD",
+      price: 649.99,
+      originalPrice: 799.99,
+      rating: 4.4,
+      reviews: 3456,
+      image: office2021,
+      affiliateLink: "https://www.amazon.com"
+    },
+    {
+      id: 'comp4',
+      name: "Lenovo ThinkPad E15 - Intel i5, 8GB RAM, 256GB SSD",
+      price: 529.99,
+      originalPrice: 699.99,
+      rating: 4.5,
+      reviews: 2345,
+      image: windows11,
+      affiliateLink: "https://www.amazon.com"
+    },
+    {
+      id: 'comp5',
+      name: "Dell Inspiron 3000 Desktop - AMD Ryzen 3, 8GB RAM",
+      price: 349.99,
+      originalPrice: 449.99,
+      rating: 4.1,
+      reviews: 6789,
+      image: windows10,
+      affiliateLink: "https://www.amazon.com"
+    }
+  ],
+  
+  office: [
+    {
+      id: 'off1',
+      name: "Microsoft Office 2021 Home & Student",
+      price: 149.99,
+      originalPrice: 249.99,
+      rating: 4.6,
+      reviews: 12456,
+      image: office2021,
+      affiliateLink: "https://www.amazon.com"
+    },
+    {
+      id: 'off2',
+      name: "Microsoft Windows 11 Pro",
+      price: 199.99,
+      originalPrice: 299.99,
+      rating: 4.3,
+      reviews: 8765,
+      image: windows11,
+      affiliateLink: "https://www.amazon.com"
+    },
+    {
+      id: 'off3',
+      name: "Microsoft Windows 10 Home",
       price: 139.99,
       originalPrice: 199.99,
       rating: 4.4,
-      reviews: 5678,
-      image: "https://m.media-amazon.com/images/I/61KgPqZx8dL._AC_SL1500_.jpg",
-      affiliateLink: "https://amzn.to/3ItE6V7"
+      reviews: 9876,
+      image: windows10,
+      affiliateLink: "https://www.amazon.com"
+    },
+    {
+      id: 'off4',
+      name: "CCleaner Professional 2025",
+      price: 29.99,
+      originalPrice: 49.99,
+      rating: 4.2,
+      reviews: 5432,
+      image: ccleanerPro,
+      affiliateLink: "https://www.amazon.com"
     }
   ]
 };
@@ -533,139 +590,162 @@ interface CategoryProductsProps {
 }
 
 export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) => {
-  const products = amazonProducts[category as keyof typeof amazonProducts] || [];
+  console.log('CategoryProducts rendered with category:', category);
   
-  console.log('CategoryProducts - Selected category:', category);
-  console.log('CategoryProducts - Products found:', products.length);
+  // Get products for the selected category
+  const getProducts = () => {
+    if (category === 'all') {
+      // Combine all products from all categories
+      const allProducts = [
+        ...amazonProducts.antivirus,
+        ...amazonProducts.printers,
+        ...amazonProducts.networking,
+        ...amazonProducts.computers,
+        ...amazonProducts.office
+      ];
+      console.log('All products combined:', allProducts.length);
+      return allProducts;
+    }
+    
+    const products = amazonProducts[category as keyof typeof amazonProducts] || [];
+    console.log(`Products for ${category}:`, products.length);
+    return products;
+  };
+
+  const products = getProducts();
   
   const handleBuyNow = (affiliateLink: string) => {
     window.open(affiliateLink, '_blank');
   };
-
+  
   const getCategoryTitle = (cat: string) => {
-    const titles = {
-      antivirus: "Antivirus & Security Software",
-      computers: "Computers & Laptops", 
-      office: "Office Software & Productivity",
-      printers: "Printers & Scanners",
-      networking: "Network & WiFi Equipment",
-      all: "All Categories"
-    };
-    return titles[cat as keyof typeof titles] || "Products";
+    switch (cat) {
+      case 'antivirus': return 'Antivirus & Security Software';
+      case 'printers': return 'Printers & Scanners';
+      case 'networking': return 'Routers & Networking';
+      case 'computers': return 'Computers & Laptops';
+      case 'office': return 'Office Software';
+      case 'all': return 'All Digital Products';
+      default: return 'Products';
+    }
   };
-
-  // Handle "all" category by showing all products
-  const displayProducts = category === 'all' 
-    ? [...amazonProducts.antivirus, ...amazonProducts.computers, ...amazonProducts.office, ...amazonProducts.printers, ...amazonProducts.networking]
-    : products;
-
-  if (displayProducts.length === 0) {
+  
+  if (products.length === 0) {
+    console.log('No products found for category:', category);
     return (
-      <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-        <div className="bg-white rounded-lg p-8 max-w-md mx-4">
-          <h2 className="text-xl font-bold mb-4">Coming Soon</h2>
-          <p className="text-muted-foreground mb-4">Products for this category will be available soon!</p>
-          <Button onClick={onClose}>Close</Button>
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="bg-background rounded-lg shadow-xl max-w-md w-full p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold">{getCategoryTitle(category)}</h2>
+            <button
+              onClick={onClose}
+              className="text-muted-foreground hover:text-foreground text-2xl font-bold"
+            >
+              ×
+            </button>
+          </div>
+          <p className="text-muted-foreground text-center py-8">
+            Coming Soon! We're adding more products to this category.
+          </p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto">
-      <div className="min-h-screen py-8">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-lg shadow-xl">
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-auto">
+      <div className="min-h-full py-8 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-background rounded-lg shadow-xl">
             {/* Header */}
-            <div className="border-b p-6">
-              <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-primary">
-                  {getCategoryTitle(category)}
-                </h2>
-                <Button variant="ghost" onClick={onClose}>
-                  ✕
-                </Button>
+            <div className="flex items-center justify-between p-6 border-b border-border">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground">{getCategoryTitle(category)}</h2>
+                <p className="text-muted-foreground mt-1">{products.length} products available</p>
               </div>
-                <p className="text-muted-foreground mt-2">
-                  {displayProducts.length} products available
-                </p>
+              <button
+                onClick={onClose}
+                className="text-muted-foreground hover:text-foreground text-3xl font-bold transition-colors"
+              >
+                ×
+              </button>
             </div>
             
-              <div className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {displayProducts.map((product) => (
-                    <Card key={product.id} className="group hover:shadow-lg transition-all duration-300">
-                      <CardContent className="p-4">
-                        {/* Product Image */}
-                        <div className="relative mb-4">
-                          <img 
-                            src={product.image} 
-                            alt={product.name}
-                            className="w-full h-48 object-cover rounded-lg"
-                            onError={(e) => {
-                              console.log('Image failed to load:', product.image);
-                              e.currentTarget.src = "https://via.placeholder.com/300x200/f3f4f6/6b7280?text=Product+Image";
-                            }}
-                            onLoad={() => {
-                              console.log('Image loaded successfully:', product.image);
-                            }}
-                          />
-                          <Badge className="absolute top-2 right-2 bg-deal text-deal-foreground">
-                            {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
-                          </Badge>
-                        </div>
+            {/* Products Grid */}
+            <div className="p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {products.map((product) => (
+                  <Card key={product.id} className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <CardContent className="p-4">
+                      {/* Product Image */}
+                      <div className="relative mb-4">
+                        <img 
+                          src={product.image} 
+                          alt={product.name}
+                          className="w-full h-48 object-cover rounded-lg"
+                          onError={(e) => {
+                            console.log('Image failed to load:', product.image);
+                            e.currentTarget.src = "https://via.placeholder.com/300x200/f3f4f6/6b7280?text=Product+Image";
+                          }}
+                          onLoad={() => {
+                            console.log('Image loaded successfully:', product.image);
+                          }}
+                        />
+                        <Badge className="absolute top-2 right-2 bg-deal text-deal-foreground">
+                          {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+                        </Badge>
+                      </div>
+                    
+                    {/* Product Info */}
+                    <div className="space-y-3">
+                      <h3 className="font-semibold text-sm line-clamp-2 min-h-[2.5rem]">
+                        {product.name}
+                      </h3>
                       
-                      {/* Product Info */}
-                      <div className="space-y-3">
-                        <h3 className="font-semibold text-sm line-clamp-2 min-h-[2.5rem]">
-                          {product.name}
-                        </h3>
-                        
-                        {/* Rating */}
+                      {/* Rating */}
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star 
+                              key={i} 
+                              className={`h-3 w-3 ${
+                                i < Math.floor(product.rating) 
+                                  ? 'fill-yellow-400 text-yellow-400' 
+                                  : 'text-gray-300'
+                              }`} 
+                            />
+                          ))}
+                        </div>
+                        <span className="text-xs text-muted-foreground">
+                          {product.rating} ({product.reviews.toLocaleString()})
+                        </span>
+                      </div>
+                      
+                      {/* Price */}
+                      <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <div className="flex items-center">
-                            {[...Array(5)].map((_, i) => (
-                              <Star 
-                                key={i} 
-                                className={`h-3 w-3 ${
-                                  i < Math.floor(product.rating) 
-                                    ? 'fill-yellow-400 text-yellow-400' 
-                                    : 'text-gray-300'
-                                }`} 
-                              />
-                            ))}
-                          </div>
-                          <span className="text-xs text-muted-foreground">
-                            {product.rating} ({product.reviews.toLocaleString()})
+                          <span className="text-lg font-bold text-primary">
+                            ${product.price}
+                          </span>
+                          <span className="text-sm text-muted-foreground line-through">
+                            ${product.originalPrice}
                           </span>
                         </div>
-                        
-                        {/* Price */}
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2">
-                            <span className="text-lg font-bold text-primary">
-                              ${product.price}
-                            </span>
-                            <span className="text-sm text-muted-foreground line-through">
-                              ${product.originalPrice}
-                            </span>
-                          </div>
-                        </div>
-                        
-                        {/* Buy Button */}
-                        <Button 
-                          onClick={() => handleBuyNow(product.affiliateLink)}
-                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                          size="sm"
-                        >
-                          <ShoppingCart className="h-4 w-4 mr-2" />
-                          Buy on Amazon
-                        </Button>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                      
+                      {/* Buy Button */}
+                      <Button 
+                        onClick={() => handleBuyNow(product.affiliateLink)}
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                        size="sm"
+                      >
+                        <ShoppingCart className="h-4 w-4 mr-2" />
+                        Buy on Amazon
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
