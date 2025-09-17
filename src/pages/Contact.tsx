@@ -56,7 +56,7 @@ export const Contact = () => {
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Phone Support</h3>
                   <p className="text-muted-foreground text-sm mb-3">Call us directly</p>
-                  <p className="text-deal font-medium">+1 (555) 123-4567</p>
+                  <p className="text-deal font-medium">540 242 3003</p>
                 </CardContent>
               </Card>
 
@@ -143,9 +143,8 @@ export const Contact = () => {
                         <div>
                           <h4 className="font-semibold mb-1">Our Office</h4>
                           <p className="text-muted-foreground">
-                            123 Tech Street<br />
-                            Digital District<br />
-                            San Francisco, CA 94102
+                            #04 S jones<br />
+                            Las Vegas, NV 89107
                           </p>
                         </div>
                       </div>
@@ -157,9 +156,9 @@ export const Contact = () => {
                         <div>
                           <h4 className="font-semibold mb-1">Phone Numbers</h4>
                           <p className="text-muted-foreground">
-                            Support: +1 (555) 123-4567<br />
-                            Sales: +1 (555) 123-4568<br />
-                            Fax: +1 (555) 123-4569
+                            Support: 540 242 3003<br />
+                            Sales: 540 242 3004<br />
+                            Fax: 540 242 3005
                           </p>
                         </div>
                       </div>
