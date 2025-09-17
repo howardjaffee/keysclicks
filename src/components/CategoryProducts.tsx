@@ -696,56 +696,57 @@ export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) =
                         </Badge>
                       </div>
                     
-                    {/* Product Info */}
-                    <div className="space-y-3">
-                      <h3 className="font-semibold text-sm line-clamp-2 min-h-[2.5rem]">
-                        {product.name}
-                      </h3>
-                      
-                      {/* Rating */}
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center">
-                          {[...Array(5)].map((_, i) => (
-                            <Star 
-                              key={i} 
-                              className={`h-3 w-3 ${
-                                i < Math.floor(product.rating) 
-                                  ? 'fill-yellow-400 text-yellow-400' 
-                                  : 'text-gray-300'
-                              }`} 
-                            />
-                          ))}
-                        </div>
-                        <span className="text-xs text-muted-foreground">
-                          {product.rating} ({product.reviews.toLocaleString()})
-                        </span>
-                      </div>
-                      
-                      {/* Price */}
-                      <div className="space-y-1">
+                      {/* Product Info */}
+                      <div className="space-y-3">
+                        <h3 className="font-semibold text-sm line-clamp-2 min-h-[2.5rem]">
+                          {product.name}
+                        </h3>
+                        
+                        {/* Rating */}
                         <div className="flex items-center gap-2">
-                          <span className="text-lg font-bold text-primary">
-                            ${product.price}
-                          </span>
-                          <span className="text-sm text-muted-foreground line-through">
-                            ${product.originalPrice}
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <Star 
+                                key={i} 
+                                className={`h-3 w-3 ${
+                                  i < Math.floor(product.rating) 
+                                    ? 'fill-yellow-400 text-yellow-400' 
+                                    : 'text-gray-300'
+                                }`} 
+                              />
+                            ))}
+                          </div>
+                          <span className="text-xs text-muted-foreground">
+                            {product.rating} ({product.reviews.toLocaleString()})
                           </span>
                         </div>
+                        
+                        {/* Price */}
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-primary">
+                              ${product.price}
+                            </span>
+                            <span className="text-sm text-muted-foreground line-through">
+                              ${product.originalPrice}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        {/* Buy Button */}
+                        <Button 
+                          onClick={() => handleBuyNow(product.affiliateLink)}
+                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                          size="sm"
+                        >
+                          <ShoppingCart className="h-4 w-4 mr-2" />
+                          Buy on Amazon
+                        </Button>
                       </div>
-                      
-                      {/* Buy Button */}
-                      <Button 
-                        onClick={() => handleBuyNow(product.affiliateLink)}
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                        size="sm"
-                      >
-                        <ShoppingCart className="h-4 w-4 mr-2" />
-                        Buy on Amazon
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
