@@ -47,7 +47,7 @@ export const Header = () => {
           <div className="flex justify-between items-center py-2 text-sm text-muted-foreground border-b">
             <div className="flex items-center gap-4">
               <span>📧 support@digitalcorner.com</span>
-              <span>📞 +1 (555) 123-4567</span>
+              <span>📞 540 242 3003</span>
             </div>
             <div className="flex items-center gap-4">
               <Button variant="ghost" size="sm" className="text-xs">

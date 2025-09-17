@@ -93,7 +93,7 @@ export const Terms = () => {
               If you have any questions about these Terms & Conditions, please contact us at:
             </p>
             <p className="mb-2">Email: support@digitalcorner.com</p>
-            <p className="mb-2">Phone: +1 (555) 123-4567</p>
+            <p className="mb-2">Phone: 540 242 3003</p>
           </section>
         </div>
       </div>
