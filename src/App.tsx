@@ -15,6 +15,12 @@ import Returns from "./pages/Returns";
 import FAQ from "./pages/FAQ";
 import Auth from "./pages/Auth";
 import Account from "./pages/Account";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import Antivirus from "./pages/Antivirus";
+import Printers from "./pages/Printers";
+import HotDeals from "./pages/HotDeals";
+import Reviews from "./pages/Reviews";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +35,12 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/antivirus" element={<Antivirus />} />
+            <Route path="/printers" element={<Printers />} />
+            <Route path="/hot-deals" element={<HotDeals />} />
+            <Route path="/reviews" element={<Reviews />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/returns" element={<Returns />} />

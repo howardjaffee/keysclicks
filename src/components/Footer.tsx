@@ -57,8 +57,14 @@ export const Footer = () => {
                 <Link to="/about" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   About Us
                 </Link>
+                <Link to="/blog" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                  Blog
+                </Link>
                 <Link to="/contact" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   Contact Us
+                </Link>
+                <Link to="/reviews" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                  Reviews
                 </Link>
                 <Link to="/returns" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   Returns & Refunds
@@ -66,12 +72,6 @@ export const Footer = () => {
                 <Link to="/faq" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
                   FAQ
                 </Link>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Track Your Order
-                </a>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Shipping Info
-                </a>
               </nav>
             </div>
             
@@ -79,23 +79,23 @@ export const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Categories</h3>
               <nav className="space-y-2">
+                <Link to="/antivirus" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                  Antivirus & Security
+                </Link>
+                <Link to="/printers" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                  Printers & Scanners
+                </Link>
+                <Link to="/hot-deals" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
+                  Hot Deals
+                </Link>
                 <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Electronics
+                  Software Licenses
                 </a>
                 <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Computers & Laptops
+                  Networking Equipment
                 </a>
                 <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Gaming
-                </a>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Mobile & Accessories
-                </a>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Smart Home
-                </a>
-                <a href="#" className="block text-hero-foreground/80 hover:text-primary-glow transition-colors">
-                  Audio & Video
+                  Tech Accessories
                 </a>
               </nav>
             </div>

@@ -174,44 +174,37 @@ export const Header = () => {
               <Button 
                 variant="ghost" 
                 className="hover:text-primary whitespace-nowrap"
-                onClick={() => handleCategoryClick('antivirus')}
+                asChild
               >
-                Antivirus
+                <Link to="/antivirus">Antivirus</Link>
               </Button>
               <Button 
                 variant="ghost" 
                 className="hover:text-primary whitespace-nowrap"
-                onClick={() => handleCategoryClick('computers')}
+                asChild
               >
-                Computers
+                <Link to="/printers">Printers</Link>
               </Button>
               <Button 
                 variant="ghost" 
                 className="hover:text-primary whitespace-nowrap"
-                onClick={() => handleCategoryClick('office')}
+                asChild
               >
-                Office Software
+                <Link to="/blog">Blog</Link>
               </Button>
               <Button 
                 variant="ghost" 
                 className="hover:text-primary whitespace-nowrap"
-                onClick={() => handleCategoryClick('printers')}
+                asChild
               >
-                Printers
-              </Button>
-              <Button 
-                variant="ghost" 
-                className="hover:text-primary whitespace-nowrap"
-                onClick={() => handleCategoryClick('networking')}
-              >
-                Networking
+                <Link to="/reviews">Reviews</Link>
               </Button>
               <Button 
                 variant="ghost" 
                 className="bg-deal/10 text-deal hover:bg-deal/20 whitespace-nowrap"
-                onClick={() => handleCategoryClick('antivirus')}
+                asChild
               >
-                🔥 Hot Deals
+                <Link to="/hot-deals">🔥 Hot Deals</Link>
               </Button>
             </div>
           </nav>
