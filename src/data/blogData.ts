@@ -1,3 +1,12 @@
+// Import product images
+import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
+import mcafeeProtectionImage from "@/assets/products/mcafee-total-protection.jpg";
+import canonPixmaImage from "@/assets/products/canon-pixma-new.jpg";
+import hpDeskjetImage from "@/assets/products/hp-deskjet-3755-new.jpg";
+import brotherPrinterImage from "@/assets/products/brother-laser-printer.jpg";
+import kasperskyImage from "@/assets/products/kaspersky-security.jpg";
+import windows11ProImage from "@/assets/products/windows-11-pro.jpg";
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -23,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     author: 'TechFix Expert',
     publishedAt: '2024-01-15',
     readTime: '8 min read',
-    image: '/src/assets/products/norton-360-deluxe-new.jpg',
+    image: nortonImage,
     tags: ['Norton', 'Product Key', 'Activation', 'Troubleshooting'],
     metaDescription: 'Fix Norton product key issues with our complete guide. Step-by-step solutions for Norton activation problems.',
     content: `
@@ -130,7 +139,7 @@ For more antivirus troubleshooting guides and deals, explore our [antivirus cate
     author: 'Digital Security Expert',
     publishedAt: '2024-01-12',
     readTime: '7 min read',
-    image: '/src/assets/products/mcafee-total-protection.jpg',
+    image: mcafeeProtectionImage,
     tags: ['McAfee', 'Installation', 'Troubleshooting', 'Windows'],
     metaDescription: 'Solve McAfee installation problems with 5 proven methods. Complete guide for McAfee Total Protection installation issues.',
     content: `
@@ -301,7 +310,7 @@ For more security software guides and exclusive deals, visit our [antivirus sect
     author: 'Printer Tech Specialist',
     publishedAt: '2024-01-10',
     readTime: '9 min read',
-    image: '/src/assets/products/canon-pixma-new.jpg',
+    image: canonPixmaImage,
     tags: ['Canon', 'PIXMA', 'Printer', 'Troubleshooting', 'Not Printing'],
     metaDescription: 'Fix Canon PIXMA printer not printing issues with our complete troubleshooting guide. Step-by-step solutions that work.',
     content: `
@@ -501,7 +510,7 @@ For more printer troubleshooting guides and the best deals on Canon printers, vi
     author: 'HP Printer Expert',
     publishedAt: '2024-01-08',
     readTime: '10 min read',
-    image: '/src/assets/products/hp-deskjet-3755-new.jpg',
+    image: hpDeskjetImage,
     tags: ['HP', 'DeskJet 3755', 'Setup', 'Wireless', 'Troubleshooting'],
     metaDescription: 'Complete HP DeskJet 3755 setup and troubleshooting guide. Wireless setup, driver installation, and common problem solutions.',
     content: `
@@ -816,7 +825,7 @@ For more printer guides and the latest deals on HP printers, visit our [printers
     author: 'Cybersecurity Analyst',
     publishedAt: '2024-01-05',
     readTime: '12 min read',
-    image: '/src/assets/products/kaspersky-total-security.jpg',
+    image: kasperskyImage,
     tags: ['Antivirus', '2024', 'Security', 'Comparison', 'Best'],
     metaDescription: 'Complete 2024 antivirus software comparison. Expert reviews of top 10 security solutions with pricing and feature analysis.',
     content: `
@@ -1321,7 +1330,7 @@ For the latest deals on these antivirus solutions, visit our [antivirus deals pa
     author: 'Windows Expert',
     publishedAt: '2024-01-03',
     readTime: '11 min read',
-    image: '/src/assets/products/windows-11-pro.jpg',
+    image: windows11ProImage,
     tags: ['Windows 11', 'Windows 10', 'Upgrade', 'Comparison', 'Microsoft'],
     metaDescription: 'Windows 11 vs Windows 10 detailed comparison. Features, performance, compatibility guide to help you decide which Windows version to use.',
     content: `

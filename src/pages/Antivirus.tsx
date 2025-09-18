@@ -1,3 +1,8 @@
+// Import product images
+import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
+import kasperskySecurityImage from "@/assets/products/kaspersky-security.jpg";
+import mcafeeProtectionImage from "@/assets/products/mcafee-total-protection.jpg";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,7 +39,7 @@ const Antivirus = () => {
         "Can be resource-intensive",
         "Higher price point"
       ],
-      image: "/src/assets/products/norton-360-deluxe-new.jpg",
+      image: nortonImage,
       affiliateLink: "https://amazon.com/norton-360-deluxe"
     },
     {
@@ -62,7 +67,7 @@ const Antivirus = () => {
         "Limited VPN data in basic plan",
         "Complex interface for beginners"
       ],
-      image: "/src/assets/products/kaspersky-total-security.jpg",
+      image: kasperskySecurityImage,
       affiliateLink: "https://amazon.com/kaspersky-total-security"
     },
     {
@@ -90,7 +95,7 @@ const Antivirus = () => {
         "Can slow older systems",
         "Occasional false positives"
       ],
-      image: "/src/assets/products/mcafee-total-protection.jpg",
+      image: mcafeeProtectionImage,
       affiliateLink: "https://amazon.com/mcafee-total-protection"
     }
   ];

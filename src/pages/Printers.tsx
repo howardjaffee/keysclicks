@@ -1,3 +1,8 @@
+// Import product images
+import canonPixmaImage from "@/assets/products/canon-pixma-new.jpg";
+import hpDeskjetImage from "@/assets/products/hp-deskjet-3755-new.jpg";
+import brotherPrinterImage from "@/assets/products/brother-laser-printer.jpg";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -35,7 +40,7 @@ const Printers = () => {
         "Ink can be expensive",
         "Slower text printing"
       ],
-      image: "/src/assets/products/canon-pixma-new.jpg",
+      image: canonPixmaImage,
       affiliateLink: "https://amazon.com/canon-pixma-ts8320"
     },
     {
@@ -64,7 +69,7 @@ const Printers = () => {
         "Limited paper capacity",
         "No LCD screen"
       ],
-      image: "/src/assets/products/hp-deskjet-3755-new.jpg",
+      image: hpDeskjetImage,
       affiliateLink: "https://amazon.com/hp-deskjet-3755"
     },
     {
@@ -93,7 +98,7 @@ const Printers = () => {
         "Monochrome only",
         "Larger footprint"
       ],
-      image: "/src/assets/products/brother-laser-printer.jpg",
+      image: brotherPrinterImage,
       affiliateLink: "https://amazon.com/brother-mfc-l2750dw"
     }
   ];

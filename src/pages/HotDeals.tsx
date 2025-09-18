@@ -1,4 +1,12 @@
 import { useState } from "react";
+// Import product images
+import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
+import canonPixmaImage from "@/assets/products/canon-pixma-new.jpg";
+import windows11ProImage from "@/assets/products/windows-11-pro.jpg";
+import kasperskySecurityImage from "@/assets/products/kaspersky-security.jpg";
+import hpDeskjetImage from "@/assets/products/hp-deskjet-3755-new.jpg";
+import asusRouterImage from "@/assets/products/asus-router.jpg";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -35,7 +43,7 @@ const HotDeals = () => {
       timeLeft: "2d 14h 23m",
       description: "Complete protection for 5 devices with VPN, password manager, and 50GB cloud backup.",
       features: ["5 Device Protection", "Secure VPN", "Password Manager", "Identity Protection"],
-      image: "/src/assets/products/norton-360-deluxe-new.jpg",
+      image: nortonImage,
       affiliateLink: "https://amazon.com/norton-360-deluxe-deal",
       dealType: "flash"
     },
@@ -52,7 +60,7 @@ const HotDeals = () => {
       timeLeft: "5d 8h 45m",
       description: "6-color photo printer with wireless connectivity and 4.3\" touchscreen display.",
       features: ["6-Color System", "Wireless Printing", "Auto Duplex", "Photo Quality"],
-      image: "/src/assets/products/canon-pixma-new.jpg",
+      image: canonPixmaImage,
       affiliateLink: "https://amazon.com/canon-pixma-deal",
       dealType: "sale"
     },
@@ -69,7 +77,7 @@ const HotDeals = () => {
       timeLeft: "1d 6h 12m",
       description: "Latest Windows operating system with enhanced security and productivity features.",
       features: ["Enhanced Security", "New Interface", "Microsoft Teams", "Business Features"],
-      image: "/src/assets/products/windows-11-pro.jpg",
+      image: windows11ProImage,
       affiliateLink: "https://amazon.com/windows-11-pro-deal",
       dealType: "flash"
     },
@@ -86,7 +94,7 @@ const HotDeals = () => {
       timeLeft: "3d 19h 56m",
       description: "Advanced protection for up to 10 devices with VPN and parental controls.",
       features: ["10 Device Coverage", "Advanced Protection", "Secure VPN", "Anti-Phishing"],
-      image: "/src/assets/products/kaspersky-total-security.jpg",
+      image: kasperskySecurityImage,
       affiliateLink: "https://amazon.com/kaspersky-deal",
       dealType: "sale"
     },
@@ -103,7 +111,7 @@ const HotDeals = () => {
       timeLeft: "4d 12h 30m",
       description: "World's smallest all-in-one printer with wireless printing capabilities.",
       features: ["Ultra Compact", "Wireless Printing", "Mobile Apps", "Auto Document Feeder"],
-      image: "/src/assets/products/hp-deskjet-3755-new.jpg",
+      image: hpDeskjetImage,
       affiliateLink: "https://amazon.com/hp-deskjet-deal",
       dealType: "sale"
     },
@@ -120,7 +128,7 @@ const HotDeals = () => {
       timeLeft: "6d 2h 18m",
       description: "Next-gen WiFi 6 router with ultra-fast speeds and advanced security features.",
       features: ["WiFi 6 Technology", "AX6000 Speed", "8 Antennas", "Gaming Mode"],
-      image: "/src/assets/products/asus-router.jpg",
+      image: asusRouterImage,
       affiliateLink: "https://amazon.com/asus-router-deal",
       dealType: "sale"
     }
