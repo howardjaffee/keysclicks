@@ -217,6 +217,12 @@ export const Header = () => {
                 <Button size="sm" asChild onClick={() => setMobileOpen(false)}>
                   <Link to="/hot-deals">Hot Deals</Link>
                 </Button>
+                <Button variant="ghost" size="sm" asChild onClick={() => setMobileOpen(false)}>
+                  <Link to="/privacy">Privacy Policy</Link>
+                </Button>
+                <Button variant="ghost" size="sm" asChild onClick={() => setMobileOpen(false)}>
+                  <Link to="/terms">Terms of Service</Link>
+                </Button>
               </div>
             </div>
           )}
