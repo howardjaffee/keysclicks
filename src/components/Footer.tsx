@@ -11,6 +11,8 @@ const quickLinks = [
   { label: "Blog", to: "/blog" },
   { label: "Reviews", to: "/reviews" },
   { label: "Contact Us", to: "/contact" },
+  { label: "Affiliate Disclosure", to: "/affiliate-disclosure" },
+  { label: "Free Support Promise", to: "/support-promise" },
   { label: "Returns & Refunds", to: "/returns" },
   { label: "FAQ", to: "/faq" },
 ];
