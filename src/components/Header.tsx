@@ -175,13 +175,13 @@ export const Header = () => {
               </Button>
             ))}
             <Button variant="ghost" size="sm" asChild className="rounded-full whitespace-nowrap text-deal hover:bg-deal/10">
-              <Link to="/hot-deals">🔥 Hot Deals</Link>
+              <Link to="/hot-deals">Hot Deals</Link>
             </Button>
           </nav>
 
           {/* Mobile nav */}
           {mobileOpen && (
-            <div className="md:hidden pb-4 space-y-3 animate-fade-in">
+            <div className="md:hidden pb-4 space-y-3">
               <form onSubmit={handleSearch} className="relative">
                 <Input
                   type="search"
@@ -205,7 +205,7 @@ export const Header = () => {
                   </Button>
                 ))}
                 <Button size="sm" asChild onClick={() => setMobileOpen(false)}>
-                  <Link to="/hot-deals">🔥 Hot Deals</Link>
+                  <Link to="/hot-deals">Hot Deals</Link>
                 </Button>
               </div>
             </div>
