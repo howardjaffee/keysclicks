@@ -202,7 +202,7 @@ export const Contact = () => {
                     </p>
                     <Button 
                       size="lg" 
-                      className="bg-white text-primary hover:bg-white/90 font-semibold"
+                      className="bg-background text-primary hover:bg-background/90 font-semibold"
                     >
                       Start Live Chat
                     </Button>

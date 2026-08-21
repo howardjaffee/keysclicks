@@ -151,7 +151,7 @@ export const About = () => {
                 </p>
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 font-semibold px-8"
+                  className="bg-background text-primary hover:bg-background/90 font-semibold px-8"
                 >
                   Shop Now
                 </Button>

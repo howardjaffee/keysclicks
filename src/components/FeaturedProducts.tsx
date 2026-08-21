@@ -275,10 +275,10 @@ export const FeaturedProducts = () => {
                       className={`
                         ${product.badge === 'Best Seller' ? 'bg-primary text-primary-foreground' : ''}
                         ${product.badge === 'Hot Deal' ? 'bg-deal text-deal-foreground' : ''}
-                        ${product.badge === 'New Arrival' ? 'bg-purple-500 text-white' : ''}
+                        ${product.badge === 'New Arrival' ? 'bg-primary text-primary-foreground' : ''}
                         ${product.badge === 'Premium' ? 'bg-gold text-black' : ''}
                         ${product.badge === 'Budget Pick' ? 'bg-primary text-primary-foreground' : ''}
-                        ${product.badge === 'Trending' ? 'bg-pink-500 text-white' : ''}
+                        ${product.badge === 'Trending' ? 'bg-deal text-deal-foreground' : ''}
                       `}
                     >
                       {product.badge}

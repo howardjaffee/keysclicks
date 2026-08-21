@@ -344,7 +344,7 @@ const HotDeals = () => {
                   {deal.timeLeft && (
                     <div className="flex items-center justify-center gap-2 bg-destructive/10 p-3 rounded-lg">
                       <Clock className="h-4 w-4 text-red-500" />
-                      <span className="text-sm font-medium text-red-600">
+                      <span className="text-sm font-medium text-destructive">
                         Ends in: {deal.timeLeft}
                       </span>
                     </div>

@@ -11,11 +11,11 @@ export const DealsSection = () => {
           {/* Deal of the Day - Large Card */}
           <Card className="lg:col-span-2 lg:row-span-2 bg-gradient-deal text-deal-foreground border-0 overflow-hidden relative">
             <CardContent className="p-8 h-full flex flex-col justify-between">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-hero-foreground/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-hero-foreground/10 rounded-full translate-y-12 -translate-x-12"></div>
               
               <div className="relative z-10">
-                <Badge className="bg-white/20 text-deal-foreground border-0 mb-4">
+                <Badge className="bg-hero-foreground/20 text-deal-foreground border-0 mb-4">
                   🔥 Deal of the Day
                 </Badge>
                 <h3 className="text-3xl font-bold mb-4">
@@ -29,15 +29,15 @@ export const DealsSection = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <Clock className="h-5 w-5" />
                   <div className="flex gap-2">
-                    <div className="bg-white/20 px-3 py-1 rounded text-sm font-mono">12h</div>
-                    <div className="bg-white/20 px-3 py-1 rounded text-sm font-mono">34m</div>
-                    <div className="bg-white/20 px-3 py-1 rounded text-sm font-mono">56s</div>
+                    <div className="bg-hero-foreground/20 px-3 py-1 rounded text-sm font-mono">12h</div>
+                    <div className="bg-hero-foreground/20 px-3 py-1 rounded text-sm font-mono">34m</div>
+                    <div className="bg-hero-foreground/20 px-3 py-1 rounded text-sm font-mono">56s</div>
                   </div>
                 </div>
                 
                 <Button 
                   size="lg" 
-                  className="bg-white text-deal hover:bg-white/90 font-semibold px-8"
+                  className="bg-background text-deal hover:bg-background/90 font-semibold px-8"
                 >
                   Shop Deals Now
                   <ShoppingCart className="ml-2 h-5 w-5" />
@@ -87,7 +87,7 @@ export const DealsSection = () => {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <Badge className="bg-red-100 text-red-600 border-0 mb-2">
+                  <Badge className="bg-destructive/10 text-destructive border-0 mb-2">
                     ⚡ Flash Sale
                   </Badge>
                   <h3 className="text-2xl font-bold mb-2 text-red-900">
@@ -97,17 +97,17 @@ export const DealsSection = () => {
                     Grab these deals before they're gone!
                   </p>
                   <Button 
-                    className="bg-destructive/100 hover:bg-red-600 text-white"
+                    className="bg-destructive hover:bg-destructive/90 text-destructive-foreground"
                     size="lg"
                   >
                     Shop Flash Sales
                   </Button>
                 </div>
                 <div className="text-right">
-                  <div className="w-20 h-20 bg-red-200 rounded-2xl flex items-center justify-center">
-                    <Clock className="h-10 w-10 text-red-600" />
+                  <div className="w-20 h-20 bg-destructive/20 rounded-2xl flex items-center justify-center">
+                    <Clock className="h-10 w-10 text-destructive" />
                   </div>
-                  <div className="mt-3 text-sm text-red-600 font-medium">
+                  <div className="mt-3 text-sm text-destructive font-medium">
                     Ends in 2 hours
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export const DealsSection = () => {
           {/* Customer Reviews */}
           <Card className="border-0 bg-gradient-to-br from-green-50 to-emerald-100">
             <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-green-900">Happy Customers</h3>

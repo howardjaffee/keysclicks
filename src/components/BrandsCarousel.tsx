@@ -31,7 +31,7 @@ export const BrandsCarousel = () => {
               key={brand.id} 
               className="flex-shrink-0 group cursor-pointer transition-transform hover:scale-105"
             >
-              <div className="bg-white p-4 rounded-lg shadow-sm group-hover:shadow-md transition-shadow border border-gray-100">
+              <div className="bg-card p-4 rounded-lg shadow-sm group-hover:shadow-md transition-shadow border border-border">
                 <img 
                   src={brand.logo} 
                   alt={brand.name}

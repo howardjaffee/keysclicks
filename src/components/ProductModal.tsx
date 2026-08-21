@@ -58,7 +58,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                     ${product.badge === 'Best Seller' ? 'bg-primary text-primary-foreground' : ''}
                     ${product.badge === 'Hot Deal' ? 'bg-deal text-deal-foreground' : ''}
                     ${product.badge === 'Premium' ? 'bg-gold text-black' : ''}
-                    ${product.badge === 'Trending' ? 'bg-pink-500 text-white' : ''}
+                    ${product.badge === 'Trending' ? 'bg-deal text-deal-foreground' : ''}
                   `}
                 >
                   {product.badge}

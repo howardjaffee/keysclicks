@@ -23,7 +23,7 @@ const categories = [
     id: "antivirus",
     name: "Antivirus Software",
     icon: Shield,
-    color: "bg-destructive/10 hover:bg-red-100 text-red-600",
+    color: "bg-accent text-accent-foreground",
     description: "Complete protection against malware, viruses, and cyber threats",
     count: "50+ products"
   },
@@ -196,15 +196,15 @@ export const Products = () => {
                 onClick={() => handleCategoryClick('antivirus')}
               >
                 <CardContent className="p-8">
-                  <div className="w-20 h-20 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Shield className="h-10 w-10 text-red-600" />
+                  <div className="w-20 h-20 bg-destructive/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Shield className="h-10 w-10 text-destructive" />
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">Antivirus & Security</h3>
                   <p className="text-muted-foreground text-center mb-6">
                     Protect your devices with premium antivirus solutions from Norton, McAfee, Kaspersky, and more.
                   </p>
                   <div className="text-center">
-                    <Badge className="bg-red-100 text-red-600">Up to 75% OFF</Badge>
+                    <Badge className="bg-destructive/10 text-destructive">Up to 75% OFF</Badge>
                   </div>
                 </CardContent>
               </Card>

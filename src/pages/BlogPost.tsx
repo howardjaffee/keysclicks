@@ -151,7 +151,7 @@ const BlogPost = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsLiked(!isLiked)}
-                  className={isLiked ? "text-red-500 hover:text-red-600" : ""}
+                  className={isLiked ? "text-red-500 hover:text-destructive" : ""}
                 >
                   <Heart className={`h-4 w-4 mr-2 ${isLiked ? 'fill-current' : ''}`} />
                   {isLiked ? 'Liked!' : 'Like'}
