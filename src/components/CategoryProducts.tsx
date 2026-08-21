@@ -1,7 +1,10 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, ShoppingCart } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Star, ShoppingCart, Search, Headphones } from "lucide-react";
 
 // Import product images
 import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
