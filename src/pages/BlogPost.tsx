@@ -211,51 +211,9 @@ const BlogPost = () => {
             </div>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none">
-              <div 
-                className="article-content"
-                dangerouslySetInnerHTML={{ 
-                  __html: post.content
-                    .split('\n')
-                    .map(line => {
-                      // Convert markdown-style headers
-                      if (line.startsWith('# ')) {
-                        return `<h1 class="text-3xl font-bold mt-8 mb-4">${line.substring(2)}</h1>`;
-                      }
-                      if (line.startsWith('## ')) {
-                        return `<h2 class="text-2xl font-semibold mt-6 mb-3">${line.substring(3)}</h2>`;
-                      }
-                      if (line.startsWith('### ')) {
-                        return `<h3 class="text-xl font-semibold mt-4 mb-2">${line.substring(4)}</h3>`;
-                      }
-                      
-                      // Convert markdown links
-                      line = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>');
-                      
-                      // Convert bold text
-                      line = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-                      
-                      // Convert bullet points
-                      if (line.startsWith('- ')) {
-                        return `<li class="ml-4">${line.substring(2)}</li>`;
-                      }
-                      
-                      // Convert numbered lists
-                      if (line.match(/^\d+\. /)) {
-                        return `<li class="ml-4">${line.replace(/^\d+\. /, '')}</li>`;
-                      }
-                      
-                      // Regular paragraphs
-                      if (line.trim() && !line.startsWith('<')) {
-                        return `<p class="mb-4 leading-relaxed">${line}</p>`;
-                      }
-                      
-                      return line;
-                    })
-                    .join('\n')
-                }}
-              />
-            </div>
+            <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary prose-table:text-sm prose-th:text-foreground prose-td:text-muted-foreground">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+            </article>
 
             {/* Article Footer */}
             <div className="mt-12 pt-8 border-t">
