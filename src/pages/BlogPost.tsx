@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useParams, Link, useNavigate } from "react-router-dom";
@@ -79,6 +80,21 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title={`${post.title} | Keys & Clicks`}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.publishedAt,
+          author: { "@type": "Organization", name: post.author },
+          publisher: { "@type": "Organization", name: "Keys & Clicks" },
+        }}
+      />
       <Header />
 
       {/* Breadcrumb */}
