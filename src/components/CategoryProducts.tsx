@@ -590,32 +590,65 @@ interface CategoryProductsProps {
   query?: string;
 }
 
-export const CategoryProducts = ({ category, onClose, query = "" }: CategoryProductsProps) => {
+const categoryFilters = [
+  { id: 'all', label: 'All products' },
+  { id: 'antivirus', label: 'Antivirus & Security' },
+  { id: 'office', label: 'Office & QuickBooks' },
+  { id: 'printers', label: 'Printers & Scanners' },
+  { id: 'networking', label: 'Routers & Networking' },
+  { id: 'computers', label: 'Computers & Laptops' },
+];
 
-  
+const sortOptions = [
+  { id: 'featured', label: 'Featured' },
+  { id: 'price-asc', label: 'Price: low to high' },
+  { id: 'price-desc', label: 'Price: high to low' },
+  { id: 'rating', label: 'Top rated' },
+  { id: 'discount', label: 'Biggest discount' },
+];
+
+export const CategoryProducts = ({ category, onClose, query = "" }: CategoryProductsProps) => {
+  const [activeCategory, setActiveCategory] = useState(category);
+  const [search, setSearch] = useState(query);
+  const [sort, setSort] = useState('featured');
+
+  useEffect(() => setActiveCategory(category), [category]);
+  useEffect(() => setSearch(query), [query]);
+
   // Get products for the selected category
-  const getProducts = () => {
-    if (category === 'all') {
+  const getProducts = (cat: string) => {
+    if (cat === 'all') {
       // Combine all products from all categories
-      const allProducts = [
+      return [
         ...amazonProducts.antivirus,
         ...amazonProducts.printers,
         ...amazonProducts.networking,
         ...amazonProducts.computers,
         ...amazonProducts.office
       ];
-        return allProducts;
     }
-    
-    const products = amazonProducts[category as keyof typeof amazonProducts] || [];
-    return products;
+
+    return amazonProducts[cat as keyof typeof amazonProducts] || [];
   };
 
-  const allMatching = getProducts();
-  const normalizedQuery = query.trim().toLowerCase();
-  const products = normalizedQuery
-    ? allMatching.filter((p) => p.name.toLowerCase().includes(normalizedQuery))
-    : allMatching;
+  const allMatching = getProducts(activeCategory);
+  const normalizedQuery = search.trim().toLowerCase();
+  const discount = (p: { price: number; originalPrice: number }) =>
+    (p.originalPrice - p.price) / p.originalPrice;
+
+  const products = [
+    ...(normalizedQuery
+      ? allMatching.filter((p) => p.name.toLowerCase().includes(normalizedQuery))
+      : allMatching),
+  ].sort((a, b) => {
+    switch (sort) {
+      case 'price-asc': return a.price - b.price;
+      case 'price-desc': return b.price - a.price;
+      case 'rating': return b.rating - a.rating;
+      case 'discount': return discount(b) - discount(a);
+      default: return 0;
+    }
+  });
   
   const handleBuyNow = (affiliateLink: string) => {
     window.open(affiliateLink, '_blank');
