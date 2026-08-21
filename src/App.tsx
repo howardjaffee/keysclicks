@@ -21,6 +21,8 @@ import Antivirus from "./pages/Antivirus";
 import Printers from "./pages/Printers";
 import HotDeals from "./pages/HotDeals";
 import Reviews from "./pages/Reviews";
+import AffiliateDisclosure from "./pages/AffiliateDisclosure";
+import SupportPromisePage from "./pages/SupportPromisePage";
 
 const queryClient = new QueryClient();
 
