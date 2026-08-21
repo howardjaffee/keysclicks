@@ -45,7 +45,7 @@ export const Contact = () => {
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Email Support</h3>
                   <p className="text-muted-foreground text-sm mb-3">Get help via email</p>
-                  <p className="text-primary font-medium">support@digitalcorner.com</p>
+                  <p className="text-primary font-medium">support@keysandclicks.com</p>
                 </CardContent>
               </Card>
 
@@ -170,9 +170,9 @@ export const Contact = () => {
                         <div>
                           <h4 className="font-semibold mb-1">Email Addresses</h4>
                           <p className="text-muted-foreground">
-                            General: info@digitalcorner.com<br />
-                            Support: support@digitalcorner.com<br />
-                            Sales: sales@digitalcorner.com
+                            General: info@keysandclicks.com<br />
+                            Support: support@keysandclicks.com<br />
+                            Sales: sales@keysandclicks.com
                           </p>
                         </div>
                       </div>

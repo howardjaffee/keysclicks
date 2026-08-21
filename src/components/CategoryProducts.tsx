@@ -587,10 +587,11 @@ const amazonProducts = {
 interface CategoryProductsProps {
   category: string;
   onClose: () => void;
+  query?: string;
 }
 
-export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) => {
-  console.log('CategoryProducts rendered with category:', category);
+export const CategoryProducts = ({ category, onClose, query = "" }: CategoryProductsProps) => {
+
   
   // Get products for the selected category
   const getProducts = () => {
@@ -603,16 +604,18 @@ export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) =
         ...amazonProducts.computers,
         ...amazonProducts.office
       ];
-      console.log('All products combined:', allProducts.length);
-      return allProducts;
+        return allProducts;
     }
     
     const products = amazonProducts[category as keyof typeof amazonProducts] || [];
-    console.log(`Products for ${category}:`, products.length);
     return products;
   };
 
-  const products = getProducts();
+  const allMatching = getProducts();
+  const normalizedQuery = query.trim().toLowerCase();
+  const products = normalizedQuery
+    ? allMatching.filter((p) => p.name.toLowerCase().includes(normalizedQuery))
+    : allMatching;
   
   const handleBuyNow = (affiliateLink: string) => {
     window.open(affiliateLink, '_blank');
@@ -631,7 +634,6 @@ export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) =
   };
   
   if (products.length === 0) {
-    console.log('No products found for category:', category);
     return (
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div className="bg-background rounded-lg shadow-xl max-w-md w-full p-6">
@@ -656,11 +658,11 @@ export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) =
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-auto">
       <div className="min-h-full py-8 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-background rounded-lg shadow-xl">
+          <div className="bg-background rounded-2xl shadow-xl border">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-border">
               <div>
-                <h2 className="text-2xl font-bold text-foreground">{getCategoryTitle(category)}</h2>
+                <h2 className="text-2xl font-bold text-foreground">{normalizedQuery ? `Results for "${query}"` : getCategoryTitle(category)}</h2>
                 <p className="text-muted-foreground mt-1">{products.length} products available</p>
               </div>
               <button
@@ -675,22 +677,18 @@ export const CategoryProducts = ({ category, onClose }: CategoryProductsProps) =
             <div className="p-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {products.map((product) => (
-                  <Card key={product.id} className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Card key={product.id} className="group surface-card hover:shadow-primary transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-4">
                       {/* Product Image */}
                       <div className="relative mb-4">
-                        <img 
-                          src={product.image} 
-                          alt={product.name}
-                          className="w-full h-48 object-cover rounded-lg"
-                          onError={(e) => {
-                            console.log('Image failed to load:', product.image);
-                            e.currentTarget.src = "https://via.placeholder.com/300x200/f3f4f6/6b7280?text=Product+Image";
-                          }}
-                          onLoad={() => {
-                            console.log('Image loaded successfully:', product.image);
-                          }}
-                        />
+                        <div className="product-media aspect-square">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            loading="lazy"
+                            className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
                         <Badge className="absolute top-2 right-2 bg-deal text-deal-foreground">
                           {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
                         </Badge>

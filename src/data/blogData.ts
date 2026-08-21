@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'norton-product-key-not-working-fix-guide',
     excerpt: 'Having trouble with your Norton product key? Learn the complete step-by-step solution to activate Norton antivirus successfully.',
     category: 'antivirus',
-    author: 'TechFix Expert',
+    author: 'Keys & Clicks Team',
     publishedAt: '2024-01-15',
     readTime: '8 min read',
     image: nortonImage,

@@ -133,7 +133,7 @@ export const Privacy = () => {
             <p className="mb-4">
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
-            <p className="mb-2">Email: privacy@digitalcorner.com</p>
+            <p className="mb-2">Email: privacy@keysandclicks.com</p>
             <p className="mb-2">Phone: 540 242 3003</p>
           </section>
         </div>

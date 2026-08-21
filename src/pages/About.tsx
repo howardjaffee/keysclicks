@@ -17,7 +17,7 @@ export const About = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-primary/20 text-primary-glow border-primary/30">
-                About Digitalcorner
+                About Keys & Clicks
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Your Trusted Partner in 
@@ -39,7 +39,7 @@ export const About = () => {
               <div>
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-muted-foreground text-lg mb-4">
-                Founded in 2020, Digital Corner started with a simple mission: to make digital security and software selection accessible and informed for everyone. We understand how overwhelming it can be to choose the right software to protect your devices and enhance your productivity in today's digital world.
+                Founded in 2020, Keys & Clicks started with a simple mission: to make digital security and software selection accessible and informed for everyone. We understand how overwhelming it can be to choose the right software to protect your devices and enhance your productivity in today's digital world.
               </p>
               <p className="text-muted-foreground text-lg mb-4">
                 Our mission is to simplify this process by providing comprehensive guides, in-depth reviews, and side-by-side comparisons of popular digital products. Whether you need robust antivirus protection like McAfee or Norton, a new operating system like Windows 11, or utility tools like CCleaner, we've done the research so you can make informed decisions and get the best value.
@@ -102,7 +102,7 @@ export const About = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Our Values</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                These core principles guide everything we do at Digitalcorner
+                These core principles guide everything we do at Keys & Clicks
               </p>
             </div>
             
@@ -147,7 +147,7 @@ export const About = () => {
               <CardContent className="p-12 text-center">
                 <h2 className="text-3xl font-bold mb-4">Ready to Secure Your Digital World?</h2>
                 <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-                  Join thousands of satisfied customers who trust Digitalcorner for their digital security needs.
+                  Join thousands of satisfied customers who trust Keys & Clicks for their digital security needs.
                 </p>
                 <Button 
                   size="lg" 
