@@ -124,7 +124,7 @@ const Antivirus = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Best Antivirus Software for 2024
+              Best Antivirus Software for 2026
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -176,7 +176,7 @@ const Antivirus = () => {
             <h2 className="text-3xl font-bold mb-4">Top Antivirus Recommendations</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Our experts have tested and reviewed the leading antivirus solutions. 
-              Here are our top picks for 2024.
+              Here are our top picks for 2026.
             </p>
           </div>
 
@@ -366,7 +366,7 @@ const Antivirus = () => {
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="border rounded-lg px-4">
                 <AccordionTrigger className="text-left">
-                  Which antivirus software offers the best protection in 2024?
+                  Which antivirus software offers the best protection in 2026?
                 </AccordionTrigger>
                 <AccordionContent>
                   Based on independent lab tests and our evaluations, Kaspersky Total Security currently offers the highest malware detection rates at 99.9%. However, Norton 360 Deluxe provides the best overall value with comprehensive features including VPN, identity protection, and excellent customer support. The "best" choice depends on your specific needs and budget.
