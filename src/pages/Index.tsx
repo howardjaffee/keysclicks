@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { BrandsCarousel } from "@/components/BrandsCarousel";
@@ -11,6 +12,11 @@ import { Footer } from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Keys & Clicks — Genuine Software Keys, Antivirus & Free Setup Help"
+        description="Curated antivirus, QuickBooks, Windows keys, printers and PC gear from trusted retailers — plus free lifetime installation and activation support."
+        path="/"
+      />
       <Header />
       <main>
         <Hero />
