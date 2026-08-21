@@ -22,7 +22,9 @@ export interface BlogPost {
   metaDescription: string;
 }
 
-export const blogPosts: BlogPost[] = [
+import { newBlogPosts } from "./newBlogPosts";
+
+const legacyPosts: BlogPost[] = [
   {
     id: '1',
     title: 'Norton Product Key Not Working - Complete Fix Guide 2024',
@@ -1767,3 +1769,5 @@ export const getPostsByCategory = (category: string): BlogPost[] => {
 export const getFeaturedPosts = (limit: number = 6): BlogPost[] => {
   return blogPosts.slice(0, limit);
 };
+
+export const blogPosts: BlogPost[] = [...newBlogPosts, ...legacyPosts];
