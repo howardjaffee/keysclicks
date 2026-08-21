@@ -117,11 +117,11 @@ export const ProductDetail = () => {
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             {/* Product Images */}
             <div className="space-y-4">
-              <div className="relative aspect-square bg-gray-50 rounded-lg overflow-hidden">
+              <div className="relative aspect-square bg-secondary rounded-lg overflow-hidden">
                 <img 
                   src={product.images[selectedImage]} 
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-contain p-6"
                   onError={(e) => {
                     e.currentTarget.src = "https://via.placeholder.com/500x500/f3f4f6/6b7280?text=Product+Image";
                   }}
@@ -167,7 +167,7 @@ export const ProductDetail = () => {
                     <img 
                       src={image} 
                       alt={`${product.name} ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="h-full w-full object-contain p-6"
                       onError={(e) => {
                         e.currentTarget.src = "https://via.placeholder.com/80x80/f3f4f6/6b7280?text=Image";
                       }}

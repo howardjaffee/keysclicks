@@ -266,7 +266,7 @@ export const FeaturedProducts = () => {
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="h-64 w-full object-contain bg-secondary p-6 group-hover:scale-105 transition-transform duration-300"
                   />
                   
                   {/* Badges */}

@@ -48,7 +48,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
               <img 
                 src={product.image} 
                 alt={product.name}
-                className="w-full h-80 object-cover rounded-lg border"
+                className="h-80 w-full object-contain rounded-xl border bg-secondary p-6"
               />
               
               {/* Badges */}

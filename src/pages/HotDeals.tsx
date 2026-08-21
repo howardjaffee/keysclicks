@@ -290,7 +290,7 @@ const HotDeals = () => {
                   <img 
                     src={deal.image} 
                     alt={deal.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="h-full w-full object-contain p-6 group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}

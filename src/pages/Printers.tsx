@@ -244,11 +244,11 @@ const Printers = () => {
                   </Badge>
                 </div>
 
-                <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 rounded-t-lg relative overflow-hidden">
+                <div className="aspect-video bg-secondary rounded-t-lg relative overflow-hidden">
                   <img 
                     src={printer.image} 
                     alt={printer.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="h-full w-full object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
