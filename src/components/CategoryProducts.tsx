@@ -821,6 +821,15 @@ export const CategoryProducts = ({ category, onClose, query = "" }: CategoryProd
                           <ShoppingCart className="h-4 w-4 mr-2" />
                           Buy on Amazon
                         </Button>
+
+                        <Link
+                          to="/support-promise"
+                          onClick={onClose}
+                          className="flex items-center justify-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                        >
+                          <Headphones className="h-3.5 w-3.5" />
+                          Free setup &amp; activation help
+                        </Link>
                       </div>
                     </CardContent>
                   </Card>
