@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,7 @@ import { Footer } from "@/components/Footer";
 export const Contact = () => {
   return (
     <div className="min-h-screen">
+      <Seo title={"Contact Keys & Clicks — Free Setup Support"} description={"Need help with a product key, install or licence transfer? Reach our support team by phone or email at no cost."} path="/contact" />
       <Header />
       
       <main className="py-16">
@@ -45,7 +47,7 @@ export const Contact = () => {
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Email Support</h3>
                   <p className="text-muted-foreground text-sm mb-3">Get help via email</p>
-                  <p className="text-primary font-medium">support@digitalcorner.com</p>
+                  <p className="text-primary font-medium">support@keysandclicks.com</p>
                 </CardContent>
               </Card>
 
@@ -62,23 +64,23 @@ export const Contact = () => {
 
               <Card className="text-center hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <MessageCircle className="h-8 w-8 text-green-600" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <MessageCircle className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Live Chat</h3>
                   <p className="text-muted-foreground text-sm mb-3">Instant assistance</p>
-                  <p className="text-green-600 font-medium">Available 24/7</p>
+                  <p className="text-primary font-medium">Available 24/7</p>
                 </CardContent>
               </Card>
 
               <Card className="text-center hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Clock className="h-8 w-8 text-purple-600" />
+                  <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Clock className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Response Time</h3>
                   <p className="text-muted-foreground text-sm mb-3">Quick replies</p>
-                  <p className="text-purple-600 font-medium">Within 2 hours</p>
+                  <p className="text-primary font-medium">Within 2 hours</p>
                 </CardContent>
               </Card>
             </div>
@@ -164,22 +166,22 @@ export const Contact = () => {
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Mail className="h-5 w-5 text-green-600" />
+                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Mail className="h-5 w-5 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-semibold mb-1">Email Addresses</h4>
                           <p className="text-muted-foreground">
-                            General: info@digitalcorner.com<br />
-                            Support: support@digitalcorner.com<br />
-                            Sales: sales@digitalcorner.com
+                            General: info@keysandclicks.com<br />
+                            Support: support@keysandclicks.com<br />
+                            Sales: sales@keysandclicks.com
                           </p>
                         </div>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Clock className="h-5 w-5 text-purple-600" />
+                        <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Clock className="h-5 w-5 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-semibold mb-1">Business Hours</h4>
@@ -202,7 +204,7 @@ export const Contact = () => {
                     </p>
                     <Button 
                       size="lg" 
-                      className="bg-white text-primary hover:bg-white/90 font-semibold"
+                      className="bg-background text-primary hover:bg-background/90 font-semibold"
                     >
                       Start Live Chat
                     </Button>

@@ -1,3 +1,6 @@
+import { Seo } from "@/components/Seo";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -77,6 +80,21 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title={`${post.title} | Keys & Clicks`}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.publishedAt,
+          author: { "@type": "Organization", name: post.author },
+          publisher: { "@type": "Organization", name: "Keys & Clicks" },
+        }}
+      />
       <Header />
 
       {/* Breadcrumb */}
@@ -151,7 +169,7 @@ const BlogPost = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsLiked(!isLiked)}
-                  className={isLiked ? "text-red-500 hover:text-red-600" : ""}
+                  className={isLiked ? "text-red-500 hover:text-destructive" : ""}
                 >
                   <Heart className={`h-4 w-4 mr-2 ${isLiked ? 'fill-current' : ''}`} />
                   {isLiked ? 'Liked!' : 'Like'}
@@ -211,51 +229,9 @@ const BlogPost = () => {
             </div>
 
             {/* Article Content */}
-            <div className="prose prose-lg max-w-none">
-              <div 
-                className="article-content"
-                dangerouslySetInnerHTML={{ 
-                  __html: post.content
-                    .split('\n')
-                    .map(line => {
-                      // Convert markdown-style headers
-                      if (line.startsWith('# ')) {
-                        return `<h1 class="text-3xl font-bold mt-8 mb-4">${line.substring(2)}</h1>`;
-                      }
-                      if (line.startsWith('## ')) {
-                        return `<h2 class="text-2xl font-semibold mt-6 mb-3">${line.substring(3)}</h2>`;
-                      }
-                      if (line.startsWith('### ')) {
-                        return `<h3 class="text-xl font-semibold mt-4 mb-2">${line.substring(4)}</h3>`;
-                      }
-                      
-                      // Convert markdown links
-                      line = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>');
-                      
-                      // Convert bold text
-                      line = line.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-                      
-                      // Convert bullet points
-                      if (line.startsWith('- ')) {
-                        return `<li class="ml-4">${line.substring(2)}</li>`;
-                      }
-                      
-                      // Convert numbered lists
-                      if (line.match(/^\d+\. /)) {
-                        return `<li class="ml-4">${line.replace(/^\d+\. /, '')}</li>`;
-                      }
-                      
-                      // Regular paragraphs
-                      if (line.trim() && !line.startsWith('<')) {
-                        return `<p class="mb-4 leading-relaxed">${line}</p>`;
-                      }
-                      
-                      return line;
-                    })
-                    .join('\n')
-                }}
-              />
-            </div>
+            <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary prose-table:text-sm prose-th:text-foreground prose-td:text-muted-foreground">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+            </article>
 
             {/* Article Footer */}
             <div className="mt-12 pt-8 border-t">

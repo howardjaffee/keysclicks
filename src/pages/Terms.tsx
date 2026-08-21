@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +36,7 @@ export const Terms = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">1. Acceptance of Terms</h2>
             <p className="mb-4">
-              By accessing and using digitalcorner.lovable.app ("Website"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+              By accessing and using keysandclicks.lovable.app ("Website"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
             </p>
             <p className="mb-4">
               This Website provides reviews, comparisons, and recommendations for digital products available through our Amazon affiliate partnerships. We are not the direct seller of any products featured on this site.
@@ -71,7 +72,7 @@ export const Terms = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">4. Intellectual Property Rights</h2>
             <p className="mb-4">
-              All content on this Website, including text, graphics, logos, images, and software, is the property of Digitalcorner or its content suppliers and is protected by copyright laws.
+              All content on this Website, including text, graphics, logos, images, and software, is the property of Keys & Clicks or its content suppliers and is protected by copyright laws.
             </p>
             <p className="mb-4">
               Company names, product names, and logos used on this Website are trademarks of their respective owners. Their use is for informational and review purposes only and does not imply endorsement or affiliation.
@@ -81,7 +82,7 @@ export const Terms = () => {
           <section className="mb-8">
             <h2 className="text-xl font-semibold mb-4">5. Limitation of Liability</h2>
             <p className="mb-4">
-              <strong>Important Disclaimer:</strong> Digitalcorner serves as an informational resource and affiliate partner only. We are not responsible for:
+              <strong>Important Disclaimer:</strong> Keys & Clicks serves as an informational resource and affiliate partner only. We are not responsible for:
             </p>
             <ul className="list-disc pl-6 mb-4">
               <li>Product quality, performance, or compatibility issues</li>
@@ -128,7 +129,7 @@ export const Terms = () => {
             <p className="mb-4">
               If you have any questions about these Terms & Conditions, please contact us at:
             </p>
-            <p className="mb-2">Email: legal@digitalcorner.com</p>
+            <p className="mb-2">Email: legal@keysandclicks.com</p>
             <p className="mb-2">Phone: 540 242 3003</p>
             <p className="mb-2">Address: #04 S Jones, Las Vegas NV 89107</p>
           </section>

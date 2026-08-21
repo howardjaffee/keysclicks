@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { Separator } from "@/components/ui/separator";
 
 export default function Returns() {

@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 // Import product images
 import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
 import kasperskySecurityImage from "@/assets/products/kaspersky-security.jpg";
@@ -112,6 +113,7 @@ const Antivirus = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Best Antivirus Software 2026 — Tested Picks | Keys & Clicks"} description={"Compare Norton, Bitdefender, McAfee and Kaspersky on protection, speed and price. Genuine licences plus free installation help."} path="/antivirus" />
       <Header />
 
       {/* Hero Section */}
@@ -124,7 +126,7 @@ const Antivirus = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Best Antivirus Software for 2024
+              Best Antivirus Software for 2026
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -158,7 +160,7 @@ const Antivirus = () => {
               <span className="text-sm font-medium">Trusted by 2M+ Users</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-600" />
+              <CheckCircle className="h-5 w-5 text-primary" />
               <span className="text-sm font-medium">Expert Tested</span>
             </div>
             <div className="flex items-center gap-2">
@@ -176,7 +178,7 @@ const Antivirus = () => {
             <h2 className="text-3xl font-bold mb-4">Top Antivirus Recommendations</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Our experts have tested and reviewed the leading antivirus solutions. 
-              Here are our top picks for 2024.
+              Here are our top picks for 2026.
             </p>
           </div>
 
@@ -197,7 +199,7 @@ const Antivirus = () => {
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="h-full w-full object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
@@ -210,7 +212,7 @@ const Antivirus = () => {
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
-                          className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                          className={`h-4 w-4 ${i < Math.floor(product.rating) ? 'fill-deal text-deal' : 'text-muted-foreground/40'}`} 
                         />
                       ))}
                       <span className="text-sm text-muted-foreground ml-1">
@@ -224,7 +226,7 @@ const Antivirus = () => {
                   <div className="flex items-center gap-2">
                     <span className="text-2xl font-bold text-primary">{product.price}</span>
                     <span className="text-sm text-muted-foreground line-through">{product.originalPrice}</span>
-                    <Badge variant="outline" className="text-green-600 border-green-600">
+                    <Badge variant="outline" className="text-primary border-green-600">
                       Save {Math.round((1 - parseFloat(product.price.replace('$', '').replace('/year', '')) / parseFloat(product.originalPrice.replace('$', ''))) * 100)}%
                     </Badge>
                   </div>
@@ -232,11 +234,11 @@ const Antivirus = () => {
 
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2 text-green-600">✓ Key Features</h4>
+                    <h4 className="font-semibold mb-2 text-primary">✓ Key Features</h4>
                     <ul className="space-y-1">
                       {product.features.slice(0, 4).map((feature, i) => (
                         <li key={i} className="text-sm flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -245,10 +247,10 @@ const Antivirus = () => {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <h5 className="font-medium text-green-600 mb-1">Pros</h5>
+                      <h5 className="font-medium text-primary mb-1">Pros</h5>
                       <ul className="space-y-1">
                         {product.pros.slice(0, 2).map((pro, i) => (
-                          <li key={i} className="text-xs text-green-600">+ {pro}</li>
+                          <li key={i} className="text-xs text-primary">+ {pro}</li>
                         ))}
                       </ul>
                     </div>
@@ -314,7 +316,7 @@ const Antivirus = () => {
                     <td className="p-4 text-center">
                       {typeof item.norton === 'boolean' ? (
                         item.norton ? (
-                          <CheckCircle className="h-5 w-5 text-green-600 mx-auto" />
+                          <CheckCircle className="h-5 w-5 text-primary mx-auto" />
                         ) : (
                           <span className="text-muted-foreground">-</span>
                         )
@@ -325,7 +327,7 @@ const Antivirus = () => {
                     <td className="p-4 text-center">
                       {typeof item.kaspersky === 'boolean' ? (
                         item.kaspersky ? (
-                          <CheckCircle className="h-5 w-5 text-green-600 mx-auto" />
+                          <CheckCircle className="h-5 w-5 text-primary mx-auto" />
                         ) : (
                           <span className="text-muted-foreground">-</span>
                         )
@@ -336,7 +338,7 @@ const Antivirus = () => {
                     <td className="p-4 text-center">
                       {typeof item.mcafee === 'boolean' ? (
                         item.mcafee ? (
-                          <CheckCircle className="h-5 w-5 text-green-600 mx-auto" />
+                          <CheckCircle className="h-5 w-5 text-primary mx-auto" />
                         ) : (
                           <span className="text-muted-foreground">-</span>
                         )
@@ -366,7 +368,7 @@ const Antivirus = () => {
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="border rounded-lg px-4">
                 <AccordionTrigger className="text-left">
-                  Which antivirus software offers the best protection in 2024?
+                  Which antivirus software offers the best protection in 2026?
                 </AccordionTrigger>
                 <AccordionContent>
                   Based on independent lab tests and our evaluations, Kaspersky Total Security currently offers the highest malware detection rates at 99.9%. However, Norton 360 Deluxe provides the best overall value with comprehensive features including VPN, identity protection, and excellent customer support. The "best" choice depends on your specific needs and budget.

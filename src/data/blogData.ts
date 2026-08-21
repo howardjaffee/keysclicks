@@ -22,14 +22,16 @@ export interface BlogPost {
   metaDescription: string;
 }
 
-export const blogPosts: BlogPost[] = [
+import { newBlogPosts } from "./newBlogPosts";
+
+const legacyPosts: BlogPost[] = [
   {
     id: '1',
     title: 'Norton Product Key Not Working - Complete Fix Guide 2024',
     slug: 'norton-product-key-not-working-fix-guide',
     excerpt: 'Having trouble with your Norton product key? Learn the complete step-by-step solution to activate Norton antivirus successfully.',
     category: 'antivirus',
-    author: 'TechFix Expert',
+    author: 'Keys & Clicks Team',
     publishedAt: '2024-01-15',
     readTime: '8 min read',
     image: nortonImage,
@@ -1767,3 +1769,5 @@ export const getPostsByCategory = (category: string): BlogPost[] => {
 export const getFeaturedPosts = (limit: number = 6): BlogPost[] => {
   return blogPosts.slice(0, limit);
 };
+
+export const blogPosts: BlogPost[] = [...newBlogPosts, ...legacyPosts];

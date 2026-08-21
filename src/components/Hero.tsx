@@ -1,116 +1,119 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Zap, Award } from "lucide-react";
+import { ArrowRight, ShieldCheck, Headphones, BadgeCheck, Sparkles } from "lucide-react";
 import { useState } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Link } from "react-router-dom";
+import heroBg from "@/assets/hero-keys-clicks.jpg";
 import { CategoryProducts } from "./CategoryProducts";
 
 export const Hero = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  
-  const handleShopProducts = () => {
-    setSelectedCategory('all');
-  };
-  
-  const handleBrowseAntivirus = () => {
-    setSelectedCategory('antivirus');
-  };
-  
-  const handleCloseProducts = () => {
-    setSelectedCategory(null);
-  };
-  
+
   return (
     <>
-      <section 
-        className="relative bg-gradient-hero text-hero-foreground py-20 lg:py-32 overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(30, 37, 64, 0.9), rgba(40, 47, 84, 0.8)), url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center bg-primary/20 text-primary-glow px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-primary/30 animate-fade-in">
-              <Shield className="h-4 w-4 mr-2" />
-              Digital Security & Software Store
-            </div>
-            
-            {/* Main heading */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in">
-              Your Corner for
-              <span className="block text-transparent bg-gradient-to-r from-primary-glow to-primary bg-clip-text">
-                Digital Product Keys & Software
+      <section className="relative overflow-hidden bg-hero text-hero-foreground">
+        <img
+          src={heroBg}
+          alt="Digital security and software licences"
+          width={1920}
+          height={1088}
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-hero via-hero/85 to-primary/25" />
+
+        <div className="container relative z-10 mx-auto px-4 py-20 lg:py-28">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 animate-fade-in">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary-glow backdrop-blur-sm">
+                <Sparkles className="h-4 w-4" />
+                Curated affiliate store for digital products
               </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl mb-8 text-hero-foreground/90 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              Find honest reviews, expert comparisons, and exclusive deals on top-rated antivirus software, Windows licenses, and essential PC tools.
-            </p>
-            
-            <div className="text-lg mb-8 text-hero-foreground/80 max-w-4xl mx-auto leading-relaxed animate-fade-in">
-              <p>
-                Welcome to Digital Corner, your go-to source for everything digital. We understand how overwhelming it can be to choose the right software to protect your devices and enhance your productivity. Our mission is to simplify this process by providing comprehensive guides, in-depth reviews, and side-by-side comparisons of popular digital products. Whether you need a robust antivirus like McAfee or Norton, a new operating system like Windows 11, or a utility tool like CCleaner, we've got you covered. We've done the research so you can make an informed decision and get the best value.
+
+              <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05]">
+                Genuine software keys,
+                <span className="block text-gradient">plus free setup help for life.</span>
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-lg md:text-xl text-hero-foreground/85 leading-relaxed">
+                Keys &amp; Clicks hand-picks antivirus suites, QuickBooks and accounting software, Windows licences,
+                printers and networking gear from Amazon and other trusted retailers. You buy at the retailer's own
+                price — and we install, activate and troubleshoot it with you, free of charge, for as long as you own it.
               </p>
-            </div>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold shadow-primary group transition-all duration-300 hover:scale-105"
-                onClick={handleShopProducts}
-              >
-                Shop Digital Products
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-105"
-                onClick={handleBrowseAntivirus}
-              >
-                Browse Antivirus
-              </Button>
-            </div>
-            
-            {/* Trust indicators */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-hero-foreground/80 animate-fade-in">
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-primary-glow" />
-                <span className="text-sm font-medium">Genuine Licenses</span>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="rounded-full px-8 shadow-primary group"
+                  onClick={() => setSelectedCategory("all")}
+                >
+                  Browse all products
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-8 border-hero-foreground/30 bg-hero-foreground/5 text-hero-foreground hover:bg-hero-foreground/15"
+                  asChild
+                >
+                  <Link to="/antivirus">Shop antivirus</Link>
+                </Button>
               </div>
-              <div className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-primary-glow" />
-                <span className="text-sm font-medium">Instant Delivery</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-primary-glow" />
-                <span className="text-sm font-medium">24/7 Support</span>
-              </div>
+
+              <dl className="mt-10 grid grid-cols-3 gap-6 max-w-lg">
+                <div>
+                  <dt className="text-2xl font-bold text-primary-glow">300+</dt>
+                  <dd className="text-sm text-hero-foreground/70">Products reviewed</dd>
+                </div>
+                <div>
+                  <dt className="text-2xl font-bold text-primary-glow">$0</dt>
+                  <dd className="text-sm text-hero-foreground/70">Charged for support</dd>
+                </div>
+                <div>
+                  <dt className="text-2xl font-bold text-primary-glow">24/7</dt>
+                  <dd className="text-sm text-hero-foreground/70">Setup guidance</dd>
+                </div>
+              </dl>
             </div>
-          </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-hero-foreground/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary-glow rounded-full mt-2 animate-pulse"></div>
+
+            <div className="lg:col-span-5 space-y-4 animate-scale-in">
+              {[
+                {
+                  icon: BadgeCheck,
+                  title: "Bought from official retailers",
+                  body: "Every buy button sends you to Amazon or the brand's own store — genuine licences, retailer warranty, retailer checkout.",
+                },
+                {
+                  icon: Headphones,
+                  title: "Free installation & activation help",
+                  body: "Stuck on a product key, a failed install or a licence transfer? Message us and we walk you through it at no cost, ever.",
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "Honest, tested recommendations",
+                  body: "Independent comparisons with real pros and cons so you buy the right tool the first time.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-hero-foreground/15 bg-hero-foreground/5 p-5 backdrop-blur-sm transition-colors hover:border-primary/40"
+                >
+                  <div className="flex gap-4">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary-glow">
+                      <item.icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h2 className="font-semibold">{item.title}</h2>
+                      <p className="mt-1 text-sm text-hero-foreground/75 leading-relaxed">{item.body}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-      
-      {/* Category Products Modal */}
+
       {selectedCategory && (
-        <CategoryProducts 
-          category={selectedCategory} 
-          onClose={handleCloseProducts}
-        />
+        <CategoryProducts category={selectedCategory} onClose={() => setSelectedCategory(null)} />
       )}
     </>
   );

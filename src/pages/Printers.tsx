@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 // Import product images
 import canonPixmaImage from "@/assets/products/canon-pixma-new.jpg";
 import hpDeskjetImage from "@/assets/products/hp-deskjet-3755-new.jpg";
@@ -132,6 +133,7 @@ const Printers = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Best Printers & Scanners for Home and Office | Keys & Clicks"} description={"Hand-picked printers and scanners with real specs, prices and setup guidance — plus free installation help on every pick."} path="/printers" />
       <Header />
 
       {/* Hero Section */}
@@ -189,11 +191,11 @@ const Printers = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-green-600 mb-2">Advantages</h4>
+                    <h4 className="font-semibold text-primary mb-2">Advantages</h4>
                     <ul className="space-y-1">
                       {type.pros.map((pro, i) => (
                         <li key={i} className="text-sm flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
                           {pro}
                         </li>
                       ))}
@@ -244,11 +246,11 @@ const Printers = () => {
                   </Badge>
                 </div>
 
-                <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 rounded-t-lg relative overflow-hidden">
+                <div className="aspect-video bg-secondary rounded-t-lg relative overflow-hidden">
                   <img 
                     src={printer.image} 
                     alt={printer.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="h-full w-full object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
@@ -264,7 +266,7 @@ const Printers = () => {
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
-                          className={`h-4 w-4 ${i < Math.floor(printer.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                          className={`h-4 w-4 ${i < Math.floor(printer.rating) ? 'fill-deal text-deal' : 'text-muted-foreground/40'}`} 
                         />
                       ))}
                       <span className="text-sm text-muted-foreground ml-1">
@@ -278,7 +280,7 @@ const Printers = () => {
                   <div className="flex items-center gap-2">
                     <span className="text-2xl font-bold text-primary">{printer.price}</span>
                     <span className="text-sm text-muted-foreground line-through">{printer.originalPrice}</span>
-                    <Badge variant="outline" className="text-green-600 border-green-600">
+                    <Badge variant="outline" className="text-primary border-green-600">
                       Save {Math.round((1 - parseFloat(printer.price.replace('$', '')) / parseFloat(printer.originalPrice.replace('$', ''))) * 100)}%
                     </Badge>
                   </div>
@@ -286,11 +288,11 @@ const Printers = () => {
 
                 <CardContent className="space-y-4">
                   <div>
-                    <h4 className="font-semibold mb-2 text-green-600">✓ Key Features</h4>
+                    <h4 className="font-semibold mb-2 text-primary">✓ Key Features</h4>
                     <ul className="space-y-1">
                       {printer.features.slice(0, 4).map((feature, i) => (
                         <li key={i} className="text-sm flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="h-3 w-3 text-primary flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -299,10 +301,10 @@ const Printers = () => {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <h5 className="font-medium text-green-600 mb-1">Pros</h5>
+                      <h5 className="font-medium text-primary mb-1">Pros</h5>
                       <ul className="space-y-1">
                         {printer.pros.map((pro, i) => (
-                          <li key={i} className="text-xs text-green-600">+ {pro}</li>
+                          <li key={i} className="text-xs text-primary">+ {pro}</li>
                         ))}
                       </ul>
                     </div>
@@ -355,7 +357,7 @@ const Printers = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <Card className="text-center">
                 <CardHeader>
-                  <Wifi className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                  <Wifi className="h-8 w-8 text-primary mx-auto mb-2" />
                   <CardTitle className="text-lg">Connectivity</CardTitle>
                 </CardHeader>
                 <CardContent>

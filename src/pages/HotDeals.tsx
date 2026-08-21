@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { useState } from "react";
 // Import product images
 import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
@@ -149,13 +150,14 @@ const HotDeals = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Today's Software & Tech Deals | Keys & Clicks"} description={"Live discounts on antivirus, Windows keys, QuickBooks, printers and networking gear from trusted retailers."} path="/hot-deals" />
       <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-red-500/10 via-orange-500/10 to-yellow-500/10 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-red-500/10 px-4 py-2 rounded-full mb-6 animate-pulse">
+            <div className="inline-flex items-center gap-2 bg-destructive/10 px-4 py-2 rounded-full mb-6 animate-pulse">
               <Flame className="h-5 w-5 text-red-500" />
               <span className="text-red-500 font-medium">Hot Deals - Limited Time</span>
             </div>
@@ -170,17 +172,17 @@ const HotDeals = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full">
-                <Shield className="h-4 w-4 text-green-600" />
-                <span className="text-green-600 font-medium text-sm">Genuine Products</span>
+              <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
+                <Shield className="h-4 w-4 text-primary" />
+                <span className="text-primary font-medium text-sm">Genuine Products</span>
               </div>
-              <div className="flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full">
-                <Timer className="h-4 w-4 text-blue-600" />
-                <span className="text-blue-600 font-medium text-sm">Instant Delivery</span>
+              <div className="flex items-center gap-2 bg-accent px-4 py-2 rounded-full">
+                <Timer className="h-4 w-4 text-primary" />
+                <span className="text-primary font-medium text-sm">Instant Delivery</span>
               </div>
-              <div className="flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
-                <TrendingUp className="h-4 w-4 text-purple-600" />
-                <span className="text-purple-600 font-medium text-sm">Best Prices</span>
+              <div className="flex items-center gap-2 bg-accent px-4 py-2 rounded-full">
+                <TrendingUp className="h-4 w-4 text-primary" />
+                <span className="text-primary font-medium text-sm">Best Prices</span>
               </div>
             </div>
           </div>
@@ -188,7 +190,7 @@ const HotDeals = () => {
       </section>
 
       {/* Flash Deals Banner */}
-      <section className="py-8 bg-gradient-to-r from-red-600 to-orange-600 text-white">
+      <section className="py-8 bg-gradient-deal text-deal-foreground">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
@@ -261,7 +263,7 @@ const HotDeals = () => {
                   <Badge 
                     className={`${
                       deal.dealType === 'flash' 
-                        ? 'bg-red-500 text-white animate-pulse' 
+                        ? 'bg-destructive text-destructive-foreground animate-pulse' 
                         : 'bg-primary text-primary-foreground'
                     } shadow-lg`}
                   >
@@ -271,7 +273,7 @@ const HotDeals = () => {
 
                 {/* Savings Badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <Badge className="bg-green-500 text-white shadow-lg">
+                  <Badge className="bg-primary text-primary-foreground shadow-lg">
                     Save {deal.savings}%
                   </Badge>
                 </div>
@@ -290,7 +292,7 @@ const HotDeals = () => {
                   <img 
                     src={deal.image} 
                     alt={deal.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="h-full w-full object-contain p-6 group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                     }}
@@ -303,7 +305,7 @@ const HotDeals = () => {
                       {[...Array(5)].map((_, i) => (
                         <Star 
                           key={i} 
-                          className={`h-4 w-4 ${i < Math.floor(deal.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                          className={`h-4 w-4 ${i < Math.floor(deal.rating) ? 'fill-deal text-deal' : 'text-muted-foreground/40'}`} 
                         />
                       ))}
                       <span className="text-sm text-muted-foreground ml-1">
@@ -324,7 +326,7 @@ const HotDeals = () => {
                 <CardContent className="space-y-4">
                   {/* Pricing */}
                   <div className="flex items-center gap-2">
-                    <span className="text-3xl font-bold text-green-600">{deal.salePrice}</span>
+                    <span className="text-3xl font-bold text-primary">{deal.salePrice}</span>
                     <span className="text-lg text-muted-foreground line-through">{deal.originalPrice}</span>
                   </div>
 
@@ -342,9 +344,9 @@ const HotDeals = () => {
 
                   {/* Time Remaining */}
                   {deal.timeLeft && (
-                    <div className="flex items-center justify-center gap-2 bg-red-50 p-3 rounded-lg">
+                    <div className="flex items-center justify-center gap-2 bg-destructive/10 p-3 rounded-lg">
                       <Clock className="h-4 w-4 text-red-500" />
-                      <span className="text-sm font-medium text-red-600">
+                      <span className="text-sm font-medium text-destructive">
                         Ends in: {deal.timeLeft}
                       </span>
                     </div>
@@ -353,7 +355,7 @@ const HotDeals = () => {
                   <div className="space-y-2 pt-2">
                     <Button 
                       asChild 
-                      className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white group-hover:shadow-lg text-lg py-6"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group-hover:shadow-lg text-lg py-6"
                       size="lg"
                     >
                       <a href={deal.affiliateLink} target="_blank" rel="noopener noreferrer">
@@ -400,7 +402,7 @@ const HotDeals = () => {
 
             <Card className="text-center">
               <CardHeader>
-                <Timer className="h-12 w-12 text-blue-500 mx-auto mb-4" />
+                <Timer className="h-12 w-12 text-primary mx-auto mb-4" />
                 <CardTitle>Instant Delivery</CardTitle>
               </CardHeader>
               <CardContent>
@@ -412,7 +414,7 @@ const HotDeals = () => {
 
             <Card className="text-center">
               <CardHeader>
-                <TrendingUp className="h-12 w-12 text-purple-500 mx-auto mb-4" />
+                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
                 <CardTitle>Best Prices</CardTitle>
               </CardHeader>
               <CardContent>

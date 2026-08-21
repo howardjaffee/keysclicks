@@ -111,7 +111,7 @@ export default function Auth() {
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-3xl font-bold">
-              Welcome to Digital Corner
+              Welcome to Keys & Clicks
             </CardTitle>
             <p className="text-muted-foreground">
               Sign in to your account or create a new one

@@ -48,7 +48,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
               <img 
                 src={product.image} 
                 alt={product.name}
-                className="w-full h-80 object-cover rounded-lg border"
+                className="h-80 w-full object-contain rounded-xl border bg-secondary p-6"
               />
               
               {/* Badges */}
@@ -58,7 +58,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                     ${product.badge === 'Best Seller' ? 'bg-primary text-primary-foreground' : ''}
                     ${product.badge === 'Hot Deal' ? 'bg-deal text-deal-foreground' : ''}
                     ${product.badge === 'Premium' ? 'bg-gold text-black' : ''}
-                    ${product.badge === 'Trending' ? 'bg-pink-500 text-white' : ''}
+                    ${product.badge === 'Trending' ? 'bg-deal text-deal-foreground' : ''}
                   `}
                 >
                   {product.badge}
@@ -88,8 +88,8 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                       key={i} 
                       className={`h-4 w-4 ${
                         i < Math.floor(product.rating) 
-                          ? 'fill-yellow-400 text-yellow-400' 
-                          : 'text-gray-300'
+                          ? 'fill-deal text-deal' 
+                          : 'text-muted-foreground/40'
                       }`} 
                     />
                   ))}
@@ -107,7 +107,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                 <span className="text-xl text-muted-foreground line-through">
                   ${product.originalPrice}
                 </span>
-                <Badge className="bg-green-500 text-white">
+                <Badge className="bg-primary text-primary-foreground">
                   Save ${(product.originalPrice - product.price).toFixed(2)}
                 </Badge>
               </div>

@@ -266,7 +266,7 @@ export const FeaturedProducts = () => {
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="h-64 w-full object-contain bg-secondary p-6 group-hover:scale-105 transition-transform duration-300"
                   />
                   
                   {/* Badges */}
@@ -275,10 +275,10 @@ export const FeaturedProducts = () => {
                       className={`
                         ${product.badge === 'Best Seller' ? 'bg-primary text-primary-foreground' : ''}
                         ${product.badge === 'Hot Deal' ? 'bg-deal text-deal-foreground' : ''}
-                        ${product.badge === 'New Arrival' ? 'bg-purple-500 text-white' : ''}
+                        ${product.badge === 'New Arrival' ? 'bg-primary text-primary-foreground' : ''}
                         ${product.badge === 'Premium' ? 'bg-gold text-black' : ''}
-                        ${product.badge === 'Budget Pick' ? 'bg-green-500 text-white' : ''}
-                        ${product.badge === 'Trending' ? 'bg-pink-500 text-white' : ''}
+                        ${product.badge === 'Budget Pick' ? 'bg-primary text-primary-foreground' : ''}
+                        ${product.badge === 'Trending' ? 'bg-deal text-deal-foreground' : ''}
                       `}
                     >
                       {product.badge}
@@ -296,7 +296,7 @@ export const FeaturedProducts = () => {
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="bg-white/90 hover:bg-white text-foreground rounded-full p-2 h-auto"
+                      className="bg-background/90 hover:bg-background text-foreground rounded-full p-2 h-auto"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleProductClick(product);
@@ -307,7 +307,7 @@ export const FeaturedProducts = () => {
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="bg-white/90 hover:bg-white text-foreground rounded-full p-2 h-auto"
+                      className="bg-background/90 hover:bg-background text-foreground rounded-full p-2 h-auto"
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleFavorite(product.id);
@@ -345,8 +345,8 @@ export const FeaturedProducts = () => {
                           key={i} 
                           className={`h-4 w-4 ${
                             i < Math.floor(product.rating) 
-                              ? 'fill-yellow-400 text-yellow-400' 
-                              : 'text-gray-300'
+                              ? 'fill-deal text-deal' 
+                              : 'text-muted-foreground/40'
                           }`} 
                         />
                       ))}

@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -321,6 +322,7 @@ const Reviews = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Software & Hardware Reviews | Keys & Clicks"} description={"Independent, hands-on reviews of antivirus suites, accounting software, printers and networking gear."} path="/reviews" />
       <Header />
 
       {/* Hero Section */}
@@ -349,7 +351,7 @@ const Reviews = () => {
                   {[...Array(5)].map((_, i) => (
                     <Star 
                       key={i} 
-                      className={`h-5 w-5 ${i < Math.floor(averageRating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                      className={`h-5 w-5 ${i < Math.floor(averageRating) ? 'fill-deal text-deal' : 'text-muted-foreground/40'}`} 
                     />
                   ))}
                 </div>
@@ -383,7 +385,7 @@ const Reviews = () => {
                     <div key={rating} className="flex items-center gap-4">
                       <div className="flex items-center gap-1 w-20">
                         <span className="text-sm font-medium">{rating}</span>
-                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star className="h-4 w-4 fill-deal text-deal" />
                       </div>
                       <div className="flex-1 bg-muted rounded-full h-2">
                         <div 
@@ -403,21 +405,21 @@ const Reviews = () => {
               <div className="grid grid-cols-2 gap-4">
                 <Card className="text-center">
                   <CardContent className="p-4">
-                    <div className="text-2xl font-bold text-green-600 mb-1">94%</div>
+                    <div className="text-2xl font-bold text-primary mb-1">94%</div>
                     <div className="text-sm text-muted-foreground">5-Star Reviews</div>
                   </CardContent>
                 </Card>
                 
                 <Card className="text-center">
                   <CardContent className="p-4">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">2.5M+</div>
+                    <div className="text-2xl font-bold text-primary mb-1">2.5M+</div>
                     <div className="text-sm text-muted-foreground">Products Sold</div>
                   </CardContent>
                 </Card>
                 
                 <Card className="text-center">
                   <CardContent className="p-4">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">99%</div>
+                    <div className="text-2xl font-bold text-primary mb-1">99%</div>
                     <div className="text-sm text-muted-foreground">Verified Purchases</div>
                   </CardContent>
                 </Card>
@@ -515,7 +517,7 @@ const Reviews = () => {
                       <div className="flex items-center justify-between mb-1">
                         <h4 className="font-semibold text-sm">{review.name}</h4>
                         {review.verified && (
-                          <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
+                          <Badge variant="outline" className="text-xs bg-primary/10 text-green-700 border-green-200">
                             ✓ Verified
                           </Badge>
                         )}
@@ -532,7 +534,7 @@ const Reviews = () => {
                         {[...Array(5)].map((_, i) => (
                           <Star 
                             key={i} 
-                            className={`h-4 w-4 ${i < review.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} 
+                            className={`h-4 w-4 ${i < review.rating ? 'fill-deal text-deal' : 'text-muted-foreground/40'}`} 
                           />
                         ))}
                       </div>

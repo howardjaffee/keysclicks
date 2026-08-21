@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -27,6 +28,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Antivirus & QuickBooks Guides | Keys & Clicks Blog"} description={"In-depth comparisons and troubleshooting guides for antivirus, QuickBooks, Windows licences and printers."} path="/blog" />
       <Header />
       
       {/* Hero Section */}
@@ -34,7 +36,7 @@ const Blog = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              TechFix Blog
+              Keys & Clicks Blog
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Your go-to resource for antivirus troubleshooting, printer solutions, and digital security guides. 
