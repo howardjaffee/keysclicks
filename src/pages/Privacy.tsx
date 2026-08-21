@@ -8,6 +8,11 @@ export const Privacy = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Privacy Policy | Keys & Clicks"
+        description="How Keys & Clicks collects, uses and protects your data, including cookies, analytics and Amazon affiliate tracking."
+        path="https://keywala-clone-maker.lovable.app/privacy"
+      />
       {/* Header */}
       <div className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
