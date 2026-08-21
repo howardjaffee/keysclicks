@@ -384,6 +384,13 @@ export const FeaturedProducts = () => {
                       Buy Now
                     </Button>
                   </div>
+
+                  <a
+                    href="/support-promise"
+                    className="mt-2 block text-center text-xs font-medium text-primary hover:underline"
+                  >
+                    Free lifetime setup &amp; activation help →
+                  </a>
                 </div>
               </CardContent>
             </Card>

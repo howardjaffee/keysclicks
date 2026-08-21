@@ -19,6 +19,7 @@ const navLinks = [
   { label: "Printers", to: "/printers" },
   { label: "Reviews", to: "/reviews" },
   { label: "Blog", to: "/blog" },
+  { label: "Free Support", to: "/support-promise" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
@@ -55,16 +56,19 @@ export const Header = () => {
       {/* Affiliate disclosure */}
       <div className="bg-accent text-accent-foreground py-2 px-4 text-center text-xs md:text-sm">
         Affiliate disclosure: Keys &amp; Clicks earns a commission from qualifying purchases made through our links,
-        at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.
+        at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.{" "}
+        <Link to="/affiliate-disclosure" className="font-semibold underline underline-offset-2 hover:text-primary">
+          Learn more
+        </Link>
       </div>
 
       {/* Value bar */}
       <div className="bg-hero text-hero-foreground py-2 px-4 text-xs md:text-sm">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
-          <span className="flex items-center gap-2">
+          <Link to="/support-promise" className="flex items-center gap-2 hover:text-primary-glow transition-colors">
             <Headphones className="h-4 w-4 text-primary-glow" />
             Free lifetime installation &amp; activation help on every product we recommend
-          </span>
+          </Link>
           <span className="flex items-center gap-4">
             <a href="tel:5402423003" className="flex items-center gap-1 hover:text-primary-glow transition-colors">
               <Phone className="h-3.5 w-3.5" /> 540 242 3003

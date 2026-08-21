@@ -233,6 +233,27 @@ const BlogPost = () => {
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
             </article>
 
+            {/* Support & disclosure CTA */}
+            <div className="mt-12 rounded-2xl border border-primary/30 bg-primary/5 p-6 sm:p-8">
+              <h2 className="text-xl font-bold font-display">Bought something we recommended? Setup help is free.</h2>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Every product linked in this article comes with free lifetime installation, activation and
+                troubleshooting support from a real person at Keys &amp; Clicks — unlimited, and never charged.
+              </p>
+              <div className="mt-5 flex flex-col sm:flex-row gap-3">
+                <Button className="rounded-full" asChild>
+                  <Link to="/support-promise">Read our support promise</Link>
+                </Button>
+                <Button variant="outline" className="rounded-full" asChild>
+                  <Link to="/contact">Get free help now</Link>
+                </Button>
+                <Button variant="ghost" className="rounded-full" asChild>
+                  <Link to="/affiliate-disclosure">How we make money</Link>
+                </Button>
+              </div>
+            </div>
+
+
             {/* Article Footer */}
             <div className="mt-12 pt-8 border-t">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

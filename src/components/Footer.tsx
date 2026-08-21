@@ -11,6 +11,8 @@ const quickLinks = [
   { label: "Blog", to: "/blog" },
   { label: "Reviews", to: "/reviews" },
   { label: "Contact Us", to: "/contact" },
+  { label: "Affiliate Disclosure", to: "/affiliate-disclosure" },
+  { label: "Free Support Promise", to: "/support-promise" },
   { label: "Returns & Refunds", to: "/returns" },
   { label: "FAQ", to: "/faq" },
 ];
@@ -127,16 +129,24 @@ export const Footer = () => {
             completed on the retailer's own website under their pricing, warranty and returns policies. As an Amazon
             Associate we earn from qualifying purchases.
           </p>
+          <Link
+            to="/affiliate-disclosure"
+            className="mt-3 inline-block text-xs font-semibold text-primary-glow underline underline-offset-4"
+          >
+            Read our full Affiliate Disclosure
+          </Link>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col items-center justify-between gap-3 text-sm text-hero-foreground/60 md:flex-row">
           <p>© {new Date().getFullYear()} Keys &amp; Clicks. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link to="/privacy" className="hover:text-primary-glow">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-primary-glow">Terms &amp; Conditions</Link>
             <Link to="/returns" className="hover:text-primary-glow">Returns</Link>
+            <Link to="/affiliate-disclosure" className="hover:text-primary-glow">Affiliate Disclosure</Link>
+            <Link to="/support-promise" className="hover:text-primary-glow">Support Promise</Link>
           </div>
         </div>
       </div>
