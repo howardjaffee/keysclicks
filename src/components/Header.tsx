@@ -19,6 +19,7 @@ const navLinks = [
   { label: "Printers", to: "/printers" },
   { label: "Reviews", to: "/reviews" },
   { label: "Blog", to: "/blog" },
+  { label: "Free Support", to: "/support-promise" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
