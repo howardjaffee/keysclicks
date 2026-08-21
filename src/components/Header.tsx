@@ -76,6 +76,12 @@ export const Header = () => {
             <a href="mailto:support@keysandclicks.com" className="hidden md:inline hover:text-primary-glow transition-colors">
               support@keysandclicks.com
             </a>
+            <Link to="/privacy" className="hidden md:inline hover:text-primary-glow transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="hidden md:inline hover:text-primary-glow transition-colors">
+              Terms of Service
+            </Link>
           </span>
         </div>
       </div>
@@ -210,6 +216,12 @@ export const Header = () => {
                 ))}
                 <Button size="sm" asChild onClick={() => setMobileOpen(false)}>
                   <Link to="/hot-deals">Hot Deals</Link>
+                </Button>
+                <Button variant="ghost" size="sm" asChild onClick={() => setMobileOpen(false)}>
+                  <Link to="/privacy">Privacy Policy</Link>
+                </Button>
+                <Button variant="ghost" size="sm" asChild onClick={() => setMobileOpen(false)}>
+                  <Link to="/terms">Terms of Service</Link>
                 </Button>
               </div>
             </div>

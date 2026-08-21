@@ -767,6 +767,8 @@ export const CategoryProducts = ({ category, onClose, query = "" }: CategoryProd
                             src={product.image}
                             alt={product.name}
                             loading="lazy"
+                            decoding="async"
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                             className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
                           />
                         </div>

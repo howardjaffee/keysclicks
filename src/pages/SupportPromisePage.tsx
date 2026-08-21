@@ -6,6 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Phone, Mail, Wrench, ShieldCheck, RotateCcw } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const steps = [
   {
@@ -43,12 +49,51 @@ const notCovered = [
   "Refunds and replacements — those are issued by the retailer, though we help you request them",
 ];
 
+
+const faqs = [
+  {
+    q: "My antivirus product key says it is invalid or already used. What do I do?",
+    a: "Nine times out of ten this is a typing or region mismatch, not a bad key. Copy the key straight from the retailer email rather than retyping it, make sure you are signed into the correct vendor account, and check the key matches the edition you installed. If it still fails, send us the key and the exact error text and we will confirm the fault and help you open a replacement claim with the seller.",
+  },
+  {
+    q: "How do I remove my old antivirus before installing a new one?",
+    a: "Uninstall the old suite from Windows Settings, then run the vendor's dedicated removal tool (Norton Remove and Reinstall, McAfee MCPR, Avast Clear and similar) and restart the computer before installing the new product. Leftover drivers from the old suite are the most common cause of a failed install, and we can walk you through the cleanup step by step.",
+  },
+  {
+    q: "Can I move my licence to a new computer?",
+    a: "Almost always yes. Deactivate the licence on the old machine through the vendor account or by uninstalling, then sign into the same account on the new computer and reactivate. Windows retail keys transfer as long as the old install is removed; OEM keys stay with the original hardware. Tell us the product and we will confirm which type you have.",
+  },
+  {
+    q: "My printer or router will not connect to the network. Where do I start?",
+    a: "Connect the device to the 2.4 GHz band rather than 5 GHz during setup, keep it within a few metres of the router, and install the manufacturer's own setup app instead of the generic Windows driver. If the device is invisible on the network, restart the router first, then the device. We can talk you through the setup on the phone if you prefer.",
+  },
+  {
+    q: "How long does free support take, and does it cost anything?",
+    a: "Email is answered within one business day and usually much sooner. Support is free and unlimited on anything you buy through our links, funded by the commission the retailer pays us. We never charge for help and never take remote control of your computer without your explicit permission for that specific session.",
+  },
+  {
+    q: "Who handles refunds, replacements and warranty claims?",
+    a: "The retailer and the manufacturer do, because your purchase is completed on their website, not ours. Amazon generally allows 30 days for physical goods, while digital licences are refundable only while unredeemed. Contact us first: if the fault is a setup issue we fix it for free, and if it is not we help you file the claim with the right evidence.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const SupportPromisePage = () => (
   <div className="min-h-screen bg-background">
     <Seo
       title="Free Support Promise, Troubleshooting & Warranty Policy | Keys & Clicks"
       description="Free lifetime installation and activation help on everything we recommend, plus how troubleshooting, warranty claims and retailer returns are handled."
-      path="/support-promise"
+      path="https://keywala-clone-maker.lovable.app/support-promise"
+      jsonLd={faqJsonLd}
     />
     <Header />
 
@@ -138,6 +183,21 @@ const SupportPromisePage = () => (
               <a href="mailto:support@keysandclicks.com">support@keysandclicks.com</a>.
             </p>
           </div>
+
+          <section id="faq" className="mt-16">
+            <h2 className="text-2xl md:text-3xl font-bold font-display">Troubleshooting FAQ</h2>
+            <p className="mt-3 text-muted-foreground max-w-3xl">
+              The questions we are asked most often. If yours is not here, email or call us — the answer is still free.
+            </p>
+            <Accordion type="single" collapsible className="mt-6">
+              {faqs.map((f) => (
+                <AccordionItem key={f.q} value={f.q}>
+                  <AccordionTrigger className="text-left">{f.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">{f.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
             <Button size="lg" className="rounded-full" asChild>

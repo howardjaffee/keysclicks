@@ -8,6 +8,11 @@ export const Terms = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Terms of Service | Keys & Clicks"
+        description="The terms governing use of Keys & Clicks, our Amazon affiliate relationships, product information accuracy and limitation of liability."
+        path="https://keywala-clone-maker.lovable.app/terms"
+      />
       {/* Header */}
       <div className="border-b bg-card">
         <div className="container mx-auto px-4 py-4">
