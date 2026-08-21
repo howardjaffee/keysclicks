@@ -88,8 +88,8 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                       key={i} 
                       className={`h-4 w-4 ${
                         i < Math.floor(product.rating) 
-                          ? 'fill-yellow-400 text-yellow-400' 
-                          : 'text-gray-300'
+                          ? 'fill-deal text-deal' 
+                          : 'text-muted-foreground/40'
                       }`} 
                     />
                   ))}
@@ -107,7 +107,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                 <span className="text-xl text-muted-foreground line-through">
                   ${product.originalPrice}
                 </span>
-                <Badge className="bg-green-500 text-white">
+                <Badge className="bg-primary text-primary-foreground">
                   Save ${(product.originalPrice - product.price).toFixed(2)}
                 </Badge>
               </div>

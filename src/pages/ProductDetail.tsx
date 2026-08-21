@@ -135,21 +135,21 @@ export const ProductDetail = () => {
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="bg-white/90 hover:bg-white rounded-full p-2"
+                    className="bg-background/90 hover:bg-background rounded-full p-2"
                     onClick={() => setIsFavorite(!isFavorite)}
                   >
                     <Heart 
                       className={`h-4 w-4 ${
-                        isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-600'
+                        isFavorite ? 'fill-red-500 text-red-500' : 'text-muted-foreground'
                       }`} 
                     />
                   </Button>
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="bg-white/90 hover:bg-white rounded-full p-2"
+                    className="bg-background/90 hover:bg-background rounded-full p-2"
                   >
-                    <Share2 className="h-4 w-4 text-gray-600" />
+                    <Share2 className="h-4 w-4 text-muted-foreground" />
                   </Button>
                 </div>
               </div>
@@ -193,8 +193,8 @@ export const ProductDetail = () => {
                         key={i} 
                         className={`h-5 w-5 ${
                           i < Math.floor(product.rating) 
-                            ? 'fill-yellow-400 text-yellow-400' 
-                            : 'text-gray-300'
+                            ? 'fill-deal text-deal' 
+                            : 'text-muted-foreground/40'
                         }`} 
                       />
                     ))}
@@ -224,12 +224,12 @@ export const ProductDetail = () => {
 
                 {/* Trust Indicators */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="text-center p-3 bg-green-50 rounded-lg">
-                    <Shield className="h-6 w-6 text-green-600 mx-auto mb-1" />
+                  <div className="text-center p-3 bg-primary/10 rounded-lg">
+                    <Shield className="h-6 w-6 text-primary mx-auto mb-1" />
                     <div className="text-sm font-medium">Genuine License</div>
                   </div>
-                  <div className="text-center p-3 bg-blue-50 rounded-lg">
-                    <Download className="h-6 w-6 text-blue-600 mx-auto mb-1" />
+                  <div className="text-center p-3 bg-accent rounded-lg">
+                    <Download className="h-6 w-6 text-primary mx-auto mb-1" />
                     <div className="text-sm font-medium">Instant Download</div>
                   </div>
                   <div className="text-center p-3 bg-purple-50 rounded-lg">
@@ -257,7 +257,7 @@ export const ProductDetail = () => {
                     <div className="space-y-3">
                       {product.features.slice(0, 4).map((feature, index) => (
                         <div key={index} className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                          <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-sm">{feature}</span>
                         </div>
                       ))}
@@ -295,7 +295,7 @@ export const ProductDetail = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     {product.features.map((feature, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -349,8 +349,8 @@ export const ProductDetail = () => {
                             key={i} 
                             className={`h-5 w-5 ${
                               i < Math.floor(product.rating) 
-                                ? 'fill-yellow-400 text-yellow-400' 
-                                : 'text-gray-300'
+                                ? 'fill-deal text-deal' 
+                                : 'text-muted-foreground/40'
                             }`} 
                           />
                         ))}
@@ -367,7 +367,7 @@ export const ProductDetail = () => {
                             {[...Array(5)].map((_, i) => (
                               <Star 
                                 key={i} 
-                                className="h-4 w-4 fill-yellow-400 text-yellow-400" 
+                                className="h-4 w-4 fill-deal text-deal" 
                               />
                             ))}
                           </div>
@@ -388,7 +388,7 @@ export const ProductDetail = () => {
                               <Star 
                                 key={i} 
                                 className={`h-4 w-4 ${
-                                  i < 4 ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
+                                  i < 4 ? 'fill-deal text-deal' : 'text-muted-foreground/40'
                                 }`} 
                               />
                             ))}

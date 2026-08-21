@@ -708,8 +708,8 @@ export const CategoryProducts = ({ category, onClose, query = "" }: CategoryProd
                                 key={i} 
                                 className={`h-3 w-3 ${
                                   i < Math.floor(product.rating) 
-                                    ? 'fill-yellow-400 text-yellow-400' 
-                                    : 'text-gray-300'
+                                    ? 'fill-deal text-deal' 
+                                    : 'text-muted-foreground/40'
                                 }`} 
                               />
                             ))}

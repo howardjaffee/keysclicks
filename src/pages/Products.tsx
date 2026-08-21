@@ -23,7 +23,7 @@ const categories = [
     id: "antivirus",
     name: "Antivirus Software",
     icon: Shield,
-    color: "bg-red-50 hover:bg-red-100 text-red-600",
+    color: "bg-destructive/10 hover:bg-red-100 text-red-600",
     description: "Complete protection against malware, viruses, and cyber threats",
     count: "50+ products"
   },
@@ -31,7 +31,7 @@ const categories = [
     id: "computers",
     name: "Computers & Laptops",
     icon: Monitor,
-    color: "bg-blue-50 hover:bg-blue-100 text-blue-600",
+    color: "bg-accent hover:bg-accent text-primary",
     description: "Latest computers, laptops, and desktop systems",
     count: "200+ products"
   },
@@ -39,7 +39,7 @@ const categories = [
     id: "office",
     name: "Office Software",
     icon: FileText,
-    color: "bg-green-50 hover:bg-green-100 text-green-600",
+    color: "bg-primary/10 hover:bg-primary/10 text-primary",
     description: "Microsoft Office, productivity suites, and business software",
     count: "15+ products"
   },

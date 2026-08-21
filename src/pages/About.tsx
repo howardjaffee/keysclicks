@@ -77,9 +77,9 @@ export const About = () => {
                     <p className="text-sm text-muted-foreground">Up to 75% off retail prices</p>
                   </CardContent>
                 </Card>
-                <Card className="bg-green-50 border-green-200">
+                <Card className="bg-primary/10 border-green-200">
                   <CardContent className="p-6 text-center">
-                    <Users className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                    <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">Expert Guidance</h3>
                     <p className="text-sm text-muted-foreground">Product recommendations & support</p>
                   </CardContent>

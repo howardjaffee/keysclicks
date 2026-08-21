@@ -62,12 +62,12 @@ export const Contact = () => {
 
               <Card className="text-center hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <MessageCircle className="h-8 w-8 text-green-600" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <MessageCircle className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Live Chat</h3>
                   <p className="text-muted-foreground text-sm mb-3">Instant assistance</p>
-                  <p className="text-green-600 font-medium">Available 24/7</p>
+                  <p className="text-primary font-medium">Available 24/7</p>
                 </CardContent>
               </Card>
 
@@ -164,8 +164,8 @@ export const Contact = () => {
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Mail className="h-5 w-5 text-green-600" />
+                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Mail className="h-5 w-5 text-primary" />
                         </div>
                         <div>
                           <h4 className="font-semibold mb-1">Email Addresses</h4>

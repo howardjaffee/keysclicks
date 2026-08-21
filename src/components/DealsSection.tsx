@@ -97,7 +97,7 @@ export const DealsSection = () => {
                     Grab these deals before they're gone!
                   </p>
                   <Button 
-                    className="bg-red-500 hover:bg-red-600 text-white"
+                    className="bg-destructive/100 hover:bg-red-600 text-white"
                     size="lg"
                   >
                     Shop Flash Sales
@@ -119,15 +119,15 @@ export const DealsSection = () => {
           <Card className="border-0 bg-gradient-to-br from-green-50 to-emerald-100">
             <CardContent className="p-6 text-center">
               <div className="w-16 h-16 bg-green-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-green-600" />
+                <Users className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-green-900">Happy Customers</h3>
               <p className="text-green-700 text-sm mb-4">
                 Join thousands of satisfied customers
               </p>
-              <div className="text-2xl font-bold text-green-600 mb-2">50K+</div>
-              <p className="text-xs text-green-600 mb-4">5-star reviews</p>
-              <Button variant="outline" size="sm" className="w-full border-green-300 text-green-600 hover:bg-green-50">
+              <div className="text-2xl font-bold text-primary mb-2">50K+</div>
+              <p className="text-xs text-primary mb-4">5-star reviews</p>
+              <Button variant="outline" size="sm" className="w-full border-green-300 text-primary hover:bg-primary/10">
                 Read Reviews
               </Button>
             </CardContent>
