@@ -292,6 +292,9 @@ const HotDeals = () => {
                   <img 
                     src={deal.image} 
                     alt={deal.name}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="h-full w-full object-contain p-6 group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';

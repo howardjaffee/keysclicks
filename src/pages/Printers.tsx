@@ -250,6 +250,9 @@ const Printers = () => {
                   <img 
                     src={printer.image} 
                     alt={printer.name}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="h-full w-full object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
