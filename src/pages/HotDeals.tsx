@@ -178,9 +178,9 @@ const HotDeals = () => {
                 <Timer className="h-4 w-4 text-primary" />
                 <span className="text-primary font-medium text-sm">Instant Delivery</span>
               </div>
-              <div className="flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full">
-                <TrendingUp className="h-4 w-4 text-purple-600" />
-                <span className="text-purple-600 font-medium text-sm">Best Prices</span>
+              <div className="flex items-center gap-2 bg-accent px-4 py-2 rounded-full">
+                <TrendingUp className="h-4 w-4 text-primary" />
+                <span className="text-primary font-medium text-sm">Best Prices</span>
               </div>
             </div>
           </div>
@@ -412,7 +412,7 @@ const HotDeals = () => {
 
             <Card className="text-center">
               <CardHeader>
-                <TrendingUp className="h-12 w-12 text-purple-500 mx-auto mb-4" />
+                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
                 <CardTitle>Best Prices</CardTitle>
               </CardHeader>
               <CardContent>

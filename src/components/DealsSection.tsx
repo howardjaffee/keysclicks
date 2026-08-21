@@ -67,16 +67,16 @@ export const DealsSection = () => {
           {/* Bulk Orders */}
           <Card className="border-0 bg-gradient-to-br from-purple-50 to-purple-100">
             <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Package className="h-8 w-8 text-purple-600" />
+              <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Package className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-purple-900">Bulk Orders</h3>
               <p className="text-purple-700 text-sm mb-4">
                 Special pricing for business customers
               </p>
-              <div className="text-2xl font-bold text-purple-600 mb-2">Save 15%</div>
-              <p className="text-xs text-purple-600 mb-4">On orders over $500</p>
-              <Button variant="outline" size="sm" className="w-full border-purple-300 text-purple-600 hover:bg-purple-50">
+              <div className="text-2xl font-bold text-primary mb-2">Save 15%</div>
+              <p className="text-xs text-primary mb-4">On orders over $500</p>
+              <Button variant="outline" size="sm" className="w-full border-primary/40 text-primary hover:bg-accent">
                 Learn More
               </Button>
             </CardContent>

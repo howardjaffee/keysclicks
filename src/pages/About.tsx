@@ -84,9 +84,9 @@ export const About = () => {
                     <p className="text-sm text-muted-foreground">Product recommendations & support</p>
                   </CardContent>
                 </Card>
-                <Card className="bg-purple-50 border-purple-200">
+                <Card className="bg-accent border-primary/20">
                   <CardContent className="p-6 text-center">
-                    <Heart className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                    <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
                     <h3 className="font-semibold mb-2">Customer Focus</h3>
                     <p className="text-sm text-muted-foreground">Your satisfaction is our priority</p>
                   </CardContent>

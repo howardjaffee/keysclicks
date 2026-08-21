@@ -417,7 +417,7 @@ const Reviews = () => {
                 
                 <Card className="text-center">
                   <CardContent className="p-4">
-                    <div className="text-2xl font-bold text-purple-600 mb-1">99%</div>
+                    <div className="text-2xl font-bold text-primary mb-1">99%</div>
                     <div className="text-sm text-muted-foreground">Verified Purchases</div>
                   </CardContent>
                 </Card>

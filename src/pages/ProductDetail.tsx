@@ -232,8 +232,8 @@ export const ProductDetail = () => {
                     <Download className="h-6 w-6 text-primary mx-auto mb-1" />
                     <div className="text-sm font-medium">Instant Download</div>
                   </div>
-                  <div className="text-center p-3 bg-purple-50 rounded-lg">
-                    <Users className="h-6 w-6 text-purple-600 mx-auto mb-1" />
+                  <div className="text-center p-3 bg-accent rounded-lg">
+                    <Users className="h-6 w-6 text-primary mx-auto mb-1" />
                     <div className="text-sm font-medium">24/7 Support</div>
                   </div>
                 </div>

@@ -47,7 +47,7 @@ const categories = [
     id: "printers",
     name: "Printers & Scanners",
     icon: Printer,
-    color: "bg-purple-50 hover:bg-purple-100 text-purple-600",
+    color: "bg-accent text-accent-foreground",
     description: "Inkjet, laser printers, and all-in-one solutions",
     count: "100+ products"
   },
@@ -214,15 +214,15 @@ export const Products = () => {
                 onClick={() => handleCategoryClick('printers')}
               >
                 <CardContent className="p-8">
-                  <div className="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Printer className="h-10 w-10 text-purple-600" />
+                  <div className="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Printer className="h-10 w-10 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-center mb-4">Printers & Scanners</h3>
                   <p className="text-muted-foreground text-center mb-6">
                     Find the perfect printer for home or office with our wide selection of inkjet and laser printers.
                   </p>
                   <div className="text-center">
-                    <Badge className="bg-purple-100 text-purple-600">Best Deals</Badge>
+                    <Badge className="bg-accent text-accent-foreground">Best Deals</Badge>
                   </div>
                 </CardContent>
               </Card>
