@@ -669,48 +669,93 @@ export const CategoryProducts = ({ category, onClose, query = "" }: CategoryProd
     }
   };
   
-  if (products.length === 0) {
-    return (
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="bg-background rounded-lg shadow-xl max-w-md w-full p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold">{getCategoryTitle(category)}</h2>
-            <button
-              onClick={onClose}
-              className="text-muted-foreground hover:text-foreground text-2xl font-bold"
-            >
-              ×
-            </button>
-          </div>
-          <p className="text-muted-foreground text-center py-8">
-            Coming Soon! We're adding more products to this category.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 overflow-auto">
       <div className="min-h-full py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="bg-background rounded-2xl shadow-xl border">
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-border">
+            <div className="flex items-start justify-between gap-4 p-6 border-b border-border">
               <div>
-                <h2 className="text-2xl font-bold text-foreground">{normalizedQuery ? `Results for "${query}"` : getCategoryTitle(category)}</h2>
+                <h2 className="text-2xl font-bold text-foreground">{normalizedQuery ? `Results for "${search}"` : getCategoryTitle(activeCategory)}</h2>
                 <p className="text-muted-foreground mt-1">{products.length} products available</p>
               </div>
               <button
                 onClick={onClose}
+                aria-label="Close products"
                 className="text-muted-foreground hover:text-foreground text-3xl font-bold transition-colors"
               >
                 ×
               </button>
             </div>
-            
+
+            {/* Search, category filters and sort */}
+            <div className="space-y-4 border-b border-border p-6">
+              <div className="flex flex-col gap-3 lg:flex-row">
+                <div className="relative flex-1">
+                  <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    type="search"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder="Search products — e.g. Norton, QuickBooks, Windows 11, printer…"
+                    aria-label="Search products"
+                    className="h-11 rounded-full pl-11"
+                  />
+                </div>
+                <select
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                  aria-label="Sort products"
+                  className="h-11 rounded-full border border-input bg-background px-4 text-sm text-foreground lg:w-56"
+                >
+                  {sortOptions.map((o) => (
+                    <option key={o.id} value={o.id}>{o.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {categoryFilters.map((f) => (
+                  <Button
+                    key={f.id}
+                    size="sm"
+                    variant={activeCategory === f.id ? "default" : "outline"}
+                    className="rounded-full"
+                    onClick={() => setActiveCategory(f.id)}
+                  >
+                    {f.label}
+                  </Button>
+                ))}
+                {(normalizedQuery || sort !== 'featured') && (
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="rounded-full"
+                    onClick={() => { setSearch(""); setSort('featured'); }}
+                  >
+                    Clear filters
+                  </Button>
+                )}
+              </div>
+
+              <Link
+                to="/support-promise"
+                onClick={onClose}
+                className="flex items-center gap-2 text-sm text-primary hover:underline"
+              >
+                <Headphones className="h-4 w-4" />
+                Free lifetime installation &amp; activation help on everything below — see our support promise
+              </Link>
+            </div>
+
             {/* Products Grid */}
             <div className="p-6">
+              {products.length === 0 && (
+                <p className="py-16 text-center text-muted-foreground">
+                  No products match “{search}”. Try a different search or pick another category.
+                </p>
+              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {products.map((product) => (
                   <Card key={product.id} className="group surface-card hover:shadow-primary transition-all duration-300 hover:-translate-y-1">
