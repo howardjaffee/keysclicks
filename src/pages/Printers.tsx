@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 // Import product images
 import canonPixmaImage from "@/assets/products/canon-pixma-new.jpg";
 import hpDeskjetImage from "@/assets/products/hp-deskjet-3755-new.jpg";
@@ -132,6 +133,7 @@ const Printers = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Best Printers & Scanners for Home and Office | Keys & Clicks"} description={"Hand-picked printers and scanners with real specs, prices and setup guidance — plus free installation help on every pick."} path="/printers" />
       <Header />
 
       {/* Hero Section */}

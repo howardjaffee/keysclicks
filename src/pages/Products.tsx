@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Header } from "@/components/Header";
@@ -100,6 +101,7 @@ export const Products = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo title={"All Digital Products & Software | Keys & Clicks"} description={"Browse antivirus, Windows keys, QuickBooks, printers and networking gear — with free lifetime setup help."} path="/products" />
       <Header />
       
       <main className="py-16">

@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -27,6 +28,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Antivirus & QuickBooks Guides | Keys & Clicks Blog"} description={"In-depth comparisons and troubleshooting guides for antivirus, QuickBooks, Windows licences and printers."} path="/blog" />
       <Header />
       
       {/* Hero Section */}

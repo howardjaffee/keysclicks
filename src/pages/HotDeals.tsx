@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { useState } from "react";
 // Import product images
 import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
@@ -149,6 +150,7 @@ const HotDeals = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Today's Software & Tech Deals | Keys & Clicks"} description={"Live discounts on antivirus, Windows keys, QuickBooks, printers and networking gear from trusted retailers."} path="/hot-deals" />
       <Header />
 
       {/* Hero Section */}

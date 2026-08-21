@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +9,7 @@ import { Footer } from "@/components/Footer";
 export const About = () => {
   return (
     <div className="min-h-screen">
+      <Seo title={"About Keys & Clicks — Genuine Keys, Free Setup Help"} description={"We hand-pick digital software and tech from trusted retailers and help you install and activate it, free of charge."} path="/about" />
       <Header />
       
       <main className="py-16">

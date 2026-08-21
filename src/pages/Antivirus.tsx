@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 // Import product images
 import nortonImage from "@/assets/products/norton-360-deluxe-new.jpg";
 import kasperskySecurityImage from "@/assets/products/kaspersky-security.jpg";
@@ -112,6 +113,7 @@ const Antivirus = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Best Antivirus Software 2026 — Tested Picks | Keys & Clicks"} description={"Compare Norton, Bitdefender, McAfee and Kaspersky on protection, speed and price. Genuine licences plus free installation help."} path="/antivirus" />
       <Header />
 
       {/* Hero Section */}

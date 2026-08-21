@@ -1,3 +1,4 @@
+import { Seo } from "@/components/Seo";
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -321,6 +322,7 @@ const Reviews = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo title={"Software & Hardware Reviews | Keys & Clicks"} description={"Independent, hands-on reviews of antivirus suites, accounting software, printers and networking gear."} path="/reviews" />
       <Header />
 
       {/* Hero Section */}
