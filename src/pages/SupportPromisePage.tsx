@@ -92,7 +92,7 @@ const SupportPromisePage = () => (
     <Seo
       title="Free Support Promise, Troubleshooting & Warranty Policy | Keys & Clicks"
       description="Free lifetime installation and activation help on everything we recommend, plus how troubleshooting, warranty claims and retailer returns are handled."
-      path="https://keywala-clone-maker.lovable.app/support-promise"
+      path="/support-promise"
       jsonLd={faqJsonLd}
     />
     <Header />
