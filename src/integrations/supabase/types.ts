@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      cookie_consent_audit: {
+        Row: {
+          action: string
+          affiliate_allowed: boolean
+          analytics_allowed: boolean
+          created_at: string
+          id: string
+          marketing_allowed: boolean
+          path: string | null
+          user_agent: string | null
+          user_id: string | null
+          version: number
+        }
+        Insert: {
+          action: string
+          affiliate_allowed: boolean
+          analytics_allowed: boolean
+          created_at?: string
+          id?: string
+          marketing_allowed: boolean
+          path?: string | null
+          user_agent?: string | null
+          user_id?: string | null
+          version?: number
+        }
+        Update: {
+          action?: string
+          affiliate_allowed?: boolean
+          analytics_allowed?: boolean
+          created_at?: string
+          id?: string
+          marketing_allowed?: boolean
+          path?: string | null
+          user_agent?: string | null
+          user_id?: string | null
+          version?: number
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
