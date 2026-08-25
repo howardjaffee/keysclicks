@@ -11,7 +11,7 @@ export const Privacy = () => {
       <Seo
         title="Privacy Policy | Keys & Clicks"
         description="How Keys & Clicks collects, uses and protects your data, including cookies, analytics and Amazon affiliate tracking."
-        path="https://keywala-clone-maker.lovable.app/privacy"
+        path="/privacy"
       />
       {/* Header */}
       <div className="border-b bg-card">
