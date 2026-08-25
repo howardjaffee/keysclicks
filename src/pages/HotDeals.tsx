@@ -13,7 +13,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+
 import { 
   Flame, 
   Star, 
@@ -367,11 +367,6 @@ const HotDeals = () => {
                       </a>
                     </Button>
                     
-                    <Button asChild variant="outline" className="w-full">
-                      <Link to={`/product/${deal.id}`}>
-                        View Details
-                      </Link>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
