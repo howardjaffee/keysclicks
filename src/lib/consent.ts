@@ -109,11 +109,12 @@ export const getConsent = (): ConsentState => {
 
 export const hasConsentDecision = () => readConsent() !== null;
 
-export const saveConsent = (state: ConsentState) => {
+export const saveConsent = (state: ConsentState, action: ConsentAuditAction = "save_preferences") => {
   if (!isBrowser()) return;
   const stored: StoredConsent = { ...state, timestamp: Date.now(), version: CONSENT_VERSION };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
   localStorage.removeItem(LEGACY_KEY);
+  recordConsentAudit(action, state, CONSENT_VERSION);
   window.dispatchEvent(new CustomEvent(CONSENT_CHANGED_EVENT, { detail: state }));
 };
 
@@ -121,6 +122,7 @@ export const clearConsent = () => {
   if (!isBrowser()) return;
   localStorage.removeItem(STORAGE_KEY);
   localStorage.removeItem(LEGACY_KEY);
+  recordConsentAudit("reset", { ...ALL_DENIED }, CONSENT_VERSION);
   window.dispatchEvent(new CustomEvent(CONSENT_CHANGED_EVENT, { detail: { ...ALL_DENIED } }));
 };
 
