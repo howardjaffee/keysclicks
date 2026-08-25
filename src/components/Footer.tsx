@@ -14,6 +14,7 @@ const quickLinks = [
   { label: "Affiliate Disclosure", to: "/affiliate-disclosure" },
   { label: "Free Support Promise", to: "/support-promise" },
   { label: "Returns & Refunds", to: "/returns" },
+  { label: "Cookie Policy", to: "/cookies" },
   { label: "FAQ", to: "/faq" },
 ];
 
@@ -143,6 +144,7 @@ export const Footer = () => {
           <p>© {new Date().getFullYear()} Keys &amp; Clicks. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/privacy" className="hover:text-primary-glow">Privacy Policy</Link>
+            <Link to="/cookies" className="hover:text-primary-glow">Cookie Policy</Link>
             <Link to="/terms" className="hover:text-primary-glow">Terms &amp; Conditions</Link>
             <Link to="/returns" className="hover:text-primary-glow">Returns</Link>
             <Link to="/affiliate-disclosure" className="hover:text-primary-glow">Affiliate Disclosure</Link>

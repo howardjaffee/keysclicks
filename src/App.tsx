@@ -23,6 +23,8 @@ import HotDeals from "./pages/HotDeals";
 import Reviews from "./pages/Reviews";
 import AffiliateDisclosure from "./pages/AffiliateDisclosure";
 import SupportPromisePage from "./pages/SupportPromisePage";
+import Cookies from "./pages/Cookies";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +47,7 @@ const App = () => (
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/cookies" element={<Cookies />} />
             <Route path="/returns" element={<Returns />} />
             <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
             <Route path="/support-promise" element={<SupportPromisePage />} />
@@ -55,6 +58,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <CookieConsent />
         </BrowserRouter>
       </TooltipProvider>
     </AuthProvider>
