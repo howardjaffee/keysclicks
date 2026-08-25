@@ -82,6 +82,10 @@ export const Header = () => {
             <Link to="/terms" className="hidden md:inline hover:text-primary-glow transition-colors">
               Terms of Service
             </Link>
+            <Link to="/cookies" className="hidden md:inline hover:text-primary-glow transition-colors">
+              Cookie Policy
+            </Link>
+
           </span>
         </div>
       </div>
@@ -223,6 +227,10 @@ export const Header = () => {
                 <Button variant="ghost" size="sm" asChild onClick={() => setMobileOpen(false)}>
                   <Link to="/terms">Terms of Service</Link>
                 </Button>
+                <Button variant="ghost" size="sm" asChild onClick={() => setMobileOpen(false)}>
+                  <Link to="/cookies">Cookie Policy</Link>
+                </Button>
+
               </div>
             </div>
           )}
