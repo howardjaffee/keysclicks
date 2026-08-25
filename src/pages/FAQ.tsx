@@ -96,6 +96,10 @@ export default function FAQ() {
         description="Answers about buying antivirus, Windows keys, QuickBooks, printers and routers through our Amazon affiliate links — pricing, returns and free setup help."
         path="/faq"
         jsonLd={faqJsonLd}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ]}
       />
       <Header />
 

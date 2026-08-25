@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Seo } from "@/components/Seo";
 
 // Sample product data - in a real app, this would come from an API
 const sampleProducts = {
@@ -98,6 +99,16 @@ export const ProductDetail = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo
+        title={`${product.name} | Keys & Clicks`}
+        description={product.description}
+        path={`/product/${product.id}`}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: product.category, path: `/${product.category.toLowerCase()}` },
+          { name: product.name, path: `/product/${product.id}` },
+        ]}
+      />
       <Header />
       
       <main className="py-8">

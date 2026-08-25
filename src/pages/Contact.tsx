@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 export const Contact = () => {
   return (
     <div className="min-h-screen">
-      <Seo title={"Contact Keys & Clicks — Free Setup Support"} description={"Need help with a product key, install or licence transfer? Reach our support team by phone or email at no cost."} path="/contact" />
+      <Seo title={"Contact Keys & Clicks — Free Setup Support"} description={"Need help with a product key, install or licence transfer? Reach our support team by phone or email at no cost."} path="/contact" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Contact Us", path: "/contact" }]} />
       <Header />
       
       <main className="py-16">

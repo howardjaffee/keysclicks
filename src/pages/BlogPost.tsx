@@ -94,6 +94,11 @@ const BlogPost = () => {
           author: { "@type": "Organization", name: post.author },
           publisher: { "@type": "Organization", name: "Keys & Clicks" },
         }}
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
       />
       <Header />
 

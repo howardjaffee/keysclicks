@@ -133,7 +133,7 @@ const Printers = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo title={"Best Printers & Scanners for Home and Office | Keys & Clicks"} description={"Hand-picked printers and scanners with real specs, prices and setup guidance — plus free installation help on every pick."} path="/printers" />
+      <Seo title={"Best Printers & Scanners for Home and Office | Keys & Clicks"} description={"Hand-picked printers and scanners with real specs, prices and setup guidance — plus free installation help on every pick."} path="/printers" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Printers & Scanners", path: "/printers" }]} />
       <Header />
 
       {/* Hero Section */}

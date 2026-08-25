@@ -12,6 +12,10 @@ export const Privacy = () => {
         title="Privacy Policy | Keys & Clicks"
         description="How Keys & Clicks collects, uses and protects your data, including cookies, analytics and Amazon affiliate tracking."
         path="/privacy"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy" },
+        ]}
       />
       {/* Header */}
       <div className="border-b bg-card">
