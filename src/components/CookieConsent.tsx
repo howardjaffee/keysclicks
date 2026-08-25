@@ -46,8 +46,8 @@ export const CookieConsent = () => {
     return () => window.removeEventListener(CONSENT_OPEN_EVENT, open);
   }, [syncBanner]);
 
-  const commit = (state: ConsentState) => {
-    saveConsent(state);
+  const commit = (state: ConsentState, action: "accept_all" | "reject_all" | "save_preferences" = "save_preferences") => {
+    saveConsent(state, action);
     setDraft(state);
     setBannerVisible(false);
     setPrefsOpen(false);
@@ -96,14 +96,14 @@ export const CookieConsent = () => {
                 variant="outline"
                 size="sm"
                 className="flex-1 rounded-full md:flex-none"
-                onClick={() => commit({ ...ALL_DENIED })}
+                onClick={() => commit({ ...ALL_DENIED }, "reject_all")}
               >
                 Reject non-essential
               </Button>
               <Button
                 size="sm"
                 className="flex-1 rounded-full md:flex-none"
-                onClick={() => commit({ ...ALL_GRANTED })}
+                onClick={() => commit({ ...ALL_GRANTED }, "accept_all")}
               >
                 Accept all
               </Button>
@@ -112,7 +112,7 @@ export const CookieConsent = () => {
                 size="icon"
                 className="shrink-0"
                 aria-label="Dismiss cookie banner and reject non-essential cookies"
-                onClick={() => commit({ ...ALL_DENIED })}
+                onClick={() => commit({ ...ALL_DENIED }, "reject_all")}
               >
                 <X aria-hidden="true" className="h-4 w-4" />
               </Button>
@@ -161,14 +161,14 @@ export const CookieConsent = () => {
           </div>
 
           <DialogFooter className="gap-2 sm:justify-between">
-            <Button variant="outline" className="rounded-full" onClick={() => commit({ ...ALL_DENIED })}>
+            <Button variant="outline" className="rounded-full" onClick={() => commit({ ...ALL_DENIED }, "reject_all")}>
               Reject all
             </Button>
             <div className="flex gap-2">
-              <Button variant="secondary" className="rounded-full" onClick={() => commit({ ...ALL_GRANTED })}>
+              <Button variant="secondary" className="rounded-full" onClick={() => commit({ ...ALL_GRANTED }, "accept_all")}>
                 Accept all
               </Button>
-              <Button className="rounded-full" onClick={() => commit(draft)}>
+              <Button className="rounded-full" onClick={() => commit(draft, "save_preferences")}>
                 Save choices
               </Button>
             </div>
