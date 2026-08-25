@@ -2,7 +2,7 @@ import { Seo } from "@/components/Seo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { resetCookieConsent } from "@/components/CookieConsent";
+import { openCookiePreferences, CONSENT_EXPIRY_DAYS } from "@/lib/consent";
 
 const cookieTypes = [
   {
@@ -115,12 +115,14 @@ const Cookies = () => (
       <div className="mt-10 rounded-xl border bg-card p-6">
         <h2 className="text-lg font-semibold">Change your cookie preferences</h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          Reopen the consent banner to accept or reject non-essential cookies.
+          Turn analytics, marketing and affiliate cookies on or off individually at any time. Your choice is
+          stored for {CONSENT_EXPIRY_DAYS} days, after which we ask you again to keep consent current.
         </p>
-        <Button className="mt-4 rounded-full" onClick={resetCookieConsent}>
-          Update cookie preferences
+        <Button className="mt-4 rounded-full" onClick={openCookiePreferences}>
+          Manage cookie preferences
         </Button>
       </div>
+
     </main>
     <Footer />
   </div>
