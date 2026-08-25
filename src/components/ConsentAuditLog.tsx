@@ -140,11 +140,12 @@ export const ConsentAuditLog = () => {
   const downloadCsv = () => {
     const cell = (v: string) => `"${v.replace(/"/g, '""')}"`;
     const rows = [
-      ["Date & time (ISO)", "Date & time (local)", "Action", "Analytics", "Marketing", "Affiliate"],
+      ["Date & time (ISO)", "Date & time (local)", "Action", "Action type", "Analytics", "Marketing", "Affiliate"],
       ...filtered.map((e) => [
         e.at,
         new Date(e.at).toLocaleString(),
         ACTION_LABEL[e.action] ?? e.action,
+        ACTION_GROUP[e.action],
         yesNo(e.categories.analytics),
         yesNo(e.categories.marketing),
         yesNo(e.categories.affiliate),
