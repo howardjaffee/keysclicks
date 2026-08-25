@@ -35,6 +35,10 @@ const AffiliateDisclosure = () => (
       title="Affiliate Disclosure | Keys & Clicks"
       description="How Keys & Clicks earns money: Amazon Associates and other affiliate programs, what our links mean, and why commissions never influence our recommendations."
       path="/affiliate-disclosure"
+      breadcrumbs={[
+        { name: "Home", path: "/" },
+        { name: "Affiliate Disclosure", path: "/affiliate-disclosure" },
+      ]}
     />
     <Header />
 

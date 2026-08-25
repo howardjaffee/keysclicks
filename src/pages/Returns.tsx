@@ -4,6 +4,15 @@ import { Separator } from "@/components/ui/separator";
 export default function Returns() {
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Returns & Refunds Policy | Keys & Clicks"
+        description="How returns and refunds work for purchases made through our Amazon affiliate links — Amazon's policies apply, and we help you through the process."
+        path="/returns"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Returns & Refunds", path: "/returns" },
+        ]}
+      />
       {/* Header */}
       <header className="bg-primary text-primary-foreground py-16">
         <div className="container mx-auto px-4">

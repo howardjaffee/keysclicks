@@ -150,7 +150,7 @@ const HotDeals = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo title={"Today's Software & Tech Deals | Keys & Clicks"} description={"Live discounts on antivirus, Windows keys, QuickBooks, printers and networking gear from trusted retailers."} path="/hot-deals" />
+      <Seo title={"Today's Software & Tech Deals | Keys & Clicks"} description={"Live discounts on antivirus, Windows keys, QuickBooks, printers and networking gear from trusted retailers."} path="/hot-deals" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Hot Deals", path: "/hot-deals" }]} />
       <Header />
 
       {/* Hero Section */}

@@ -12,6 +12,10 @@ export const Terms = () => {
         title="Terms of Service | Keys & Clicks"
         description="The terms governing use of Keys & Clicks, our Amazon affiliate relationships, product information accuracy and limitation of liability."
         path="/terms"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Terms of Service", path: "/terms" },
+        ]}
       />
       {/* Header */}
       <div className="border-b bg-card">

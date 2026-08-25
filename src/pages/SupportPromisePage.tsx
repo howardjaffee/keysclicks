@@ -94,6 +94,10 @@ const SupportPromisePage = () => (
       description="Free lifetime installation and activation help on everything we recommend, plus how troubleshooting, warranty claims and retailer returns are handled."
       path="/support-promise"
       jsonLd={faqJsonLd}
+      breadcrumbs={[
+        { name: "Home", path: "/" },
+        { name: "Support Promise & Warranty", path: "/support-promise" },
+      ]}
     />
     <Header />
 

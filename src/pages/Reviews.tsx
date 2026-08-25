@@ -322,7 +322,7 @@ const Reviews = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo title={"Software & Hardware Reviews | Keys & Clicks"} description={"Independent, hands-on reviews of antivirus suites, accounting software, printers and networking gear."} path="/reviews" />
+      <Seo title={"Software & Hardware Reviews | Keys & Clicks"} description={"Independent, hands-on reviews of antivirus suites, accounting software, printers and networking gear."} path="/reviews" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Reviews", path: "/reviews" }]} />
       <Header />
 
       {/* Hero Section */}

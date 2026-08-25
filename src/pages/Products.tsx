@@ -101,7 +101,7 @@ export const Products = () => {
 
   return (
     <div className="min-h-screen">
-      <Seo title={"All Digital Products & Software | Keys & Clicks"} description={"Browse antivirus, Windows keys, QuickBooks, printers and networking gear — with free lifetime setup help."} path="/products" />
+      <Seo title={"All Digital Products & Software | Keys & Clicks"} description={"Browse antivirus, Windows keys, QuickBooks, printers and networking gear — with free lifetime setup help."} path="/products" breadcrumbs={[{ name: "Home", path: "/" }, { name: "All Products", path: "/products" }]} />
       <Header />
       
       <main className="py-16">

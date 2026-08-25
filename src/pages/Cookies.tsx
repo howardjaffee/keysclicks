@@ -38,6 +38,10 @@ const Cookies = () => (
       title="Cookie Policy | Keys & Clicks"
       description="What cookies Keys & Clicks uses for analytics, advertising and Amazon affiliate tracking, and how you can control or withdraw your consent at any time."
       path="/cookies"
+      breadcrumbs={[
+        { name: "Home", path: "/" },
+        { name: "Cookie Policy", path: "/cookies" },
+      ]}
     />
     <Header />
     <main className="container mx-auto max-w-4xl px-4 py-12">

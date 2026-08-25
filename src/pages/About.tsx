@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 export const About = () => {
   return (
     <div className="min-h-screen">
-      <Seo title={"About Keys & Clicks — Genuine Keys, Free Setup Help"} description={"We hand-pick digital software and tech from trusted retailers and help you install and activate it, free of charge."} path="/about" />
+      <Seo title={"About Keys & Clicks — Genuine Keys, Free Setup Help"} description={"We hand-pick digital software and tech from trusted retailers and help you install and activate it, free of charge."} path="/about" breadcrumbs={[{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }]} />
       <Header />
       
       <main className="py-16">

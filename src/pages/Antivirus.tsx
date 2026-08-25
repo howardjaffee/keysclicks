@@ -113,7 +113,7 @@ const Antivirus = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo title={"Best Antivirus Software 2026 — Tested Picks | Keys & Clicks"} description={"Compare Norton, Bitdefender, McAfee and Kaspersky on protection, speed and price. Genuine licences plus free installation help."} path="/antivirus" />
+      <Seo title={"Best Antivirus Software 2026 — Tested Picks | Keys & Clicks"} description={"Compare Norton, Bitdefender, McAfee and Kaspersky on protection, speed and price. Genuine licences plus free installation help."} path="/antivirus" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Antivirus & Security", path: "/antivirus" }]} />
       <Header />
 
       {/* Hero Section */}
