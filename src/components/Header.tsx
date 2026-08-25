@@ -13,6 +13,8 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import logo from "@/assets/logo-keys-clicks.png";
 import { CategoryProducts } from "./CategoryProducts";
+import { openCookiePreferences } from "@/lib/consent";
+
 
 const navLinks = [
   { label: "Antivirus", to: "/antivirus" },
@@ -238,6 +240,17 @@ export const Header = () => {
                 <Button variant="ghost" size="sm" asChild onClick={() => setMobileOpen(false)}>
                   <Link to="/cookies">Cookie Policy</Link>
                 </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    openCookiePreferences();
+                  }}
+                >
+                  Manage cookies
+                </Button>
+
 
               </div>
             </div>
