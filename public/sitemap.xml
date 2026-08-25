@@ -19,5 +19,6 @@
   <url><loc>/affiliate-disclosure</loc><priority>0.5</priority></url>
   <url><loc>/returns</loc><priority>0.4</priority></url>
   <url><loc>/privacy</loc><priority>0.4</priority></url>
+  <url><loc>/cookies</loc><priority>0.4</priority></url>
   <url><loc>/terms</loc><priority>0.4</priority></url>
 </urlset>
