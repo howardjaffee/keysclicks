@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { openCookiePreferences, CONSENT_EXPIRY_DAYS } from "@/lib/consent";
+import ConsentAuditLog from "@/components/ConsentAuditLog";
 
 const cookieTypes = [
   {
@@ -122,6 +123,8 @@ const Cookies = () => (
           Manage cookie preferences
         </Button>
       </div>
+
+      <ConsentAuditLog />
 
     </main>
     <Footer />
