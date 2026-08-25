@@ -85,6 +85,14 @@ export const Header = () => {
             <Link to="/cookies" className="hidden md:inline hover:text-primary-glow transition-colors">
               Cookie Policy
             </Link>
+            <button
+              type="button"
+              onClick={openCookiePreferences}
+              className="hidden md:inline hover:text-primary-glow transition-colors underline underline-offset-2"
+            >
+              Manage cookie preferences
+            </button>
+
 
           </span>
         </div>
