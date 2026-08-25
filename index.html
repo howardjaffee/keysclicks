@@ -11,7 +11,7 @@
     <meta property="og:title" content="Keys &amp; Clicks — Digital Software Keys &amp; Free Setup Support" />
     <meta property="og:description" content="Honest reviews and curated deals on antivirus, accounting software, Windows keys and PC gear — with free installation help for every buyer." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
+    <meta property="og:url" content="https://keysclicks.lovable.app/" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Keys &amp; Clicks — Digital Software Keys &amp; Free Setup Support" />
@@ -24,19 +24,34 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Keys & Clicks",
-        "description": "Affiliate store for digital software, antivirus and PC products with free installation and activation support.",
-        "email": "support@keysandclicks.com",
-        "telephone": "540 242 3003",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "#04 S Jones",
-          "addressLocality": "Las Vegas",
-          "addressRegion": "NV",
-          "postalCode": "89107",
-          "addressCountry": "US"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://keysclicks.lovable.app/#organization",
+            "name": "Keys & Clicks",
+            "url": "https://keysclicks.lovable.app/",
+            "logo": "https://keysclicks.lovable.app/favicon.png",
+            "description": "Affiliate store for digital software, antivirus and PC products with free installation and activation support.",
+            "email": "support@keysandclicks.com",
+            "telephone": "540 242 3003",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "#04 S Jones",
+              "addressLocality": "Las Vegas",
+              "addressRegion": "NV",
+              "postalCode": "89107",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://keysclicks.lovable.app/#website",
+            "url": "https://keysclicks.lovable.app/",
+            "name": "Keys & Clicks",
+            "inLanguage": "en-US",
+            "publisher": { "@id": "https://keysclicks.lovable.app/#organization" }
+          }
+        ]
       }
     </script>
 

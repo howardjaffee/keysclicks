@@ -333,11 +333,6 @@ const Printers = () => {
                       </a>
                     </Button>
                     
-                    <Button asChild variant="outline" className="w-full">
-                      <Link to={`/product/${printer.id}`}>
-                        Full Review
-                      </Link>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>

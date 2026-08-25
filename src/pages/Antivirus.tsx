@@ -279,11 +279,6 @@ const Antivirus = () => {
                       </a>
                     </Button>
                     
-                    <Button asChild variant="outline" className="w-full">
-                      <Link to={`/product/${product.id}`}>
-                        Full Review
-                      </Link>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
