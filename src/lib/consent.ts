@@ -3,6 +3,8 @@
  * Categories: necessary (always on), analytics, marketing, affiliate.
  */
 
+import { recordConsentAudit, type ConsentAuditAction } from "./consentAudit";
+
 export type ConsentCategory = "analytics" | "marketing" | "affiliate";
 
 export type ConsentState = Record<ConsentCategory, boolean>;
