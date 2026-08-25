@@ -51,9 +51,10 @@ const useIsComplianceAdmin = () => {
     }
     let cancelled = false;
     setIsAdmin(null);
-    supabase
-      .rpc("has_role", { _user_id: user.id, _role: "admin" } as never)
-      .then(({ data, error }) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (supabase as any)
+      .rpc("has_role", { _user_id: user.id, _role: "admin" })
+      .then(({ data, error }: { data: unknown; error: unknown }) => {
         if (!cancelled) setIsAdmin(error ? false : Boolean(data));
       });
     return () => {
