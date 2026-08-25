@@ -65,10 +65,60 @@ const pushConsentMode = (state: ConsentState, mode: "default" | "update") => {
   });
 };
 
+/** Cookie name prefixes written by Google analytics / ads tags. */
+const TRACKING_COOKIE_PREFIXES = ["_ga", "_gid", "_gat", "_gcl", "_uet", "IDE"];
+
+/** Delete tracking cookies this origin can reach. */
+const clearTrackingCookies = () => {
+  const host = window.location.hostname;
+  const domains = [host, `.${host}`, `.${host.split(".").slice(-2).join(".")}`];
+  document.cookie.split(";").forEach((raw) => {
+    const name = raw.split("=")[0]?.trim();
+    if (!name || !TRACKING_COOKIE_PREFIXES.some((p) => name.startsWith(p))) return;
+    domains.forEach((domain) => {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${domain}`;
+    });
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+  });
+};
+
+/**
+ * Immediately switch off whatever is already running for the categories the
+ * visitor just withdrew: Google's opt-out flag, cookie cleanup and a
+ * dataLayer signal so any listening tag stops collecting.
+ */
+const revokeTracking = (state: ConsentState, previous: ConsentState) => {
+  const revoked = (["analytics", "marketing", "affiliate"] as const).filter(
+    (key) => previous[key] && !state[key],
+  );
+  if (revoked.length === 0) return;
+
+  // Hard opt-out for the already-loaded Google tag.
+  if (!state.analytics && !state.marketing) {
+    (window as unknown as Record<string, boolean>)[`ga-disable-${GOOGLE_TAG_ID}`] = true;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "consent_revoked",
+    revoked_categories: revoked,
+    consent_updated_at: new Date().toISOString(),
+  });
+
+  clearTrackingCookies();
+};
+
 const applyConsent = (state: ConsentState) => {
+  const previous = current;
   current = state;
   pushConsentMode(state, "update");
-  if (state.analytics || state.marketing) loadGoogleTag();
+  revokeTracking(state, previous);
+
+  if (state.analytics || state.marketing) {
+    // Re-enable the opt-out flag if the visitor grants consent again.
+    (window as unknown as Record<string, boolean>)[`ga-disable-${GOOGLE_TAG_ID}`] = false;
+    loadGoogleTag();
+  }
 };
 
 export const hasAnalyticsConsent = () => current.analytics;
