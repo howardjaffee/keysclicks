@@ -70,14 +70,42 @@ export const ConsentAuditLog = () => {
 
   const filtersActive = Boolean(from || to || category !== "all" || status !== "any");
 
-  const download = () => {
-    const blob = new Blob([JSON.stringify(filtered, null, 2)], { type: "application/json" });
+  const saveFile = (contents: string, type: string, filename: string) => {
+    const blob = new Blob([contents], { type });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "cookie-consent-audit-log.json";
+    a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
+  };
+
+  const downloadJson = () =>
+    saveFile(
+      JSON.stringify(filtered, null, 2),
+      "application/json",
+      "cookie-consent-audit-log.json",
+    );
+
+  const downloadCsv = () => {
+    const cell = (v: string) => `"${v.replace(/"/g, '""')}"`;
+    const rows = [
+      ["Date & time (ISO)", "Date & time (local)", "Action", "Analytics", "Marketing", "Affiliate"],
+      ...filtered.map((e) => [
+        e.at,
+        new Date(e.at).toLocaleString(),
+        ACTION_LABEL[e.action] ?? e.action,
+        yesNo(e.categories.analytics),
+        yesNo(e.categories.marketing),
+        yesNo(e.categories.affiliate),
+      ]),
+    ];
+    // BOM keeps accents readable when compliance opens this in Excel.
+    saveFile(
+      `\uFEFF${rows.map((r) => r.map(cell).join(",")).join("\r\n")}`,
+      "text/csv;charset=utf-8",
+      "cookie-consent-audit-log.csv",
+    );
   };
 
   return (
