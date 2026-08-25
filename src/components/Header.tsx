@@ -82,6 +82,10 @@ export const Header = () => {
             <Link to="/terms" className="hidden md:inline hover:text-primary-glow transition-colors">
               Terms of Service
             </Link>
+            <Link to="/cookies" className="hidden md:inline hover:text-primary-glow transition-colors">
+              Cookie Policy
+            </Link>
+
           </span>
         </div>
       </div>

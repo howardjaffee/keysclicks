@@ -35,37 +35,55 @@ export const CookieConsent = () => {
   return (
     <div
       role="dialog"
-      aria-label="Cookie consent"
+      aria-modal="false"
+      aria-labelledby="cookie-consent-title"
+      aria-describedby="cookie-consent-desc"
       className="fixed inset-x-0 bottom-0 z-[60] border-t bg-card/95 backdrop-blur-md shadow-lg"
     >
       <div className="container mx-auto flex flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-start gap-3">
-          <Cookie className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-          <p className="text-sm text-muted-foreground">
-            We use cookies to run this site, measure how our guides perform and track Amazon affiliate
-            referrals. Non-essential cookies are only set with your consent.{" "}
-            <Link to="/cookies" className="font-semibold text-primary underline underline-offset-4">
-              Cookie Policy
-            </Link>
-          </p>
+          <Cookie aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+          <div>
+            <h2 id="cookie-consent-title" className="text-sm font-semibold">
+              We value your privacy
+            </h2>
+            <p id="cookie-consent-desc" className="mt-1 text-sm text-muted-foreground">
+              We use cookies to run this site, measure how our guides perform and track Amazon affiliate
+              referrals. Non-essential cookies are only set with your consent.{" "}
+              <Link to="/cookies" className="font-semibold text-primary underline underline-offset-4">
+                Cookie Policy
+              </Link>
+            </p>
+          </div>
         </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <Button variant="outline" size="sm" className="rounded-full" onClick={() => decide("rejected")}>
+        <div className="flex w-full shrink-0 flex-wrap items-center gap-2 md:w-auto md:flex-nowrap">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex-1 rounded-full md:flex-none"
+            onClick={() => decide("rejected")}
+          >
             Reject non-essential
           </Button>
-          <Button size="sm" className="rounded-full" onClick={() => decide("accepted")}>
+          <Button
+            size="sm"
+            className="flex-1 rounded-full md:flex-none"
+            onClick={() => decide("accepted")}
+          >
             Accept all
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            aria-label="Dismiss cookie banner"
+            className="shrink-0"
+            aria-label="Dismiss cookie banner and reject non-essential cookies"
             onClick={() => decide("rejected")}
           >
-            <X className="h-4 w-4" />
+            <X aria-hidden="true" className="h-4 w-4" />
           </Button>
         </div>
       </div>
     </div>
   );
 };
+
