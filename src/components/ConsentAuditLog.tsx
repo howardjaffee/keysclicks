@@ -1,6 +1,18 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Download, FileSpreadsheet, History, Lock, ShieldAlert, Trash2 } from "lucide-react";
+import {
+  ArrowDownWideNarrow,
+  ArrowUpNarrowWide,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+  FileSpreadsheet,
+  History,
+  Lock,
+  ShieldAlert,
+  Trash2,
+  UserCog,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,21 +25,20 @@ import {
 } from "@/components/ui/select";
 import {
   ACTION_LABEL,
-  clearAuditLog,
   onAuditChange,
-  readAuditLog,
   type ConsentAuditAction,
-  type ConsentAuditEntry,
 } from "@/lib/consentAudit";
 import type { ConsentCategory } from "@/lib/consent";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 
 const yesNo = (v: boolean) => (v ? "Allowed" : "Blocked");
+const PAGE_SIZE = 25;
 
 type CategoryFilter = "all" | ConsentCategory;
 type StatusFilter = "any" | "allowed" | "blocked";
 type ActionFilter = "all" | "granted" | "revoked" | "updated";
+type SortColumn = "created_at" | "action";
 
 /** High-level grouping of audit actions for compliance review. */
 const ACTION_GROUP: Record<ConsentAuditAction, Exclude<ActionFilter, "all">> = {
@@ -37,6 +48,22 @@ const ACTION_GROUP: Record<ConsentAuditAction, Exclude<ActionFilter, "all">> = {
   save_preferences: "updated",
   expired_reprompt: "updated",
 };
+
+const GROUP_ACTIONS: Record<Exclude<ActionFilter, "all">, ConsentAuditAction[]> = {
+  granted: ["accept_all"],
+  updated: ["save_preferences", "expired_reprompt"],
+  revoked: ["reject_all", "reset"],
+};
+
+interface AuditRow {
+  id: string;
+  created_at: string;
+  action: ConsentAuditAction;
+  analytics_allowed: boolean;
+  marketing_allowed: boolean;
+  affiliate_allowed: boolean;
+  path: string | null;
+}
 
 /** Resolve whether the signed-in user holds the admin (compliance) role. */
 const useIsComplianceAdmin = () => {
@@ -65,51 +92,78 @@ const useIsComplianceAdmin = () => {
   return { isAdmin, loading: loading || isAdmin === null, signedIn: Boolean(user) };
 };
 
-/** Compliance view of every cookie decision made on this device. Admin-only. */
+/** Compliance view of every recorded cookie decision. Admin-only, server-paginated. */
 export const ConsentAuditLog = () => {
   const { isAdmin, loading: adminLoading, signedIn } = useIsComplianceAdmin();
-  const [entries, setEntries] = useState<ConsentAuditEntry[]>([]);
+  const [rows, setRows] = useState<AuditRow[]>([]);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [sortColumn, setSortColumn] = useState<SortColumn>("created_at");
+  const [sortAsc, setSortAsc] = useState(false);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [category, setCategory] = useState<CategoryFilter>("all");
   const [status, setStatus] = useState<StatusFilter>("any");
   const [action, setAction] = useState<ActionFilter>("all");
 
+  const buildQuery = useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let q = (supabase as any)
+      .from("cookie_consent_audit")
+      .select("id, created_at, action, analytics_allowed, marketing_allowed, affiliate_allowed, path", {
+        count: "exact",
+      });
+    if (from) q = q.gte("created_at", new Date(`${from}T00:00:00`).toISOString());
+    if (to) q = q.lte("created_at", new Date(`${to}T23:59:59.999`).toISOString());
+    if (action !== "all") q = q.in("action", GROUP_ACTIONS[action]);
+    if (category !== "all") {
+      const col = `${category}_allowed`;
+      if (status === "allowed") q = q.eq(col, true);
+      else if (status === "blocked") q = q.eq(col, false);
+    } else if (status !== "any") {
+      const allowed = status === "allowed";
+      q = q
+        .eq("analytics_allowed", allowed)
+        .eq("marketing_allowed", allowed)
+        .eq("affiliate_allowed", allowed);
+    }
+    return q;
+  }, [from, to, action, category, status]);
+
+  const load = useCallback(
+    (pageIndex: number) => {
+      if (!isAdmin) return;
+      setLoading(true);
+      buildQuery()
+        .order(sortColumn, { ascending: sortAsc })
+        .order("id", { ascending: sortAsc })
+        .range(pageIndex * PAGE_SIZE, pageIndex * PAGE_SIZE + PAGE_SIZE - 1)
+        .then(({ data, count, error }: { data: AuditRow[] | null; count: number | null; error: unknown }) => {
+          if (!error) {
+            setRows(data ?? []);
+            setTotal(count ?? 0);
+          }
+          setLoading(false);
+        });
+    },
+    [isAdmin, buildQuery, sortColumn, sortAsc],
+  );
+
   useEffect(() => {
-    // Only read the device log once the admin check has passed.
+    load(page);
+  }, [load, page]);
+
+  // Refetch when a new consent decision is recorded.
+  useEffect(() => {
     if (!isAdmin) return;
-    setEntries(readAuditLog());
-    return onAuditChange(setEntries);
-  }, [isAdmin]);
+    return onAuditChange(() => load(0));
+  }, [isAdmin, load]);
 
+  // Reset to first page whenever filters or sorting change.
   useEffect(() => {
-    setEntries(readAuditLog());
-    return onAuditChange(setEntries);
-  }, []);
-
-  const filtered = useMemo(() => {
-    const fromTime = from ? new Date(`${from}T00:00:00`).getTime() : null;
-    const toTime = to ? new Date(`${to}T23:59:59.999`).getTime() : null;
-
-    return entries.filter((entry) => {
-      const at = new Date(entry.at).getTime();
-      if (fromTime !== null && at < fromTime) return false;
-      if (toTime !== null && at > toTime) return false;
-      if (category === "all") {
-        if (status === "allowed") {
-          return entry.categories.analytics || entry.categories.marketing || entry.categories.affiliate;
-        }
-        if (status === "blocked") {
-          return !entry.categories.analytics || !entry.categories.marketing || !entry.categories.affiliate;
-        }
-        return true;
-      }
-      const allowed = entry.categories[category];
-      if (status === "allowed") return allowed;
-      if (status === "blocked") return !allowed;
-      return true;
-    }).filter((entry) => action === "all" || ACTION_GROUP[entry.action] === action);
-  }, [entries, from, to, category, status, action]);
+    setPage(0);
+  }, [from, to, category, status, action, sortColumn, sortAsc]);
 
   const resetFilters = () => {
     setFrom("");
@@ -120,6 +174,7 @@ export const ConsentAuditLog = () => {
   };
 
   const filtersActive = Boolean(from || to || category !== "all" || status !== "any" || action !== "all");
+  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
   const saveFile = (contents: string, type: string, filename: string) => {
     const blob = new Blob([contents], { type });
@@ -131,33 +186,58 @@ export const ConsentAuditLog = () => {
     URL.revokeObjectURL(url);
   };
 
-  const downloadJson = () =>
-    saveFile(
-      JSON.stringify(filtered, null, 2),
-      "application/json",
-      "cookie-consent-audit-log.json",
-    );
+  /** Fetch every row matching the current filters (paged server-side). */
+  const fetchAllFiltered = async (): Promise<AuditRow[]> => {
+    const out: AuditRow[] = [];
+    const CHUNK = 1000;
+    for (let offset = 0; ; offset += CHUNK) {
+      const { data, error } = await buildQuery()
+        .order(sortColumn, { ascending: sortAsc })
+        .range(offset, offset + CHUNK - 1);
+      if (error || !data) break;
+      out.push(...(data as AuditRow[]));
+      if (data.length < CHUNK) break;
+    }
+    return out;
+  };
 
-  const downloadCsv = () => {
+  const downloadJson = async () => {
+    const all = await fetchAllFiltered();
+    saveFile(JSON.stringify(all, null, 2), "application/json", "cookie-consent-audit-log.json");
+  };
+
+  const downloadCsv = async () => {
+    const all = await fetchAllFiltered();
     const cell = (v: string) => `"${v.replace(/"/g, '""')}"`;
-    const rows = [
-      ["Date & time (ISO)", "Date & time (local)", "Action", "Action type", "Analytics", "Marketing", "Affiliate"],
-      ...filtered.map((e) => [
-        e.at,
-        new Date(e.at).toLocaleString(),
+    const csvRows = [
+      ["Date & time (ISO)", "Date & time (local)", "Action", "Action type", "Analytics", "Marketing", "Affiliate", "Page"],
+      ...all.map((e) => [
+        e.created_at,
+        new Date(e.created_at).toLocaleString(),
         ACTION_LABEL[e.action] ?? e.action,
-        ACTION_GROUP[e.action],
-        yesNo(e.categories.analytics),
-        yesNo(e.categories.marketing),
-        yesNo(e.categories.affiliate),
+        ACTION_GROUP[e.action] ?? "",
+        yesNo(e.analytics_allowed),
+        yesNo(e.marketing_allowed),
+        yesNo(e.affiliate_allowed),
+        e.path ?? "",
       ]),
     ];
     // BOM keeps accents readable when compliance opens this in Excel.
     saveFile(
-      `\uFEFF${rows.map((r) => r.map(cell).join(",")).join("\r\n")}`,
+      `\uFEFF${csvRows.map((r) => r.map(cell).join(",")).join("\r\n")}`,
       "text/csv;charset=utf-8",
       "cookie-consent-audit-log.csv",
     );
+  };
+
+  const clearLog = () => {
+    if (!window.confirm("Permanently delete the entire consent audit log? This cannot be undone.")) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (supabase as any)
+      .from("cookie_consent_audit")
+      .delete()
+      .neq("id", "00000000-0000-0000-0000-000000000000")
+      .then(() => load(0));
   };
 
   if (adminLoading) {
@@ -208,11 +288,17 @@ export const ConsentAuditLog = () => {
           Consent audit log
         </h2>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" className="rounded-full" onClick={downloadCsv} disabled={!filtered.length}>
+          <Button asChild variant="outline" size="sm" className="rounded-full">
+            <Link to="/admin/roles">
+              <UserCog aria-hidden="true" className="mr-1.5 h-4 w-4" />
+              Manage admins
+            </Link>
+          </Button>
+          <Button variant="outline" size="sm" className="rounded-full" onClick={downloadCsv} disabled={!total}>
             <FileSpreadsheet aria-hidden="true" className="mr-1.5 h-4 w-4" />
             Export CSV
           </Button>
-          <Button variant="outline" size="sm" className="rounded-full" onClick={downloadJson} disabled={!filtered.length}>
+          <Button variant="outline" size="sm" className="rounded-full" onClick={downloadJson} disabled={!total}>
             <Download aria-hidden="true" className="mr-1.5 h-4 w-4" />
             Export JSON
           </Button>
@@ -220,8 +306,8 @@ export const ConsentAuditLog = () => {
             variant="ghost"
             size="sm"
             className="rounded-full"
-            onClick={clearAuditLog}
-            disabled={!entries.length}
+            onClick={clearLog}
+            disabled={!total}
           >
             <Trash2 aria-hidden="true" className="mr-1.5 h-4 w-4" />
             Clear
@@ -229,11 +315,11 @@ export const ConsentAuditLog = () => {
         </div>
       </div>
       <p className="mt-1 text-sm text-muted-foreground">
-        Each cookie choice you make is recorded with a timestamp so it can be reviewed for compliance. This
-        record stays on your device and is never sent to our servers.
+        Every cookie choice is recorded with a timestamp for compliance review. Records are stored
+        securely and are only visible to authorized compliance accounts.
       </p>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
         <div className="space-y-1.5">
           <Label htmlFor="audit-from" className="text-xs font-semibold uppercase tracking-wide">From date</Label>
           <Input id="audit-from" type="date" value={from} max={to || undefined} onChange={(e) => setFrom(e.target.value)} />
@@ -283,11 +369,39 @@ export const ConsentAuditLog = () => {
             </SelectContent>
           </Select>
         </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="audit-sort" className="text-xs font-semibold uppercase tracking-wide">Sort by</Label>
+          <div className="flex gap-1.5">
+            <Select value={sortColumn} onValueChange={(v) => setSortColumn(v as SortColumn)}>
+              <SelectTrigger id="audit-sort" aria-label="Sort column">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="created_at">Date &amp; time</SelectItem>
+                <SelectItem value="action">Action</SelectItem>
+              </SelectContent>
+            </Select>
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label={sortAsc ? "Sort descending" : "Sort ascending"}
+              onClick={() => setSortAsc((v) => !v)}
+            >
+              {sortAsc ? (
+                <ArrowUpNarrowWide aria-hidden="true" className="h-4 w-4" />
+              ) : (
+                <ArrowDownWideNarrow aria-hidden="true" className="h-4 w-4" />
+              )}
+            </Button>
+          </div>
+        </div>
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
         <span aria-live="polite">
-          Showing {filtered.length} of {entries.length} recorded {entries.length === 1 ? "decision" : "decisions"}
+          {loading
+            ? "Loading…"
+            : `Showing ${rows.length ? page * PAGE_SIZE + 1 : 0}–${page * PAGE_SIZE + rows.length} of ${total} recorded ${total === 1 ? "decision" : "decisions"}`}
         </span>
         {filtersActive && (
           <Button variant="link" size="sm" className="h-auto p-0" onClick={resetFilters}>
@@ -296,10 +410,10 @@ export const ConsentAuditLog = () => {
         )}
       </div>
 
-      {entries.length === 0 ? (
-        <p className="mt-4 text-sm text-muted-foreground">No consent decisions recorded on this device yet.</p>
-      ) : filtered.length === 0 ? (
-        <p className="mt-4 text-sm text-muted-foreground">No decisions match these filters.</p>
+      {total === 0 && !loading ? (
+        <p className="mt-4 text-sm text-muted-foreground">
+          {filtersActive ? "No decisions match these filters." : "No consent decisions recorded yet."}
+        </p>
       ) : (
         <div className="mt-4 overflow-x-auto">
           <table className="w-full min-w-[560px] text-left text-sm">
@@ -313,22 +427,50 @@ export const ConsentAuditLog = () => {
               </tr>
             </thead>
             <tbody className="divide-y">
-              {filtered.map((entry) => (
+              {rows.map((entry) => (
                 <tr key={entry.id}>
                   <td className="py-2 pr-4 align-top text-muted-foreground">
-                    {new Date(entry.at).toLocaleString()}
+                    {new Date(entry.created_at).toLocaleString()}
                   </td>
                   <td className="py-2 pr-4 align-top font-medium text-foreground">
                     {ACTION_LABEL[entry.action] ?? entry.action}
                   </td>
-                  <td className="py-2 pr-4 align-top">{yesNo(entry.categories.analytics)}</td>
-                  <td className="py-2 pr-4 align-top">{yesNo(entry.categories.marketing)}</td>
-                  <td className="py-2 align-top">{yesNo(entry.categories.affiliate)}</td>
+                  <td className="py-2 pr-4 align-top">{yesNo(entry.analytics_allowed)}</td>
+                  <td className="py-2 pr-4 align-top">{yesNo(entry.marketing_allowed)}</td>
+                  <td className="py-2 align-top">{yesNo(entry.affiliate_allowed)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+      )}
+
+      {pageCount > 1 && (
+        <nav aria-label="Audit log pages" className="mt-4 flex items-center justify-between gap-3">
+          <Button
+            variant="outline"
+            size="sm"
+            className="rounded-full"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={page === 0 || loading}
+          >
+            <ChevronLeft aria-hidden="true" className="mr-1 h-4 w-4" />
+            Previous
+          </Button>
+          <span className="text-sm text-muted-foreground" aria-live="polite">
+            Page {page + 1} of {pageCount}
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            className="rounded-full"
+            onClick={() => setPage((p) => Math.min(pageCount - 1, p + 1))}
+            disabled={page >= pageCount - 1 || loading}
+          >
+            Next
+            <ChevronRight aria-hidden="true" className="ml-1 h-4 w-4" />
+          </Button>
+        </nav>
       )}
     </div>
   );

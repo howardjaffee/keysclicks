@@ -1,12 +1,13 @@
 /**
- * Internal cookie-consent audit log.
+ * Cookie-consent audit log — server-side.
  *
  * Every consent decision (banner accept/reject, per-category change in the
- * preferences modal, reset) is appended locally with a timestamp so the choice
- * history can be reviewed for compliance purposes. Stored on the visitor's
- * device only — no personal data leaves the browser.
+ * preferences modal, reset) is recorded in the `cookie_consent_audit` table
+ * with a timestamp so the choice history can be reviewed for compliance.
+ * A lightweight local mirror is kept so the UI can react instantly to changes.
  */
 
+import { supabase } from "@/integrations/supabase/client";
 import type { ConsentState } from "./consent";
 
 export type ConsentAuditAction =
@@ -28,68 +29,36 @@ export interface ConsentAuditEntry {
   version: number;
 }
 
-export const AUDIT_KEY = "kc-cookie-consent-audit-v1";
 export const AUDIT_EVENT = "kc-cookie-consent-audit-changed";
-/** Keep the log bounded so localStorage never grows unchecked. */
-export const AUDIT_MAX_ENTRIES = 100;
 
 const isBrowser = () => typeof window !== "undefined";
-
-const newId = () => {
-  try {
-    return crypto.randomUUID();
-  } catch {
-    return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
-  }
-};
-
-export const readAuditLog = (): ConsentAuditEntry[] => {
-  if (!isBrowser()) return [];
-  try {
-    const raw = localStorage.getItem(AUDIT_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as ConsentAuditEntry[]) : [];
-  } catch {
-    return [];
-  }
-};
 
 export const recordConsentAudit = (
   action: ConsentAuditAction,
   categories: ConsentState,
   version: number,
-): ConsentAuditEntry | null => {
-  if (!isBrowser()) return null;
-  const entry: ConsentAuditEntry = {
-    id: newId(),
-    at: new Date().toISOString(),
+): void => {
+  if (!isBrowser()) return;
+  const row = {
     action,
-    categories: { ...categories },
+    analytics_allowed: categories.analytics,
+    marketing_allowed: categories.marketing,
+    affiliate_allowed: categories.affiliate,
     path: window.location.pathname,
-    userAgent: navigator.userAgent,
+    user_agent: navigator.userAgent,
     version,
   };
-  try {
-    const next = [entry, ...readAuditLog()].slice(0, AUDIT_MAX_ENTRIES);
-    localStorage.setItem(AUDIT_KEY, JSON.stringify(next));
-    window.dispatchEvent(new CustomEvent(AUDIT_EVENT, { detail: next }));
-  } catch {
-    /* storage unavailable — audit is best effort */
-  }
-  return entry;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  void (supabase as any)
+    .from("cookie_consent_audit")
+    .insert(row)
+    .then(() => {
+      window.dispatchEvent(new CustomEvent(AUDIT_EVENT));
+    });
 };
 
-export const clearAuditLog = () => {
-  if (!isBrowser()) return;
-  localStorage.removeItem(AUDIT_KEY);
-  window.dispatchEvent(new CustomEvent(AUDIT_EVENT, { detail: [] }));
-};
-
-export const exportAuditLog = () => JSON.stringify(readAuditLog(), null, 2);
-
-export const onAuditChange = (handler: (entries: ConsentAuditEntry[]) => void) => {
-  const listener = (e: Event) => handler((e as CustomEvent<ConsentAuditEntry[]>).detail ?? readAuditLog());
+export const onAuditChange = (handler: () => void) => {
+  const listener = () => handler();
   window.addEventListener(AUDIT_EVENT, listener);
   return () => window.removeEventListener(AUDIT_EVENT, listener);
 };

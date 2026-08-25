@@ -24,6 +24,7 @@ import Reviews from "./pages/Reviews";
 import AffiliateDisclosure from "./pages/AffiliateDisclosure";
 import SupportPromisePage from "./pages/SupportPromisePage";
 import Cookies from "./pages/Cookies";
+import AdminRoles from "./pages/AdminRoles";
 import { CookieConsent } from "@/components/CookieConsent";
 import { TrackingStatusIndicator } from "@/components/TrackingStatusIndicator";
 
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/cookies" element={<Cookies />} />
+            <Route path="/admin/roles" element={<AdminRoles />} />
             <Route path="/returns" element={<Returns />} />
             <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
             <Route path="/support-promise" element={<SupportPromisePage />} />
