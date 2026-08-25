@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { Download, FileSpreadsheet, History, Trash2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Download, FileSpreadsheet, History, Lock, ShieldAlert, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,22 +16,70 @@ import {
   clearAuditLog,
   onAuditChange,
   readAuditLog,
+  type ConsentAuditAction,
   type ConsentAuditEntry,
 } from "@/lib/consentAudit";
 import type { ConsentCategory } from "@/lib/consent";
+import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 
 const yesNo = (v: boolean) => (v ? "Allowed" : "Blocked");
 
 type CategoryFilter = "all" | ConsentCategory;
 type StatusFilter = "any" | "allowed" | "blocked";
+type ActionFilter = "all" | "granted" | "revoked" | "updated";
 
-/** Compliance view of every cookie decision made on this device. */
+/** High-level grouping of audit actions for compliance review. */
+const ACTION_GROUP: Record<ConsentAuditAction, Exclude<ActionFilter, "all">> = {
+  accept_all: "granted",
+  reject_all: "revoked",
+  reset: "revoked",
+  save_preferences: "updated",
+  expired_reprompt: "updated",
+};
+
+/** Resolve whether the signed-in user holds the admin (compliance) role. */
+const useIsComplianceAdmin = () => {
+  const { user, loading } = useAuth();
+  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) {
+      setIsAdmin(false);
+      return;
+    }
+    let cancelled = false;
+    setIsAdmin(null);
+    supabase
+      .rpc("has_role", { _user_id: user.id, _role: "admin" } as never)
+      .then(({ data, error }) => {
+        if (!cancelled) setIsAdmin(error ? false : Boolean(data));
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [user, loading]);
+
+  return { isAdmin, loading: loading || isAdmin === null, signedIn: Boolean(user) };
+};
+
+/** Compliance view of every cookie decision made on this device. Admin-only. */
 export const ConsentAuditLog = () => {
+  const { isAdmin, loading: adminLoading, signedIn } = useIsComplianceAdmin();
   const [entries, setEntries] = useState<ConsentAuditEntry[]>([]);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [category, setCategory] = useState<CategoryFilter>("all");
   const [status, setStatus] = useState<StatusFilter>("any");
+  const [action, setAction] = useState<ActionFilter>("all");
+
+  useEffect(() => {
+    // Only read the device log once the admin check has passed.
+    if (!isAdmin) return;
+    setEntries(readAuditLog());
+    return onAuditChange(setEntries);
+  }, [isAdmin]);
 
   useEffect(() => {
     setEntries(readAuditLog());
