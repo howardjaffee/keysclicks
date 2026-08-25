@@ -5,6 +5,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Shield, Headphones, BadgeCheck, Clock } from "lucide-react";
 import logo from "@/assets/logo-keys-clicks.png";
+import { openCookiePreferences } from "@/lib/consent";
+
 
 const quickLinks = [
   { label: "About Us", to: "/about" },
@@ -149,6 +151,10 @@ export const Footer = () => {
             <Link to="/returns" className="hover:text-primary-glow">Returns</Link>
             <Link to="/affiliate-disclosure" className="hover:text-primary-glow">Affiliate Disclosure</Link>
             <Link to="/support-promise" className="hover:text-primary-glow">Support Promise</Link>
+            <button type="button" onClick={openCookiePreferences} className="underline underline-offset-2 hover:text-primary-glow">
+              Manage cookie preferences
+            </button>
+
           </div>
         </div>
       </div>

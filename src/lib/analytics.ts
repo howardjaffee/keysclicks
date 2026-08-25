@@ -1,13 +1,12 @@
 /**
- * Consent-gated analytics / advertising loader.
- * No Google tag, conversion tag or affiliate tracking script is injected
- * until the visitor accepts non-essential cookies in the consent banner.
+ * Category-gated analytics / advertising loader.
+ * No Google tag, conversion tag or affiliate tracking script runs until the
+ * visitor grants the matching cookie category in the consent modal.
  */
 
+import { getConsent, onConsentChange, type ConsentState } from "./consent";
+
 const GOOGLE_TAG_ID = "AW-16504739130";
-const STORAGE_KEY = "kc-cookie-consent";
-const ACCEPTED_EVENT = "kc-cookie-consent-accepted";
-const RESET_EVENT = "kc-cookie-consent-reset";
 
 declare global {
   interface Window {
@@ -16,7 +15,8 @@ declare global {
   }
 }
 
-let loaded = false;
+let tagLoaded = false;
+let current: ConsentState = { analytics: false, marketing: false, affiliate: false };
 
 const gtag = (...args: unknown[]) => {
   window.dataLayer = window.dataLayer || [];
@@ -24,8 +24,8 @@ const gtag = (...args: unknown[]) => {
 };
 
 const loadGoogleTag = () => {
-  if (loaded) return;
-  loaded = true;
+  if (tagLoaded) return;
+  tagLoaded = true;
 
   const script = document.createElement("script");
   script.async = true;
@@ -34,27 +34,37 @@ const loadGoogleTag = () => {
 
   window.gtag = gtag;
   gtag("js", new Date());
-  gtag("consent", "update", {
-    analytics_storage: "granted",
-    ad_storage: "granted",
-    ad_user_data: "granted",
-    ad_personalization: "granted",
-  });
   gtag("config", GOOGLE_TAG_ID);
 };
 
-export const hasTrackingConsent = () =>
-  typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY) === "accepted";
+const pushConsentMode = (state: ConsentState, mode: "default" | "update") => {
+  gtag("consent", mode, {
+    analytics_storage: state.analytics ? "granted" : "denied",
+    ad_storage: state.marketing ? "granted" : "denied",
+    ad_user_data: state.marketing ? "granted" : "denied",
+    ad_personalization: state.marketing ? "granted" : "denied",
+  });
+};
 
-/** Send a page view — no-op until consent is granted. */
+const applyConsent = (state: ConsentState) => {
+  current = state;
+  pushConsentMode(state, "update");
+  if (state.analytics || state.marketing) loadGoogleTag();
+};
+
+export const hasAnalyticsConsent = () => current.analytics;
+export const hasMarketingConsent = () => current.marketing;
+export const hasAffiliateConsent = () => current.affiliate;
+
+/** Send a page view — no-op without analytics consent. */
 export const trackPageView = (path: string) => {
-  if (!loaded) return;
+  if (!tagLoaded || !current.analytics) return;
   gtag("event", "page_view", { page_path: path });
 };
 
-/** Track an affiliate outbound click — no-op until consent is granted. */
+/** Track an affiliate outbound click — no-op without affiliate consent. */
 export const trackAffiliateClick = (label: string) => {
-  if (!loaded) return;
+  if (!tagLoaded || !current.affiliate) return;
   gtag("event", "affiliate_click", { affiliate_target: label });
 };
 
@@ -62,17 +72,11 @@ export const initAnalytics = () => {
   if (typeof window === "undefined") return;
 
   // Consent Mode defaults: everything denied until the visitor opts in.
-  gtag("consent", "default", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-  });
+  pushConsentMode({ analytics: false, marketing: false, affiliate: false }, "default");
 
-  if (hasTrackingConsent()) loadGoogleTag();
+  const stored = getConsent();
+  if (stored.analytics || stored.marketing || stored.affiliate) applyConsent(stored);
+  else current = stored;
 
-  window.addEventListener(ACCEPTED_EVENT, loadGoogleTag);
-  window.addEventListener(RESET_EVENT, () => {
-    if (hasTrackingConsent()) loadGoogleTag();
-  });
+  onConsentChange(applyConsent);
 };
