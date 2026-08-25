@@ -4,7 +4,7 @@
  * visitor grants the matching cookie category in the consent modal.
  */
 
-import { getConsent, onConsentChange, type ConsentState } from "./consent";
+import { getConsent, hasConsentDecision, onConsentChange, type ConsentState } from "./consent";
 
 const GOOGLE_TAG_ID = "AW-16504739130";
 
@@ -37,12 +37,31 @@ const loadGoogleTag = () => {
   gtag("config", GOOGLE_TAG_ID);
 };
 
+/** Google Consent Mode v2 signal map for the current category choices. */
+const consentSignals = (state: ConsentState) => ({
+  analytics_storage: state.analytics ? "granted" : "denied",
+  ad_storage: state.marketing ? "granted" : "denied",
+  ad_user_data: state.marketing ? "granted" : "denied",
+  ad_personalization: state.marketing ? "granted" : "denied",
+  personalization_storage: state.marketing ? "granted" : "denied",
+  functionality_storage: state.affiliate ? "granted" : "denied",
+  security_storage: "granted",
+});
+
 const pushConsentMode = (state: ConsentState, mode: "default" | "update") => {
-  gtag("consent", mode, {
-    analytics_storage: state.analytics ? "granted" : "denied",
-    ad_storage: state.marketing ? "granted" : "denied",
-    ad_user_data: state.marketing ? "granted" : "denied",
-    ad_personalization: state.marketing ? "granted" : "denied",
+  gtag("consent", mode, consentSignals(state));
+
+  // Mirror the change as a dataLayer event so GTM triggers can react to it.
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: mode === "default" ? "consent_default" : "consent_update",
+    consent_mode: consentSignals(state),
+    consent_categories: {
+      analytics: state.analytics,
+      marketing: state.marketing,
+      affiliate: state.affiliate,
+    },
+    consent_updated_at: new Date().toISOString(),
   });
 };
 
@@ -75,7 +94,7 @@ export const initAnalytics = () => {
   pushConsentMode({ analytics: false, marketing: false, affiliate: false }, "default");
 
   const stored = getConsent();
-  if (stored.analytics || stored.marketing || stored.affiliate) applyConsent(stored);
+  if (hasConsentDecision()) applyConsent(stored);
   else current = stored;
 
   onConsentChange(applyConsent);
