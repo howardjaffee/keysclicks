@@ -158,6 +158,46 @@ export const ConsentAuditLog = () => {
     );
   };
 
+  if (adminLoading) {
+    return (
+      <div className="mt-6 rounded-xl border bg-card p-6" role="status">
+        <h2 className="flex items-center gap-2 text-lg font-semibold">
+          <History aria-hidden="true" className="h-5 w-5 text-primary" />
+          Consent audit log
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">Checking compliance access…</p>
+      </div>
+    );
+  }
+
+  if (!isAdmin) {
+    return (
+      <div className="mt-6 rounded-xl border bg-card p-6">
+        <h2 className="flex items-center gap-2 text-lg font-semibold">
+          <Lock aria-hidden="true" className="h-5 w-5 text-primary" />
+          Consent audit log
+        </h2>
+        <div className="mt-3 flex items-start gap-3 rounded-lg border border-dashed p-4">
+          <ShieldAlert aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
+          <div className="text-sm text-muted-foreground">
+            <p>
+              The consent audit log contains compliance records and is restricted to authorized
+              admin/compliance accounts.
+              {signedIn
+                ? " Your current account does not have compliance access."
+                : " Please sign in with an authorized account to view or export it."}
+            </p>
+            {!signedIn && (
+              <Button asChild variant="outline" size="sm" className="mt-3 rounded-full">
+                <Link to="/auth">Sign in</Link>
+              </Button>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mt-6 rounded-xl border bg-card p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
