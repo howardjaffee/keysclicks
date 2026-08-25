@@ -115,8 +115,12 @@ export const ConsentAuditLog = () => {
           <History aria-hidden="true" className="h-5 w-5 text-primary" />
           Consent audit log
         </h2>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm" className="rounded-full" onClick={download} disabled={!filtered.length}>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" size="sm" className="rounded-full" onClick={downloadCsv} disabled={!filtered.length}>
+            <FileSpreadsheet aria-hidden="true" className="mr-1.5 h-4 w-4" />
+            Export CSV
+          </Button>
+          <Button variant="outline" size="sm" className="rounded-full" onClick={downloadJson} disabled={!filtered.length}>
             <Download aria-hidden="true" className="mr-1.5 h-4 w-4" />
             Export JSON
           </Button>
