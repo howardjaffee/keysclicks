@@ -25,6 +25,7 @@ import AffiliateDisclosure from "./pages/AffiliateDisclosure";
 import SupportPromisePage from "./pages/SupportPromisePage";
 import Cookies from "./pages/Cookies";
 import { CookieConsent } from "@/components/CookieConsent";
+import { TrackingStatusIndicator } from "@/components/TrackingStatusIndicator";
 
 const queryClient = new QueryClient();
 
