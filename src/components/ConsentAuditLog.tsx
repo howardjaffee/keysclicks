@@ -231,7 +231,7 @@ export const ConsentAuditLog = () => {
         record stays on your device and is never sent to our servers.
       </p>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         <div className="space-y-1.5">
           <Label htmlFor="audit-from" className="text-xs font-semibold uppercase tracking-wide">From date</Label>
           <Input id="audit-from" type="date" value={from} max={to || undefined} onChange={(e) => setFrom(e.target.value)} />
@@ -264,6 +264,20 @@ export const ConsentAuditLog = () => {
               <SelectItem value="any">Any choice</SelectItem>
               <SelectItem value="allowed">Allowed</SelectItem>
               <SelectItem value="blocked">Blocked</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="audit-action" className="text-xs font-semibold uppercase tracking-wide">Action type</Label>
+          <Select value={action} onValueChange={(v) => setAction(v as ActionFilter)}>
+            <SelectTrigger id="audit-action" aria-label="Filter by action type">
+              <SelectValue placeholder="All actions" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All actions</SelectItem>
+              <SelectItem value="granted">Granted</SelectItem>
+              <SelectItem value="updated">Updated</SelectItem>
+              <SelectItem value="revoked">Revoked</SelectItem>
             </SelectContent>
           </Select>
         </div>
