@@ -296,7 +296,7 @@ export const ConsentAuditLog = () => {
           </Button>
           <Button variant="outline" size="sm" className="rounded-full" onClick={downloadCsv} disabled={!total}>
             <FileSpreadsheet aria-hidden="true" className="mr-1.5 h-4 w-4" />
-            Export CSV
+            Export CSV (all filtered)
           </Button>
           <Button variant="outline" size="sm" className="rounded-full" onClick={downloadJson} disabled={!total}>
             <Download aria-hidden="true" className="mr-1.5 h-4 w-4" />
