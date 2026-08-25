@@ -107,17 +107,18 @@ export const ConsentAuditLog = () => {
       if (status === "allowed") return allowed;
       if (status === "blocked") return !allowed;
       return true;
-    });
-  }, [entries, from, to, category, status]);
+    }).filter((entry) => action === "all" || ACTION_GROUP[entry.action] === action);
+  }, [entries, from, to, category, status, action]);
 
   const resetFilters = () => {
     setFrom("");
     setTo("");
     setCategory("all");
     setStatus("any");
+    setAction("all");
   };
 
-  const filtersActive = Boolean(from || to || category !== "all" || status !== "any");
+  const filtersActive = Boolean(from || to || category !== "all" || status !== "any" || action !== "all");
 
   const saveFile = (contents: string, type: string, filename: string) => {
     const blob = new Blob([contents], { type });
