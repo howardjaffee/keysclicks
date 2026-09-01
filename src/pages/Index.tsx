@@ -6,8 +6,11 @@ import { CategoryGrid } from "@/components/CategoryGrid";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { DealsSection } from "@/components/DealsSection";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { SoftwareFinderQuiz } from "@/components/SoftwareFinderQuiz";
+import { SoftwareBuyingGuide } from "@/components/SoftwareBuyingGuide";
 import { SupportPromise } from "@/components/SupportPromise";
 import { Footer } from "@/components/Footer";
+
 
 const Index = () => {
   return (
@@ -24,8 +27,11 @@ const Index = () => {
         <CategoryGrid />
         <FeaturedProducts />
         <WhyChooseUs />
+        <SoftwareFinderQuiz />
+        <SoftwareBuyingGuide />
         <DealsSection />
         <SupportPromise />
+
       </main>
       <Footer />
     </div>
