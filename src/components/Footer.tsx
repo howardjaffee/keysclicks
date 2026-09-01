@@ -123,9 +123,20 @@ export const Footer = () => {
 
       <div className="border-b border-hero-foreground/15">
         <div className="container mx-auto px-4 py-6 text-center">
+          <p className="mx-auto max-w-4xl text-xs leading-relaxed text-hero-foreground/75">
+            KeysClicks is an independent informational and software setup guide site. We participate in the Amazon
+            Services LLC Associates Program. Products are sold and fulfilled directly via Amazon or authorized vendors.
+            We provide independent setup assistance and buyer guidance.
+          </p>
+        </div>
+      </div>
+
+      <div className="border-b border-hero-foreground/15">
+        <div className="container mx-auto px-4 py-6 text-center">
           <h4 className="mb-2 text-sm font-semibold text-hero-foreground/80">Affiliate &amp; Trademark Disclaimer</h4>
           <p className="mx-auto max-w-4xl text-xs leading-relaxed text-hero-foreground/60">
             Keys &amp; Clicks is an independent affiliate publisher and is not affiliated with, endorsed by or
+
             authorised by any software brand. "Norton", "McAfee", "Bitdefender", "Kaspersky", "CCleaner", "QuickBooks",
             "Intuit", "Microsoft", "Windows", "HP", "Canon", "Brother", "NETGEAR" and "ASUS" are trademarks of their
             respective owners and are used here for identification and review purposes only. All purchases are
