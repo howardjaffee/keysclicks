@@ -57,12 +57,14 @@ export const Header = () => {
     <>
       {/* Affiliate disclosure */}
       <div className="bg-accent text-accent-foreground py-2 px-4 text-center text-xs md:text-sm">
-        Affiliate disclosure: Keys &amp; Clicks earns a commission from qualifying purchases made through our links,
-        at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.{" "}
+        KeysClicks is an independent informational and software setup guide site. We participate in the Amazon Services
+        LLC Associates Program. Products are sold and fulfilled directly via Amazon or authorized vendors. We provide
+        independent setup assistance and buyer guidance.{" "}
         <Link to="/affiliate-disclosure" className="font-semibold underline underline-offset-2 hover:text-primary">
           Learn more
         </Link>
       </div>
+
 
       {/* Value bar */}
       <div className="bg-hero text-hero-foreground py-2 px-4 text-xs md:text-sm">
