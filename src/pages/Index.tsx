@@ -27,8 +27,11 @@ const Index = () => {
         <CategoryGrid />
         <FeaturedProducts />
         <WhyChooseUs />
+        <SoftwareFinderQuiz />
+        <SoftwareBuyingGuide />
         <DealsSection />
         <SupportPromise />
+
       </main>
       <Footer />
     </div>
