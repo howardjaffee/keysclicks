@@ -139,7 +139,7 @@ export const Terms = () => {
               If you have any questions about these Terms & Conditions, please contact us at:
             </p>
             <p className="mb-2">Email: legal@keysandclicks.com</p>
-            <p className="mb-2">Phone: 540 242 3003</p>
+            
             <p className="mb-2">Address: #04 S Jones, Las Vegas NV 89107</p>
           </section>
         </div>

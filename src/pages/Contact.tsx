@@ -4,14 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Clock, MessageCircle, MapPin, Send } from "lucide-react";
+import { Mail, FileText, Clock, MessageCircle, MapPin, Send } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const Contact = () => {
   return (
     <div className="min-h-screen">
-      <Seo title={"Contact Keys & Clicks — Free Setup Support"} description={"Need help with a product key, install or licence transfer? Reach our support team by phone or email at no cost."} path="/contact" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Contact Us", path: "/contact" }]} />
+      <Seo title={"Contact Keys & Clicks — Editorial Enquiries"} description={"Contact the KeysClicks editorial team about our licensing, compatibility and deployment reference guides. Written enquiries only."} path="/contact" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Contact Us", path: "/contact" }]} />
       <Header />
       
       <main className="py-16">
@@ -54,11 +54,11 @@ export const Contact = () => {
               <Card className="text-center hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="w-16 h-16 bg-deal/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Phone className="h-8 w-8 text-deal" />
+                    <FileText className="h-8 w-8 text-deal" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">Phone Support</h3>
-                  <p className="text-muted-foreground text-sm mb-3">Call us directly</p>
-                  <p className="text-deal font-medium">540 242 3003</p>
+                  <h3 className="font-semibold text-lg mb-2">Editorial Enquiries</h3>
+                  <p className="text-muted-foreground text-sm mb-3">Corrections and guide feedback</p>
+                  <p className="text-deal font-medium">editorial@keysandclicks.com</p>
                 </CardContent>
               </Card>
 
@@ -67,9 +67,9 @@ export const Contact = () => {
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <MessageCircle className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-2">Live Chat</h3>
-                  <p className="text-muted-foreground text-sm mb-3">Instant assistance</p>
-                  <p className="text-primary font-medium">Available 24/7</p>
+                  <h3 className="font-semibold text-lg mb-2">Contact Form</h3>
+                  <p className="text-muted-foreground text-sm mb-3">Written enquiries only</p>
+                  <p className="text-primary font-medium">Use the form below</p>
                 </CardContent>
               </Card>
 
@@ -153,14 +153,14 @@ export const Contact = () => {
 
                       <div className="flex items-start gap-4">
                         <div className="w-10 h-10 bg-deal/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Phone className="h-5 w-5 text-deal" />
+                          <FileText className="h-5 w-5 text-deal" />
                         </div>
                         <div>
-                          <h4 className="font-semibold mb-1">Phone Numbers</h4>
+                          <h4 className="font-semibold mb-1">How to reach us</h4>
                           <p className="text-muted-foreground">
-                            Support: 540 242 3003<br />
-                            Sales: 540 242 3004<br />
-                            Fax: 540 242 3005
+                            Written enquiries only, via the form on this page or by email.<br />
+                            We do not operate a telephone support line.<br />
+                            Typical response time: 1&ndash;2 business days.
                           </p>
                         </div>
                       </div>

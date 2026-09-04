@@ -25,10 +25,30 @@ import AffiliateDisclosure from "./pages/AffiliateDisclosure";
 import SupportPromisePage from "./pages/SupportPromisePage";
 import Cookies from "./pages/Cookies";
 import AdminRoles from "./pages/AdminRoles";
+import Insights from "./pages/Insights";
 import { CookieConsent } from "@/components/CookieConsent";
 import { TrackingStatusIndicator } from "@/components/TrackingStatusIndicator";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
+
+/** Scrolls to the #hash target after in-app navigation (e.g. /#analyzer from another page). */
+const ScrollToHash = () => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0 });
+      return;
+    }
+    const id = hash.slice(1);
+    const timer = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+    return () => window.clearTimeout(timer);
+  }, [pathname, hash]);
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -37,8 +57,10 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToHash />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/insights" element={<Insights />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
