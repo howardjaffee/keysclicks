@@ -113,7 +113,7 @@ const Cookies = () => (
           <a href="mailto:support@keysandclicks.com" className="font-semibold text-primary underline underline-offset-4">
             support@keysandclicks.com
           </a>{" "}
-          or call 540 242 3003.
+          using the form on our Contact page.
         </p>
       </section>
 

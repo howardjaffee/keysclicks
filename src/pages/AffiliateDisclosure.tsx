@@ -115,7 +115,7 @@ const AffiliateDisclosure = () => (
             <h2>Questions</h2>
             <p>
               If anything about how we make money is unclear, email{" "}
-              <a href="mailto:support@keysandclicks.com">support@keysandclicks.com</a> or call 540 242 3003 and we will
+              <a href="mailto:support@keysandclicks.com">support@keysandclicks.com</a> and we will
               answer plainly.
             </p>
           </div>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Check, Phone, Mail } from "lucide-react";
+import { Check, FileText, Mail } from "lucide-react";
 
 const covered = [
   "Downloading and installing your software correctly",
@@ -53,11 +53,9 @@ export const SupportPromise = () => (
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-hero-foreground/15 bg-hero-foreground/5 p-6">
-            <Phone className="h-6 w-6 text-primary-glow" />
-            <h3 className="mt-4 font-semibold">Call us</h3>
-            <a href="tel:5402423003" className="mt-1 block text-hero-foreground/80 hover:text-primary-glow">
-              540 242 3003
-            </a>
+            <FileText className="h-6 w-6 text-primary-glow" />
+            <h3 className="mt-4 font-semibold">Written enquiries</h3>
+            <span className="mt-1 block text-hero-foreground/80">Use the form on our Contact page</span>
           </div>
           <div className="rounded-2xl border border-hero-foreground/15 bg-hero-foreground/5 p-6">
             <Mail className="h-6 w-6 text-primary-glow" />

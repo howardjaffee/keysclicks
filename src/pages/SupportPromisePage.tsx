@@ -5,7 +5,7 @@ import { SupportPromise } from "@/components/SupportPromise";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Phone, Mail, Wrench, ShieldCheck, RotateCcw } from "lucide-react";
+import { Mail, Wrench, ShieldCheck, RotateCcw } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -181,7 +181,7 @@ const SupportPromisePage = () => (
 
             <h2>Response times</h2>
             <p>
-              Email is answered within one business day, usually much faster. Phone support runs Monday to Saturday.
+              Email and contact-form enquiries are answered within one business day, usually much faster.
               There is no ticket limit, no paid tier and no upsell: we will never ask you to pay for support, and
               anyone claiming to be us and asking for payment or remote access is not us — report it to{" "}
               <a href="mailto:support@keysandclicks.com">support@keysandclicks.com</a>.
@@ -208,11 +208,6 @@ const SupportPromisePage = () => (
               <Link to="/contact">
                 <Mail className="mr-2 h-4 w-4" /> Request free help
               </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full" asChild>
-              <a href="tel:5402423003">
-                <Phone className="mr-2 h-4 w-4" /> 540 242 3003
-              </a>
             </Button>
             <Button size="lg" variant="outline" className="rounded-full" asChild>
               <Link to="/returns">

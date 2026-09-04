@@ -144,7 +144,7 @@ export const Privacy = () => {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <p className="mb-2">Email: privacy@keysandclicks.com</p>
-            <p className="mb-2">Phone: 540 242 3003</p>
+            
           </section>
         </div>
       </div>

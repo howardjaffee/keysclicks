@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const faqs: { q: string; a: string }[] = [
   {
@@ -66,7 +66,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How can I contact you for additional help?",
-    a: "You can email us at support@keysandclicks.com, call us on 540 242 3003, or use the form on our Contact page. We typically respond to emails within 24 hours, and our free setup support covers every product we recommend.",
+    a: "You can email us at support@keysandclicks.com, or use the form on our Contact page. We typically respond to emails within 24 hours, and our free setup support covers every product we recommend.",
   },
   {
     q: "Do you have a deals alert service?",
@@ -146,9 +146,6 @@ export default function FAQ() {
             <div className="flex flex-wrap justify-center gap-6 text-muted-foreground mb-6">
               <span className="inline-flex items-center gap-2">
                 <Mail className="h-4 w-4" /> support@keysandclicks.com
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Phone className="h-4 w-4" /> 540 242 3003
               </span>
             </div>
             <Button asChild className="rounded-full">
