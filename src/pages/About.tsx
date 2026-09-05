@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Award, Users, Heart, CheckCircle, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -151,11 +152,12 @@ export const About = () => {
                 <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
                   Join thousands of satisfied customers who trust Keys & Clicks for their digital security needs.
                 </p>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
+                  asChild
                   className="bg-background text-primary hover:bg-background/90 font-semibold px-8"
                 >
-                  Shop Now
+                  <Link to="/#analyzer">Open the compatibility analyzer</Link>
                 </Button>
               </CardContent>
             </Card>
