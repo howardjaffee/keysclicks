@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 /** Canonical domain for the published site — used for canonical and og:url tags. */
-export const SITE_URL = "https://keysclicks.lovable.app";
+export const SITE_URL = "https://keysclicks.com";
 
 export interface BreadcrumbItem {
   name: string;

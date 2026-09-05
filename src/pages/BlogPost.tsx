@@ -330,7 +330,7 @@ const BlogPost = () => {
                       
                       <Button asChild variant="ghost" size="sm" className="text-sm">
                         <Link to={`/blog/${relatedPost.slug}`}>
-                          Read More
+                          Read: {relatedPost.title}
                         </Link>
                       </Button>
                     </div>
