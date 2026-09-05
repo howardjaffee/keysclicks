@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, FileText, Clock, MessageCircle, MapPin, Send } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -51,7 +52,7 @@ export const Contact = () => {
                 </span>
               </h1>
               <p className="text-xl text-hero-foreground/90 max-w-3xl mx-auto">
-                Have questions about our products or need technical support? Our expert team is ready to assist you 24/7.
+                Questions about our licensing, compatibility or deployment guides? Send us a written enquiry and our editorial team will reply.
               </p>
             </div>
           </div>
@@ -100,8 +101,8 @@ export const Contact = () => {
                     <Clock className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Response Time</h3>
-                  <p className="text-muted-foreground text-sm mb-3">Quick replies</p>
-                  <p className="text-primary font-medium">Within 2 hours</p>
+                  <p className="text-muted-foreground text-sm mb-3">Written enquiries</p>
+                  <p className="text-primary font-medium">1&ndash;2 business days</p>
                 </CardContent>
               </Card>
             </div>
@@ -246,7 +247,7 @@ export const Contact = () => {
                           <p className="text-muted-foreground">
                             Monday - Friday: 9:00 AM - 6:00 PM PST<br />
                             Saturday: 10:00 AM - 4:00 PM PST<br />
-                            Sunday: Emergency support only
+                            Sunday: Closed
                           </p>
                         </div>
                       </div>
@@ -256,15 +257,16 @@ export const Contact = () => {
 
                 <Card className="bg-gradient-primary text-primary-foreground border-0">
                   <CardContent className="p-8">
-                    <h3 className="text-xl font-bold mb-4">Need Immediate Help?</h3>
+                    <h3 className="text-xl font-bold mb-4">Looking for answers now?</h3>
                     <p className="text-primary-foreground/90 mb-6">
-                      Our technical support team is available 24/7 to help you with any urgent issues.
+                      Our reference guides cover licensing models, edition differences and activation error codes.
                     </p>
-                    <Button 
-                      size="lg" 
+                    <Button
+                      size="lg"
+                      asChild
                       className="bg-background text-primary hover:bg-background/90 font-semibold"
                     >
-                      Start Live Chat
+                      <Link to="/faq">Read the frequently asked questions</Link>
                     </Button>
                   </CardContent>
                 </Card>
