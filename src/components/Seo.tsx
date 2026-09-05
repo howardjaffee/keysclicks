@@ -42,8 +42,10 @@ export const Seo = ({ title, description, path, type = "website", jsonLd, breadc
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
+      <meta property="og:image" content={`${SITE_URL}/og-image.jpg`} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${SITE_URL}/og-image.jpg`} />
       {jsonLd && <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>}
       {breadcrumbLd && <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>}
     </Helmet>
