@@ -111,38 +111,75 @@ export const Contact = () => {
               <Card>
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium mb-2">First Name</label>
-                        <Input placeholder="Enter your first name" />
+                        <label htmlFor="contact-first-name" className="block text-sm font-medium mb-2">First Name</label>
+                        <Input
+                          id="contact-first-name"
+                          name="firstName"
+                          autoComplete="given-name"
+                          required
+                          value={form.firstName}
+                          onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                          placeholder="Enter your first name"
+                        />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">Last Name</label>
-                        <Input placeholder="Enter your last name" />
+                        <label htmlFor="contact-last-name" className="block text-sm font-medium mb-2">Last Name</label>
+                        <Input
+                          id="contact-last-name"
+                          name="lastName"
+                          autoComplete="family-name"
+                          value={form.lastName}
+                          onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                          placeholder="Enter your last name"
+                        />
                       </div>
                     </div>
-                    
+
                     <div>
-                      <label className="block text-sm font-medium mb-2">Email Address</label>
-                      <Input type="email" placeholder="Enter your email" />
+                      <label htmlFor="contact-email" className="block text-sm font-medium mb-2">Email Address</label>
+                      <Input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        required
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        placeholder="Enter your email"
+                      />
                     </div>
-                    
+
                     <div>
-                      <label className="block text-sm font-medium mb-2">Subject</label>
-                      <Input placeholder="What's this about?" />
+                      <label htmlFor="contact-subject" className="block text-sm font-medium mb-2">Subject</label>
+                      <Input
+                        id="contact-subject"
+                        name="subject"
+                        value={form.subject}
+                        onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                        placeholder="What's this about?"
+                      />
                     </div>
-                    
+
                     <div>
-                      <label className="block text-sm font-medium mb-2">Message</label>
-                      <Textarea 
+                      <label htmlFor="contact-message" className="block text-sm font-medium mb-2">Message</label>
+                      <Textarea
+                        id="contact-message"
+                        name="message"
+                        required
+                        value={form.message}
+                        onChange={(e) => setForm({ ...form, message: e.target.value })}
                         placeholder="Tell us how we can help you..."
                         rows={6}
                       />
                     </div>
-                    
-                    <Button 
-                      size="lg" 
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={sending}
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                     >
                       <Send className="h-4 w-4 mr-2" />
