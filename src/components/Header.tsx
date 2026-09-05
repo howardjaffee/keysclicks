@@ -40,7 +40,7 @@ export const Header = () => {
         KeysClicks is an independent educational portal and software compatibility reference guide. We do not sell
         software keys directly, manage licensing, or provide technical support services.{" "}
         <Link to="/affiliate-disclosure" className="font-semibold underline underline-offset-2 hover:text-primary">
-          Learn more
+          Read our affiliate and independence disclosure
         </Link>
       </div>
 
@@ -93,7 +93,7 @@ export const Header = () => {
               {user ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm">
+                    <Button variant="ghost" size="sm" aria-label="Open account menu">
                       <User className="h-5 w-5" />
                       <span className="ml-2 hidden lg:inline">{user.email?.split("@")[0]}</span>
                     </Button>
@@ -112,7 +112,7 @@ export const Header = () => {
                 </DropdownMenu>
               ) : (
                 <Button variant="ghost" size="sm" asChild>
-                  <Link to="/auth">
+                  <Link to="/auth" aria-label="Sign in to your account">
                     <User className="h-5 w-5" />
                     <span className="ml-2 hidden lg:inline">Sign In</span>
                   </Link>

@@ -153,7 +153,7 @@ const Blog = () => {
                       
                       <Button asChild variant="ghost" size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground">
                         <Link to={`/blog/${post.slug}`}>
-                          Read More
+                          Read: {post.title}
                         </Link>
                       </Button>
                     </div>
