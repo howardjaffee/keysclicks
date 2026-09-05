@@ -7,8 +7,29 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, FileText, Clock, MessageCircle, MapPin, Send } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useState } from "react";
+import { toast } from "sonner";
+
+const emptyForm = { firstName: "", lastName: "", email: "", subject: "", message: "" };
 
 export const Contact = () => {
+  const [form, setForm] = useState(emptyForm);
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSending(true);
+    const body = encodeURIComponent(
+      `Name: ${form.firstName} ${form.lastName}\nEmail: ${form.email}\n\n${form.message}`,
+    );
+    window.location.href = `mailto:support@keysandclicks.com?subject=${encodeURIComponent(
+      form.subject || "Website enquiry",
+    )}&body=${body}`;
+    toast.success("Thanks! Your email app is opening with your enquiry ready to send.");
+    setForm(emptyForm);
+    setSending(false);
+  };
+
   return (
     <div className="min-h-screen">
       <Seo title={"Contact Keys & Clicks — Editorial Enquiries"} description={"Contact the KeysClicks editorial team about our licensing, compatibility and deployment reference guides. Written enquiries only."} path="/contact" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Contact Us", path: "/contact" }]} />
